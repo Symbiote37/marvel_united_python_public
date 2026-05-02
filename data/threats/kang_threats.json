@@ -1,0 +1,50 @@
+[
+  {
+    "id": "time_army",
+    "name": "Time Army",
+    "heroic_req": 3,
+    "id_internal": "time_army",
+    "short_effect": "+1 DMG/T",
+    "effect_text": "As long as this threat is in play, Heroes ending their turn in a Location with any T take 1 damage."
+  },
+  {
+    "id": "time_army",
+    "name": "Time Army",
+    "heroic_req": 3,
+    "id_internal": "time_army",
+    "short_effect": "+1 DMG/T",
+    "effect_text": "As long as this threat is in play, Heroes ending their turn in a Location with any T take 1 damage."
+  },
+  {
+    "id": "time_hideout",
+    "name": "Time Hideout",
+    "heroic_req": 3,
+    "id_internal": "time_hideout",
+    "short_effect": "No DMG",
+    "effect_text": "Kang can't take any damage as long as he is in this or adjacent Locations."
+  },
+  {
+    "id": "time_hideout",
+    "name": "Time Hideout",
+    "heroic_req": 3,
+    "id_internal": "time_hideout",
+    "short_effect": "No DMG",
+    "effect_text": "Kang can't take any damage as long as he is in this or adjacent Locations."
+  },
+  {
+    "id": "time_paradox",
+    "name": "Time Paradox",
+    "heroic_req": 3,
+    "id_internal": "time_paradox",
+    "short_effect": "Full HP",
+    "effect_text": "As long as this threat is in play, whenever Kang enters play, he does so with full health."
+  },
+  {
+    "id": "time_paradox",
+    "name": "Time Paradox",
+    "heroic_req": 3,
+    "id_internal": "time_paradox",
+    "short_effect": "Full HP",
+    "effect_text": "As long as this threat is in play, whenever Kang enters play, he does so with full health."
+  }
+]

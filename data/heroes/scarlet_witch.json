@@ -1,0 +1,18 @@
+{
+  "internal_id": "scarlet_witch",
+  "name": "Scarlet Witch",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "attack"] },
+    { "id": 4, "actions": ["move", "attack"] },
+    { "id": 5, "actions": ["move", "move"] },
+    { "id": 6, "actions": ["heroic", "heroic"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Chaos Magic", "actions": ["wild"], "special_id": "scarlet_witch_chaos_magic", "auto_trigger": true, "effect_text": "Another Hero can swap one card from their hand with one on their faceup cards in the Storyline." },
+    { "id": 11, "name": "Psionic Energy Blast", "actions": [], "special_id": "scarlet_witch_psionic_energy_blast", "effect_text": "✸ ✸ ✸ against a single enemy in an adjacent Location." },
+    { "id": 12, "name": "Psionic Energy Field", "actions": [], "special_id": "scarlet_witch_psionic_energy_field", "auto_trigger": true, "effect_text": "Cancel the first damage each hero would suffer from the effects of the next Master Plan card." }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "name": "Oscorp Tower",
+    "capacity": 4,
+    "start_thugs": 1,
+    "start_civs": 1,
+    "end_effect": {
+      "logic_key": "gain_move_token",
+      "text": "You may gain 1 ➡ token."
+    },
+    "short_effect": "+1 Move\nToken"
+  },
+  { 
+    "id": 1, 
+    "name": "Queens", 
+    "capacity": 5, 
+    "start_thugs": 0, 
+    "start_civs": 2, 
+    "end_effect": { 
+      "logic_key": "heal_1", 
+      "text": "If you have 1 or 2 cards in hand, you may draw 1 card." 
+    }, 
+    "short_effect": "Heal Up\n+1 Card" 
+  },
+  { 
+    "id": 2, 
+    "name": "Daily Bugle", 
+    "capacity": 4, 
+    "start_thugs": 0, 
+    "start_civs": 2, 
+    "end_effect": { 
+      "logic_key": "reveal_plan", 
+      "text": "Reveal the top card of the Master Plan deck. You may place it on the bottom." 
+    }, 
+    "short_effect": "Reveal\nNext Plan" 
+  },
+  { 
+    "id": 3, 
+    "name": "Brooklyn Bridge", 
+    "capacity": 4, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "rescue_1_c", 
+      "text": "You may add 1 C to any Location. Then, rescue 1 C from this Location." 
+    }, 
+    "short_effect": "Rescue\n1 C" 
+  },
+  { 
+    "id": 4, 
+    "name": "Midtown HS", 
+    "capacity": 4, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "gain_heroic_token",
+      "text": "You may gain 1 ★ token."
+    },
+    "short_effect": "+1 ★\nToken"
+  },
+  { 
+    "id": 5, 
+    "name": "Osborn Labs", 
+    "capacity": 3, 
+    "start_thugs": 1, 
+    "start_civs": 0, 
+    "end_effect": { 
+      "logic_key": "gain_attack_token",
+      "text": "You may gain 1 ✸ token."
+    },
+    "short_effect": "+1 ✸\nToken"
+  }
+]

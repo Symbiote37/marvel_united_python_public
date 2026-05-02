@@ -1,0 +1,22 @@
+{
+    "unlocked_heroes": [
+        "captain_america",
+        "winter_soldier",
+        "spider-man",
+        "miles_morales"
+    ],
+    "historical_roster": [
+        "captain_america",
+        "winter_soldier",
+        "spider-man",
+        "miles_morales"
+    ],
+    "eliminated_heroes": [],
+    "completed_nodes": [],
+    "keys": 0,
+    "trophies": 0,
+    "blue_bolts": 0,
+    "shields": 0,
+    "crosses": 0,
+    "last_lost_heroes": []
+}

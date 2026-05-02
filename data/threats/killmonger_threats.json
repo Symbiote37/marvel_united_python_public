@@ -1,0 +1,50 @@
+[
+  {
+    "id": "elite_troops",
+    "name": "Mercenaries",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "2✸/Thug",
+    "effect_text": "Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "elite_troops",
+    "name": "Mercenaries",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "2✸/Thug",
+    "effect_text": "Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "assassination_attempt",
+    "name": "Assassination Attempt",
+    "heroic_req": 3,
+    "id_internal": "assassination_attempt",
+    "short_effect": "+1DMG/Turn",
+    "effect_text": "Heroes ending their turn on this location take 1 damage."
+  },
+  {
+    "id": "assassination_attempt",
+    "name": "Assassination Attempt",
+    "heroic_req": 3,
+    "id_internal": "assassination_attempt",
+    "short_effect": "+1DMG/Turn",
+    "effect_text": "Heroes ending their turn on this location take 1 damage."
+  },
+  {
+    "id": "weapon_smuggling",
+    "name": "Weapon Smuggling",
+    "heroic_req": 3,
+    "trigger_id": "weapon_smuggling",
+    "short_effect": "+1 Crisis",
+    "effect_text": "Place 1 Crisis token in an empty slot in this Location. If all slots are full, it replaces leftmost T/C token."
+  },
+  {
+    "id": "weapon_smuggling",
+    "name": "Weapon Smuggling",
+    "heroic_req": 3,
+    "trigger_id": "weapon_smuggling",
+    "short_effect": "+1 Crisis",
+    "effect_text": "Place 1 Crisis token in an empty slot in this Location. If all slots are full, it replaces leftmost T/C token."
+  }
+]

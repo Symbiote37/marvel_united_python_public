@@ -1,0 +1,25 @@
+{
+  "name": "Ronan",
+  "internal_id": "ronan",
+  "health_map": {
+    "2": 5,
+    "3": 9,
+    "4": 12
+  },
+  "plot_name": "KO Tokens",
+  "plot_max": 4,
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": true, "trigger": false },
+    { "id": 2, "move": 0, "bam": false, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 1}, "right": {"thugs": 1, "civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 3, "move": "cw", "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 4, "move": "cw", "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 5, "move": "ccw", "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 6, "move": "ccw", "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 7, "move": "cw", "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 8, "move": "ccw", "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 9, "move": "cw", "bam": false, "trigger": false, "special_id": "kree_law", "display_name": "Kree-Law", "effect_text": "Add T to every Location." },
+    { "id": 10, "move": "ccw", "bam": false, "trigger": false, "special_id": "kree_law", "display_name": "Kree-Law", "effect_text": "Add T to every Location." },
+    { "id": 11, "move": "cw", "bam": false, "trigger": false, "special_id": "cosmi_rod", "display_name": "Cosmi-Rod", "effect_text": "Deal 1 damage to each Hero in Ronan's Location." },
+    { "id": 12, "move": "ccw", "bam": false, "trigger": false, "special_id": "cosmi_rod", "display_name": "Cosmi-Rod", "effect_text": "Deal 1 damage to each Hero in Ronan's Location." }
+  ]
+}

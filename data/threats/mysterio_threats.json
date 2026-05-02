@@ -1,0 +1,50 @@
+[
+  {
+    "id": "battle_drones",
+    "name": "Battle Drones",
+    "attack_req": 3,
+    "id_internal": "battle_drones",
+    "short_effect": "+1 DMG",
+    "effect_text": "When this Threat is revealed, the Hero revealing it takes 1 damage."
+  },
+  {
+    "id": "battle_drones",
+    "name": "Battle Drones",
+    "attack_req": 3,
+    "id_internal": "battle_drones",
+    "short_effect": "+1 DMG",
+    "effect_text": "When this Threat is revealed, the Hero revealing it takes 1 damage."
+  },
+  {
+    "id": "broken_illusion",
+    "name": "Broken Illusion",
+    "heroic_req": 3,
+    "id_internal": "broken_illusion",
+    "short_effect": "V -- DMG",
+    "effect_text": "Mysterio can now be damaged (once 2 Missions have been completed)."
+  },
+  {
+    "id": "broken_illusion",
+    "name": "Broken Illusion",
+    "heroic_req": 3,
+    "id_internal": "broken_illusion",
+    "short_effect": "V -- DMG",
+    "effect_text": "Mysterio can now be damaged (once 2 Missions have been completed)."
+  },
+  {
+    "id": "smoke_mirrors",
+    "name": "Smoke and Mirrors",
+    "heroic_req": 3,
+    "id_internal": "smoke_mirrors",
+    "short_effect": "+1 T",
+    "effect_text": " When this Threat is revealed, add T to this location."
+  },
+  {
+    "id": "smoke_mirrors",
+    "name": "Smoke and Mirrors",
+    "heroic_req": 3,
+    "id_internal": "smoke_mirrors",
+    "short_effect": "+1 T",
+    "effect_text": " When this Threat is revealed, add T to this location."
+  }
+]

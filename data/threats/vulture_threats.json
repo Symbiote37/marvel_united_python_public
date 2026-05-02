@@ -1,0 +1,50 @@
+[
+  {
+    "id": "electromagnetic_wings",
+    "name": "Electromagnetic Wings",
+    "heroic_req": 3,
+    "id_internal": "electromagnetic_wings",
+    "short_effect": "Move",
+    "effect_text": "If Vulture is attacked here, he only takes 1 damage and immediately moves to the opposite Location."
+  },
+  {
+    "id": "electromagnetic_wings",
+    "name": "Electromagnetic Wings",
+    "heroic_req": 3,
+    "id_internal": "electromagnetic_wings",
+    "short_effect": "Move",
+    "effect_text": "If Vulture is attacked here, he only takes 1 damage and immediately moves to the opposite Location."
+  },
+  {
+    "id": "grenade_bombing",
+    "name": "Grenade Bombing",
+    "heroic_req": 3,
+    "trigger_id": "grenade_bombing",
+    "short_effect": "+2 DMG",
+    "effect_text": "Each Hero in this Location takes 2 damage."
+  },
+  {
+    "id": "grenade_bombing",
+    "name": "Grenade Bombing",
+    "heroic_req": 3,
+    "trigger_id": "grenade_bombing",
+    "short_effect": "+2 DMG",
+    "effect_text": "Each Hero in this Location takes 2 damage."
+  },
+  {
+    "id": "kraven",
+    "name": "Kraven",
+    "hp": 4,
+    "bam_id": "heavy_dmg_single_bam",
+    "short_effect": "BAM: +2 DMG",
+    "effect_text": "BAM!: Deal 2 damage to 1 Hero in this Location."
+  },
+  {
+    "id": "sandman",
+    "name": "Sandman",
+    "hp": 4,
+    "bam_id": "light_damage_bam",
+    "short_effect": "+1 DMG",
+    "effect_text": "BAM!: Deal 1 damage to each Hero in this Location. If there are no Heroes in this Location, steal 1 Crisis token here."
+  }
+]

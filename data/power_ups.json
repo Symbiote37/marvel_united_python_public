@@ -1,0 +1,46 @@
+{
+  "power_ups": [
+    {
+      "id": "pu_heroic_1",
+      "name": "Power-Up",
+      "req": {"heroic": 4},
+      "effect_text": "➡ ➡ + ★ "
+    },
+    {
+      "id": "pu_heroic_2",
+      "name": "Power-Up",
+      "req": {"heroic": 4},
+      "effect_text": "✸ ✸ + ★ "
+    },
+    {
+      "id": "pu_attack_1",
+      "name": "Power-Up",
+      "req": {"attack": 4},
+      "effect_text": "➡ ➡ + ✸ "
+    },
+    {
+      "id": "pu_attack_2",
+      "name": "Power-Up",
+      "req": {"attack": 4},
+      "effect_text": "★ ★ + ✸ "
+    },
+    {
+      "id": "pu_move_1",
+      "name": "Power-Up",
+      "req": {"move": 4},
+      "effect_text": "✸ ✸ + ➡ "
+    },
+    {
+      "id": "pu_move_2",
+      "name": "Power-Up",
+      "req": {"move": 4},
+      "effect_text": "★ ★ + ➡ "
+    },
+    {
+      "id": "pu_wild_1",
+      "name": "Power-Up",
+      "req": {"attack": 1, "move": 1, "heroic": 1, "threat": 1},
+      "effect_text": "✸ ➡ ★ + ❖ "
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "internal_id": "howard_the_duck",
+  "name": "Howard the Duck",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move"] },
+    { "id": 3, "actions": ["move", "attack"] },
+    { "id": 4, "actions": ["heroic"] },
+    { "id": 5, "actions": ["heroic"] },
+    { "id": 6, "actions": ["attack"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Big Freaking Gun", "actions": ["move"], "special_id": "howard_the_duck_big_freaking_gun", "effect_text": "Deal ✸ ✸ in any Location." },
+    { "id": 11, "name": "Neutron Disintegrator", "actions": ["heroic"], "special_id": "howard_the_duck_neutron_disintegrator", "effect_text": "Deal damage to a Villain or Henchman in your Location until they have 1 Health. You can't use any attack this turn." },
+    { "id": 12, "name": " No More Mister Nice Duck!", "actions": ["attack"], "special_id": "howard_the_duck_no_more_mr_nice_duck", "effect_text": " Deal ✸ ✸ to each enemy in your Location." }
+  ]
+}

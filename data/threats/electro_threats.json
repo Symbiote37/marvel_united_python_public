@@ -1,0 +1,50 @@
+[
+  {
+    "id": "high_voltage",
+    "name": "High Voltage",
+    "heroic_req": 3,
+    "id_internal": "high_voltage",
+    "short_effect": "+1 DMG",
+    "effect_text": "When a Hero takes damage in this Location, they take 1 extra damage."
+  },
+  {
+    "id": "high_voltage",
+    "name": "High Voltage",
+    "heroic_req": 3,
+    "id_internal": "high_voltage",
+    "short_effect": "+1 DMG",
+    "effect_text": "When a Hero takes damage in this Location, they take 1 extra damage."
+  },
+  {
+    "id": "overpowered",
+    "name": "Overpowered",
+    "heroic_req": 3,
+    "trigger_id": "overpowered",
+    "short_effect": "+Master Plan",
+    "effect_text": "Play another Master Plan card after resolving the current one."
+  },
+  {
+    "id": "overpowered",
+    "name": "Overpowered",
+    "heroic_req": 3,
+    "trigger_id": "overpowered",
+    "short_effect": "+Master Plan",
+    "effect_text": "Play another Master Plan card after resolving the current one."
+  },
+  {
+    "id": "recharge",
+    "name": "Recharge",
+    "heroic_req": 3,
+    "trigger_id": "recharge",
+    "short_effect": "+3 HP",
+    "effect_text": "Electro gains 3 Health (may go above his starting value)."
+  },
+  {
+    "id": "recharge",
+    "name": "Recharge",
+    "heroic_req": 3,
+    "trigger_id": "recharge",
+    "short_effect": "+3 HP",
+    "effect_text": "Electro gains 3 Health (may go above his starting value)."
+  }
+]

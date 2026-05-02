@@ -1,0 +1,18 @@
+{
+  "internal_id": "quicksilver",
+  "name": "Quicksilver",
+  "deck": [
+    { "id": 1, "actions": ["move", "move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["move", "attack"] },
+    { "id": 5, "actions": ["move", "attack"] },
+    { "id": 6, "actions": ["heroic"] },
+    { "id": 7, "actions": ["attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Run to the Rescue", "actions": ["move", "move"], "special_id": "quicksilver_run_to_the_rescue", "auto_trigger": true, "effect_text": " You can rescue 1 C in each Location you enter this turn." },
+    { "id": 11, "name": "Speed Fighting", "actions": ["move", "move"], "special_id": "quicksilver_speed_fighting", "auto_trigger": true, "effect_text": "You can defeat 1 T in each Location you enter this turn." },
+    { "id": 12, "name": "Superhuman Speed", "actions": ["move", "move"], "special_id": "quicksilver_superhuman_speed", "auto_trigger": true, "effect_text": "Choose: ✸ ✸ or delay the next Villain turn by 1 card." }
+  ]
+}

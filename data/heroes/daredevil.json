@@ -1,0 +1,18 @@
+{
+  "internal_id": "daredevil",
+  "name": "Daredevil",
+  "deck": [
+    { "id": 1, "actions": ["move", "heroic"] },
+    { "id": 2, "actions": ["move", "attack"] },
+    { "id": 3, "actions": ["heroic"] },
+    { "id": 4, "actions": ["heroic"] },
+    { "id": 5, "actions": ["heroic", "heroic"] },
+    { "id": 6, "actions": ["heroic", "attack"] },
+    { "id": 7, "actions": ["attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Radar Sense", "actions": ["move"], "special_id": "daredevil_radar_sense", "auto_trigger": true, "effect_text": "Gain either a ★ or ✸ token for each Location you enter this turn." },
+    { "id": 11, "name": "The Man Without Fear", "actions": ["heroic"], "special_id": "daredevil_man_without_fear", "auto_trigger": true, "effect_text": "Gain 1 ➡ token for each C you rescue this turn." },
+    { "id": 12, "name": "Blind Justice", "actions": ["attack"], "special_id": "daredevil_blind_justice", "auto_trigger": true, "effect_text": "Gain 1 ➡ token for each T you defeat this turn." }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "internal_id": "she-hulk",
+  "name": "She-Hulk",
+  "deck": [
+    { "id": 1, "actions": ["move", "attack"] },
+    { "id": 2, "actions": ["heroic"] },
+    { "id": 3, "actions": ["heroic", "heroic"] },
+    { "id": 4, "actions": ["attack"] },
+    { "id": 5, "actions": ["attack", "attack"] },
+    { "id": 6, "actions": ["attack", "attack"] },
+    { "id": 7, "actions": ["wild"] },
+    { "id": 8, "actions": ["wild", "wild"] },
+    { "id": 9, "name": "Transformation", "actions": ["move"], "special_id": "she_hulk_transformation", "auto_trigger": true, "effect_text": "✸ plus another ✸ for each Transformation card in the Storyline (including this one)." },
+    { "id": 10, "name": "Transformation", "actions": ["move"], "special_id": "she-hulk_transformation", "auto_trigger": true, "effect_text": "✸ plus another ✸ for each Transformation card in the Storyline (including this one)." },
+    { "id": 11, "name": "Transformation", "actions": ["move"], "special_id": "she-hulk_transformation", "auto_trigger": true, "effect_text": "✸ plus another ✸ for each Transformation card in the Storyline (including this one)." },
+    { "id": 12, "name": "Transformation", "actions": ["move"], "special_id": "she-hulk_transformation", "auto_trigger": true, "effect_text": "✸ plus another ✸ for each Transformation card in the Storyline (including this one)." }
+  ]
+}

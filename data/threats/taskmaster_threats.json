@@ -1,0 +1,50 @@
+[
+  {
+    "id": "elite_troops",
+    "name": "Elite Thugs",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "2✸/Thug",
+    "effect_text": "Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "elite_troops",
+    "name": "Elite Thugs",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "2✸/Thug",
+    "effect_text": "Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "move_trap",
+    "name": "Entangling Trap",
+    "heroic_req": 3,
+    "id_internal": "move_trap",
+    "short_effect": "2➡/Move",
+    "effect_text": "Heroes using ➡ to leave this Location must use ➡➡ instead."
+  },
+  {
+    "id": "move_trap",
+    "name": "Entangling Trap",
+    "heroic_req": 3,
+    "id_internal": "move_trap",
+    "short_effect": "2➡/Move",
+    "effect_text": "Heroes using ➡ to leave this Location must use ➡➡ instead."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Explosive Trap",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Explosive Trap",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "chain_hammer",
+    "name": "Chain Hammer",
+    "heroic_req": 3,
+    "id_internal": "chain_hammer",
+    "short_effect": "+1 DMG/ADJ",
+    "effect_text": "As long as at least 1 Chain Hammer is in play, Black Dwarf's BAM also deals 1 damage to each Hero in adjacent Locations."
+  },
+  {
+    "id": "chain_hammer",
+    "name": "Chain Hammer",
+    "heroic_req": 3,
+    "id_internal": "chain_hammer",
+    "short_effect": "+1 DMG/ADJ",
+    "effect_text": "As long as at least 1 Chain Hammer is in play, Black Dwarf's BAM also deals 1 damage to each Hero in adjacent Locations."
+  },
+  {
+    "id": "super_tough",
+    "name": "Super Tough",
+    "heroic_req": 3,
+    "id_internal": "super_tough",
+    "short_effect": "-1 DMG",
+    "effect_text": "As long as at least 1 Super Tough is in play, Black Dwarf ignores 1 damage each turn."
+  },
+  {
+    "id": "super_tough",
+    "name": "Super Tough",
+    "heroic_req": 3,
+    "id_internal": "super_tough",
+    "short_effect": "-1 DMG",
+    "effect_text": "As long as at least 1 Super Tough is in play, Black Dwarf ignores 1 damage each turn."
+  },
+  {
+    "id": "charge",
+    "name": "Charge",
+    "heroic_req": 3,
+    "trigger_id": "charge",
+    "short_effect": "+1 DMG/Hero",
+    "effect_text": "Deal 1 damage to each Hero in this Location."
+  },
+  {
+    "id": "charge",
+    "name": "Charge",
+    "heroic_req": 3,
+    "trigger_id": "charge",
+    "short_effect": "+1 DMG/Hero",
+    "effect_text": "Deal 1 damage to each Hero in this Location."
+  }
+]

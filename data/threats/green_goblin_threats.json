@@ -1,0 +1,50 @@
+[
+  {
+    "id": "elite_troops",
+    "name": "Corporate Thugs",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "-1 DMG",
+    "effect_text": "When this Threat is placed, add a T to this Location. Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "elite_troops",
+    "name": "Corporate Thugs",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "-1 DMG",
+    "effect_text": "When this Threat is placed, add a T to this Location. Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "civilian_shield",
+    "name": "Using Civilians As Shield",
+    "heroic_req": 3,
+    "id_internal": "civilian_shield",
+    "short_effect": "-1 DMG",
+    "effect_text": "Green Goblin cannot take any damage as long as there are any C in this Location."
+  },
+  {
+    "id": "electro",
+    "name": "Electro",
+    "hp": 4,
+    "bam_id": "light_adj_bam",
+    "short_effect": "BAM: +1DMG/ADJ",
+    "effect_text": "BAM! Deal 1 damage to each Hero in both adjacent Locations."
+  },
+  {
+    "id": "kraven",
+    "name": "Kraven",
+    "hp": 4,
+    "bam_id": "light_damage_bam",
+    "short_effect": "BAM: +1DMG/Hero",
+    "effect_text": "BAM! Move this Threat to the next clockwise location with any Heroes and no threat (if possible). Deal 1 damage to each Hero in that location."
+  },
+  {
+    "id": "lizard",
+    "name": "Lizard",
+    "hp": 5,
+    "bam_id": "lizard",
+    "short_effect": "BAM: + 2DMG",
+    "effect_text": "BAM! Deal 2 damage among Heroes in this Location (Heroes choose how to split the damage)."
+  }
+]

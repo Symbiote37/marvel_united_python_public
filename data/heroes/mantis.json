@@ -1,0 +1,18 @@
+{
+  "internal_id": "mantis",
+  "name": "Mantis",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["heroic"] },
+    { "id": 5, "actions": ["heroic", "heroic"] },
+    { "id": 6, "actions": ["attack"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Astral Projection", "actions": ["heroic"], "special_id": "mantis_astral_projection", "auto_trigger": true, "effect_text": "This turn, you may use each action as if you are in a different Location." },
+    { "id": 11, "name": "Psychic Healing", "actions": ["heroic"], "special_id": "mantis_psychic_healing", "auto_trigger": true, "effect_text": "Another Hero draws 2 cards." },
+    { "id": 12, "name": "Emphatic Manipulation", "actions": ["wild"], "special_id": "mantis_emphatic", "auto_trigger": true, "effect_text": "Cancel any BAM! on the next Master Plan card." }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "connections",
+    "name": "Connections",
+    "heroic_req": 3,
+    "id_internal": "connections",
+    "short_effect": "Discard Thugs",
+    "effect_text": "As long as this Threat is in play, any defeated T are discarded instead of being placed on the Mission card."
+  },
+  {
+    "id": "connections",
+    "name": "Connections",
+    "heroic_req": 3,
+    "id_internal": "connections",
+    "short_effect": "Discard Thugs",
+    "effect_text": "As long as this Threat is in play, any defeated T are discarded instead of being placed on the Mission card."
+  },
+  {
+    "id": "secrets",
+    "name": "Secrets",
+    "heroic_req": 3,
+    "id_internal": "secrets",
+    "short_effect": "Discard Civs",
+    "effect_text": "As long as this Threat is in play, any defeated C are discarded instead of being placed on the Mission card."
+  },
+  {
+    "id": "secrets",
+    "name": "Secrets",
+    "heroic_req": 3,
+    "id_internal": "secrets",
+    "short_effect": "Discard Civs",
+    "effect_text": "As long as this Threat is in play, any defeated C are discarded instead of being placed on the Mission card."
+  },
+  {
+    "id": "elite_troops",
+    "name": "Corrupted Elite Thugs",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "2✸/Thug",
+    "effect_text": "Any C in this Location is immediately turned into T. Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "bullseye",
+    "name": "Bullseye",
+    "hp": 5,
+    "bam_id": "light_dmg_adj_bam",
+    "short_effect": "+1 DMG/ADJ",
+    "effect_text": "BAM!: Deal 1 damage to each Hero in this Location and both adjacent ones. Discard 1 C from each of these Locations without Heroes."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "elite_troops",
+    "name": "Dark Dimension",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "2✸/Thug",
+    "effect_text": "Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "elite_troops",
+    "name": "Dark Dimension",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "2✸/Thug",
+    "effect_text": "Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Banishment",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Banishment",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "elemental_control",
+    "name": "Elemental Control",
+    "heroic_req": 3,
+    "id_internal": "elemental_control",
+    "short_effect": "+1DMG/Turn",
+    "effect_text": "Heroes ending their turn on this location take 1 damage."
+  },
+  {
+    "id": "elemental_control",
+    "name": "Elemental Control",
+    "heroic_req": 3,
+    "id_internal": "elemental_control",
+    "short_effect": "+1DMG/Turn",
+    "effect_text": "Heroes ending their turn on this location take 1 damage."
+  }
+]

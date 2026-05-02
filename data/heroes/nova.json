@@ -1,0 +1,18 @@
+{
+  "internal_id": "nova",
+  "name": "Nova",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["heroic"] },
+    { "id": 4, "actions": ["heroic", "heroic"] },
+    { "id": 5, "actions": ["heroic", "attack"] },
+    { "id": 6, "actions": ["heroic", "attack"] },
+    { "id": 7, "actions": ["attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "I am the Help", "actions": ["wild"], "special_id": "nova_i_am_the_help", "effect_text": "★ ★ in an adjacent Location." },
+    { "id": 11, "name": "I am the Help", "actions": ["wild"], "special_id": "nova_i_am_the_help", "effect_text": "★ ★ in an adjacent Location." },
+    { "id": 12, "name": "I am the Help", "actions": ["wild"], "special_id": "nova_i_am_the_help", "effect_text": "★ ★ in an adjacent Location." }
+  ]
+}

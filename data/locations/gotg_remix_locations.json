@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "name": "The Milano",
+    "capacity": 2,
+    "start_thugs": 0,
+    "start_civs": 0,
+    "end_effect": { 
+      "logic_key": "move_anywhere", 
+      "text": "You may move to any other Location." 
+    }, 
+    "short_effect": "Move\nAnywhere" 
+  },
+  { 
+    "id": 1, 
+    "name": "Morag", 
+    "capacity": 5, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "gain_wild_token",
+      "text": "You may gain 1 ❖ token."
+    },
+    "short_effect": "+1 ❖\nToken"
+  },
+  { 
+    "id": 2, 
+    "name": "Xandar", 
+    "capacity": 4, 
+    "start_thugs": 0, 
+    "start_civs": 2, 
+    "end_effect": { 
+      "logic_key": "heal_3", 
+      "text": "You may draw cards until you have 3 in your hand." 
+    }, 
+    "short_effect": "Heal Up\n3 Cards" 
+  },
+  { 
+    "id": 3, 
+    "name": "Kyla", 
+    "capacity": 4, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "kyla_threat_token", 
+      "text": "You may discard 1 card from your hand to the bottom of your deck to place 1 token from the pool on any Threat card." 
+    }, 
+    "short_effect": "Discard 1\n+1 Action" 
+  },
+  { 
+    "id": 4, 
+    "name": "Knowhere", 
+    "capacity": 5, 
+    "start_thugs": 2, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "gain_2_tokens", 
+      "text": "You may discard 1 Action token to gain 2 Action tokens of your choice between ➡, ✸ and ★."
+    }, 
+    "short_effect": "Gain\nTokens" 
+  },
+  { 
+    "id": 5, 
+    "name": "Collector's Museum", 
+    "capacity": 3, 
+    "start_thugs": 1, 
+    "start_civs": 0, 
+    "end_effect": { 
+      "logic_key": "token_for_card",
+      "text": "You may discard 1 Action token to draw 1 card."
+    },
+    "short_effect": "-1 Token\n+1 Card"
+  }
+]

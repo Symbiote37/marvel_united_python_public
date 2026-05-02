@@ -1,0 +1,18 @@
+{
+  "internal_id": "nebula",
+  "name": "Nebula",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "attack"] },
+    { "id": 3, "actions": ["heroic"] },
+    { "id": 4, "actions": ["heroic", "attack"] },
+    { "id": 5, "actions": ["attack"] },
+    { "id": 6, "actions": ["attack", "attack"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Regeneration Implant", "actions": ["move"], "special_id": "draw_up_to_3", "auto_trigger": true, "effect_text": "You may draw cards until you have 3 cards." },
+    { "id": 11, "name": "Electroshock Batons", "actions": ["attack"], "special_id": "nebula_electroshock_batons", "effect_text": "✸ in both adjacent Locations." },
+    { "id": 12, "name": "Image Projection", "actions": ["attack"], "special_id": "nebula_image_projection", "auto_trigger": true, "effect_text": "Every Hero can swap a card from their hand with one of their cards in the Storyline. Remove the top of the Master Plan from the game." }
+  ]
+}

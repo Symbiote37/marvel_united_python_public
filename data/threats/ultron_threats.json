@@ -1,0 +1,50 @@
+[
+  {
+    "id": "duplication",
+    "name": "Duplication",
+    "heroic_req": 3,
+    "trigger_id": "add_thug",
+    "short_effect": "+T/Loc",
+    "effect_text": "Add T to this Location."
+  },
+  {
+    "id": "duplication",
+    "name": "Duplication",
+    "heroic_req": 3,
+    "trigger_id": "add_thug",
+    "short_effect": "+T/Loc",
+    "effect_text": "Add T to this Location."
+  },
+  {
+    "id": "ultron_clone",
+    "name": "Ultron Clone",
+    "hp": 4,
+    "bam_id": "light_damage_bam",
+    "short_effect": "BAM: +T/+1DMG",
+    "effect_text": "BAM! Add T to this Location. Heroes in this Location may prevent this effect if each of them takes 1 damage."
+  },
+  {
+    "id": "ultron_clone",
+    "name": "Ultron Clone",
+    "hp": 4,
+    "bam_id": "light_damage_bam",
+    "short_effect": "BAM: +T/+1DMG",
+    "effect_text": "BAM! Add T to this Location. Heroes in this Location may prevent this effect if each of them takes 1 damage."
+  },
+  {
+    "id": "action_trap",
+    "name": "Ultron Virus",
+    "heroic_req": 3,
+    "id_internal": "action_trap",
+    "short_effect": "-1 Action",
+    "effect_text": "Heroes starting their turn in this Location must ignore 1 action symbol of their choice."
+  },
+  {
+    "id": "action_trap",
+    "name": "Ultron Virus",
+    "heroic_req": 3,
+    "id_internal": "action_trap",
+    "short_effect": "-1 Action",
+    "effect_text": "Heroes starting their turn in this Location must ignore 1 action symbol of their choice."
+  }
+]

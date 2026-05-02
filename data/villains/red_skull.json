@@ -1,0 +1,25 @@
+{
+  "name": "Red Skull",
+  "internal_id": "red_skull",
+  "health_map": {
+    "2": 4,
+    "3": 8,
+    "4": 11
+  },
+  "plot_name": "Fear Track",
+  "plot_max": 20,
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": true },
+    { "id": 2, "move": 1, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 3, "move": 1, "bam": false, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 4, "move": 2, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 5, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 6, "move": 3, "bam": false, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 7, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 8, "move": 5, "bam": false, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 1}, "right": {"thugs": 1, "civilians": 1}, "center": {"thugs": 2, "civilians": 2}} },
+    { "id": 9, "move": 0, "bam": false, "trigger": false, "special_id": "skull_hail_hydra", "display_name": " Hail Hydra!", "effect_text": "Discard all C from Locations with Heroes and deal 1 damage to each of those Heroes. Advance the Fear Track by the number of C discarded in this way." },
+    { "id": 10, "move": 0, "bam": false, "trigger": false, "special_id": "skull_hail_hydra", "display_name": " Hail Hydra!", "effect_text": "Discard all C from Locations with Heroes and deal 1 damage to each of those Heroes. Advance the Fear Track by the number of C discarded in this way." },
+    { "id": 11, "move": 0, "bam": true, "trigger": false, "special_id": "skull_hydra_insurgency", "display_name": "Hydra Insurgency", "effect_text": "For each Crisis token the Heroes have, advance the Fear Track by 1." },
+    { "id": 12, "move": 0, "bam": true, "trigger": false, "special_id": "skull_hydra_insurgency", "display_name": "Hydra Insurgency", "effect_text": "For each Crisis token the Heroes have, advance the Fear Track by 1." }
+  ]
+}

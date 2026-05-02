@@ -1,0 +1,59 @@
+[
+  {
+    "id": "weak_spot_doctor_octopus",
+    "name": "Doctor Octopus",
+    "attack_req": 1,
+    "move_req": 1,
+    "heroic_req": 1,
+    "id_internal": "weak_spot_doctor_octopus",
+    "short_effect": "Doctor Octopus",
+    "effect_text": "Doctor Octopus can't be damaged until this is completed."
+  },
+  {
+    "id": "weak_spot_electro",
+    "name": "Electro",
+    "attack_req": 1,
+    "move_req": 1,
+    "heroic_req": 1,
+    "id_internal": "weak_spot_electro",
+    "short_effect": "Electro",
+    "effect_text": " can't be damaged until this is completed."
+  },
+  {
+    "id": "weak_spot_kraven",
+    "name": "Kraven",
+    "attack_req": 1,
+    "heroic_req": 2,
+    "id_internal": "weak_spot_kraven",
+    "short_effect": "Kraven",
+    "effect_text": "Kraven can't be damaged until this is completed."
+  },
+  {
+    "id": "weak_spot_mysterio",
+    "name": "Mysterio",
+    "attack_req": 1,
+    "heroic_req": 2,
+    "id_internal": "weak_spot_mysterio",
+    "short_effect": "Mysterio",
+    "effect_text": "Mysterio can't be damaged until this is completed."
+  },
+  {
+    "id": "weak_spot_sandman",
+    "name": "Sandman",
+    "attack_req": 1,
+    "move_req": 1,
+    "heroic_req": 1,
+    "id_internal": "weak_spot_sandman",
+    "short_effect": "Sandman",
+    "effect_text": "Sandman can't be damaged until this is completed."
+  },
+  {
+    "id": "weak_spot_vulture",
+    "name": "Vulture",
+    "heroic_req": 1,
+    "move_req": 2,
+    "id_internal": "weak_spot_vulture",
+    "short_effect": "Vulture",
+    "effect_text": "Vulture can't be damaged until this is completed."
+  }
+]

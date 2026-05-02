@@ -1,0 +1,8 @@
+{
+  "internal_id": "infinity_gauntlet",
+  "name": "Infinity Gauntlet",
+  "hp": 0,
+  "bam": false,
+  "plan_deck": [],
+  "effect_text": "Initiates the 4-stage Infinity Gauntlet campaign."
+}

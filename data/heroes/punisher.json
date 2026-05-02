@@ -1,0 +1,18 @@
+{
+  "internal_id": "punisher",
+  "name": "Punisher",
+  "deck": [
+    { "id": 1, "actions": ["move", "attack"] },
+    { "id": 2, "actions": ["move", "attack"] },
+    { "id": 3, "actions": ["heroic"] },
+    { "id": 4, "actions": ["heroic"] },
+    { "id": 5, "actions": ["attack"] },
+    { "id": 6, "actions": ["attack"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Special Ops Training", "actions": ["move"], "special_id": "punisher_special_ops_training", "effect_text": "You can move to any Location and ✸ ✸ there." },
+    { "id": 11, "name": "Heavy Firepower", "actions": [], "special_id": "punisher_heavy_firepower", "effect_text": "✸ ✸ in any Location and ✸ in both adjacent ones." },
+    { "id": 12, "name": "Energy Infusion", "actions": [], "special_id": "punisher_precision_shot", "effect_text": "✸ ✸ ✸ ✸ against a single enemy. Damage you deal this turn can't be cancelled or reduced." }
+  ]
+}

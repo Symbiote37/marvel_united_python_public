@@ -1,0 +1,74 @@
+[
+  { 
+    "id": 0, 
+    "name": "Shuri's Lab", 
+    "capacity": 3, 
+    "start_thugs": 0, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "heal_3", 
+      "text": "You may draw cards until you have 3 in your hand." 
+    }, 
+    "short_effect": "Heal Up\n3 Cards" 
+  },
+  { 
+    "id": 1, 
+    "name": "Warrior Falls", 
+    "capacity": 4, 
+    "start_thugs": 2, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "attack_at_loc", 
+      "text": "You may ✸ in this Location." 
+    }, 
+    "short_effect": "Swap with\nStoryline" 
+  },
+  {
+    "id": 2,
+    "name": "Great Mound",
+    "capacity": 4,
+    "start_thugs": 1,
+    "start_civs": 1,
+    "end_effect": {
+      "logic_key": "remove_crisis_effect",
+      "text": "You may discard 1 card from your hand to bottom of deck to remove 1 Crisis token from anywhere."
+    },
+    "short_effect": "Clear\n1 Crisis"
+  },
+  { 
+    "id": 3, 
+    "name": "Royal Palace", 
+    "capacity": 3, 
+    "start_thugs": 0, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "pick_next_card", 
+      "text": "You may search your deck for one card and set it aside. Then, shuffle your deck and place that card on top." 
+    }, 
+    "short_effect": "Pick Your\nNext Card" 
+  },
+  { 
+    "id": 4, 
+    "name": "Jabari Village", 
+    "capacity": 4, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "gain_wild_token",
+      "text": "You may gain 1 ❖ token."
+    },
+    "short_effect": "+1 ❖\nToken"
+  },
+  { 
+    "id": 5, 
+    "name": "Golden City", 
+    "capacity": 4, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "move_anywhere", 
+      "text": "You may move to any other Location." 
+    }, 
+    "short_effect": "Move\nAnywhere" 
+  }
+]

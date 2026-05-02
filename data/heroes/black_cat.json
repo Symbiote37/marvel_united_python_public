@@ -1,0 +1,18 @@
+{
+  "internal_id": "black_cat",
+  "name": "Black Cat",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "attack"] },
+    { "id": 3, "actions": ["move", "attack"] },
+    { "id": 4, "actions": ["attack", "attack"] },
+    { "id": 5, "actions": ["wild"] },
+    { "id": 6, "actions": ["wild", "wild"] },
+    { "id": 7, "name": "Cat Instincts", "actions": ["move"], "special_id": "black_cat_cat_instincts", "effect_text": "Gain any combination of 2 ✸, ★, or ➡ tokens." },
+    { "id": 8, "name": "Cat Instincts", "actions": ["move"], "special_id": "black_cat_cat_instincts", "effect_text": "Gain any combination of 2 ✸, ★, or ➡ tokens." },
+    { "id": 9, "name": "Cat Luck", "actions": ["heroic"], "special_id": "black_cat_cat_luck", "auto_trigger": true, "effect_text": "When the next Master Plan card is revealed, you may put it on the bottom and draw another one instead." },
+    { "id": 10, "name": "Cat Luck", "actions": ["heroic"], "special_id": "black_cat_cat_luck", "auto_trigger": true, "effect_text": "When the next Master Plan card is revealed, you may put it on the bottom and draw another one instead." },
+    { "id": 11, "name": "Cat Claws", "actions": ["attack"], "special_id": "black_cat_cat_claws", "auto_trigger": true, "effect_text": "When the next Master Plan card is revealed, you may put it on the bottom and draw another one instead." },
+    { "id": 12, "name": "Cat Claws", "actions": ["attack"], "special_id": "black_cat_cat_claws", "auto_trigger": true, "effect_text": "When the next Master Plan card is revealed, you may put it on the bottom and draw another one instead." }
+  ]
+}

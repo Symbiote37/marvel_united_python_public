@@ -1,0 +1,50 @@
+[
+  {
+    "id": "heroic_trap",
+    "name": "Endanger Civilians",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Endanger Civilians",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Endanger Civilians",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+ {
+    "id": "mysterio",
+    "name": "Mysterio",
+    "hp": 3,
+    "bam_id": "mysterio",
+    "short_effect": "BAM: +1DMG",
+    "effect_text": "BAM! Deal 1 damage to 1 Hero in this Location. Add C and T to this Location."
+  },
+  {
+    "id": "sandman",
+    "name": "Sandman",
+    "hp": 4,
+    "bam_id": "light_damage_bam",
+    "short_effect": "+1DMG/HP",
+    "effect_text": " BAM! Sandman gains 1 health. Deal 1 damage to each Hero in this Location."
+  },
+  {
+    "id": "vulture",
+    "name": "Vulture",
+    "hp": 4,
+    "bam_id": "vulture",
+    "short_effect": "+1DMG/Move",
+    "effect_text": " BAM! Deal 1 damage to 1 Hero in this Location. Then, move this card to the first clockwise Location without a Threat (if possible)."
+  }
+]

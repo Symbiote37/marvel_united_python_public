@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "name": "New York",
+    "capacity": 5,
+    "start_thugs": 1,
+    "start_civs": 1,
+    "end_effect": {
+      "logic_key": "token_for_card",
+      "text": "You may discard 1 Action token to draw 1 card."
+    },
+    "short_effect": "-1 Token\n+1 Card"
+  },
+  { 
+    "id": 1, 
+    "name": "Sanctum Sanctorum", 
+    "capacity": 3, 
+    "start_thugs": 0, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "action_boost", 
+      "text": "You may place 1 Action token from the pool on a Threat or Power-Up card." 
+    }, 
+    "short_effect": "+1 Action" 
+  },
+  { 
+    "id": 2, 
+    "name": "Asgard", 
+    "capacity": 3, 
+    "start_thugs": 0, 
+    "start_civs": 0, 
+    "end_effect": { 
+      "logic_key": "heal_1", 
+      "text": "If you have 1 or 2 cards in hand, you may draw 1 card." 
+    }, 
+    "short_effect": "Heal Up\n+1 Card" 
+  },
+  { 
+    "id": 3, 
+    "name": "Vormir", 
+    "capacity": 4, 
+    "start_thugs": 2, 
+    "start_civs": 0, 
+    "end_effect": { 
+      "logic_key": "ko_for_threat", 
+      "text": "You may KO another Hero in this Location to immediately clear a Threat card." 
+    }, 
+    "short_effect": "Hero KO\n- Threat" 
+  },
+  { 
+    "id": 4, 
+    "name": "Nidavellir", 
+    "capacity": 3, 
+    "start_thugs": 0, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "nidavellir_forge", 
+      "text": "You may gain 1 ✸ token. You may discard 1 card from your hand to the bottom of the deck to gain another ✸ token." 
+    }, 
+    "short_effect": "+✸ token" 
+  },
+  { 
+    "id": 5, 
+    "name": "Hala", 
+    "capacity": 4, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "swap_with_storyline", 
+      "text": "You may swap a card from your hand with one of your faceup cards in the Storyline." 
+    }, 
+    "short_effect": "Swap with\nStoryline" 
+  }
+]

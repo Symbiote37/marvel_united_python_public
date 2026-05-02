@@ -1,0 +1,23 @@
+{
+  "name": "Bullseye",
+  "internal_id": "bullseye",
+  "health_map": {
+    "2": 5,
+    "3": 7,
+    "4": 10
+  },
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": true, "trigger": false },
+    { "id": 2, "move": 1, "bam": false, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 1}} },
+    { "id": 3, "move": 1, "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 1}} },
+    { "id": 4, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 1}} },
+    { "id": 5, "move": 3, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 1}} },
+    { "id": 6, "move": 3, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 1}} },
+    { "id": 7, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 1}} },
+    { "id": 8, "move": 5, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"thugs": 1}} },
+    { "id": 9, "move": "cw", "bam": false, "trigger": false, "special_id": "master_assassin", "display_name": "Master Assassin", "effect_text": "Deal 2 damage to each Hero in both Locations adjacent to Bullseye." },
+    { "id": 10, "move": "cw", "bam": false, "trigger": false, "special_id": "master_assassin", "display_name": "Master Assassin", "effect_text": "Deal 2 damage to each Hero in both Locations adjacent to Bullseye." },
+    { "id": 11, "move": 0, "bam": false, "trigger": false, "special_id": "impossible_shot", "display_name": "Impossible Shot", "effect_text": "Deal 2 damage to each Hero in the Location opposite to Bullseye." },
+    { "id": 12, "move": 1, "bam": false, "trigger": false, "special_id": "impossible_shot", "display_name": "Impossible Shot", "effect_text": "Deal 2 damage to each Hero in the Location opposite to Bullseye." }
+  ]
+}

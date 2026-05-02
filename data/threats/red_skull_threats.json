@@ -1,0 +1,49 @@
+[
+  {
+    "id": "crossbones",
+    "name": "Crossbones",
+    "hp": 6,
+    "bam_id": "heavy_damage_bam",
+    "short_effect": "BAM: +2DMG",
+    "effect_text": "BAM! Deal 2 damage to each Hero in this Location. Any Hero can prevent this effect by taking 2 Crisis tokens."
+  },
+  {
+    "id": "bob_hydra",
+    "name": "Bob Agent of Hydra",
+    "hp": 4,
+    "short_effect": "+1▲/Turn",
+    "effect_text": "Heroes starting their turn in this Location take 1 Crisis Token."
+  },
+  {
+    "id": "elite_troops",
+    "name": "Hydra Elite Troops",
+    "heroic_req": 3,
+    "id_internal": "elite_troops",
+    "short_effect": "2✸/Thug",
+    "effect_text": "Each T in this Location requires 2 damage to be defeated."
+  },
+  {
+    "id": "madame_hydra",
+    "name": "Madame Hydra",
+    "hp": 5,
+    "bam_id": "light_damage_bam",
+    "short_effect": "BAM: +1DMG",
+    "effect_text": "BAM! Deal 1 damage to each Hero in this Location. Any Hero can prevent this effect by taking 1 Crisis token."
+  },
+  {
+    "id": "subversion",
+    "name": "Subversion",
+    "heroic_req": 3,
+    "trigger_id": "token_purge",
+    "short_effect": "-T/C=+Fear",
+    "effect_text": "Discard all T and C from this Location and advance the Fear Track by the number of tokens discarded this way."
+  },
+  {
+    "id": "brainwashing",
+    "name": "Brainwashing",
+    "trigger_id": "aoe_crisis",
+    "heroic_req": 3,
+    "short_effect": "+1▲/Hero",
+    "effect_text": "Heroes in this and adjacent Locations take 1 Crisis token each."
+  }
+]

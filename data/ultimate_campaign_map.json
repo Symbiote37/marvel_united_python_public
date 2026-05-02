@@ -1,0 +1,550 @@
+{
+    "campaign_name": "Marvel United: Ultimate Campaign",
+    "starting_roster": [
+        "captain_america", 
+        "winter_soldier", 
+        "spider-man", 
+        "miles_morales"
+    ],
+    "hero_vault": {
+        "tier_1": {
+            "requirement": ["zemo_01"], 
+            "heroes": {
+                "falcon": {"cost": 1},
+                "war_machine": {"cost": 1}
+            }
+        },
+        "tier_2": {
+            "requirement": ["red_skull_01"], 
+            "heroes": {
+                "she-hulk": {"cost": 1},
+                "luke_cage": {"cost": 1},
+                "jessica_jones": {"cost": 1}
+            }
+        },
+        "tier_3": {
+            "requirement": ["hela_01"], 
+            "heroes": {
+                "korg": {"cost": 1}
+            }
+        },
+        "tier_4": {
+            "requirement": ["black_dwarf_01"], 
+            "heroes": {
+                "nova": {"cost": 1}
+            }
+        },
+        "tier_5": {
+            "requirement": ["ultron_02"], 
+            "heroes": {
+                "blade": {"cost": 1},
+                "mockingbird": {"cost": 1}
+            }
+        },
+        "tier_6": {
+            "requirement": ["ultron_02"], 
+            "heroes": {
+                "doctor_strange": {
+                    "cost": 3,
+                    "unlock_villains": ["dormammu"]
+                },
+                "squirrel_girl": {"cost": 1}
+            }
+        },
+        "tier_7": {
+            "requirement": ["taskmaster_02"], 
+            "heroes": {
+                "shang_chi": {"cost": 1}
+            }
+        }
+    },
+    "nodes": {
+        "zemo_01": {
+            "name": "Hydra Uprising",
+            "description": "Baron Zemo is radicalizing the streets.",
+            "villain": "baron_zemo",
+            "mode": "standard",
+            "prerequisites": [], 
+            "rewards": {
+                "unlock_heroes": ["hulk", "iron_man", "black_widow", "hawkeye"]
+            }
+        },
+        "kang_01": {
+            "name": "Temporal Incursion",
+            "description": "Kang is rewriting history.",
+            "villain": "kang",
+            "mode": "standard",
+            "prerequisites": ["zemo_01"], 
+            "rewards": {
+                "unlock_heroes": ["ant-man", "wasp"]
+            }
+        },
+        "red_skull_01": {
+            "name": "Dust of Death",
+            "description": "Red Skull is seeking the Tesseract.",
+            "villain": "red_skull",
+            "mode": "standard",
+            "prerequisites": ["zemo_01"], 
+            "rewards": {
+                "keys": 1,
+                "trophies": 1,
+                "unlock_heroes": ["ms_marvel", "nick_fury"]
+            }
+        },
+        "ultron_01": {
+            "name": "Age of Ultron",
+            "description": "The machine evolution has begun.",
+            "villain": "ultron",
+            "mode": "standard",
+            "prerequisites": ["zemo_01"], 
+            "rewards": {
+                "unlock_heroes": ["vision"]
+            }
+        },
+        "loki_01": {
+            "name": "Asgardian Ambush",
+            "description": "The God of Mischief plots his throne.",
+            "villain": "loki",
+            "mode": "standard",
+            "prerequisites": ["zemo_01"], 
+            "rewards": {
+                "unlock_heroes": ["thor"]
+            }
+        },
+        "hela_01": {
+            "name": "Goddess of Death",
+            "description": "Hela rises to claim the Nine Realms.",
+            "villain": "hela",
+            "mode": "standard",
+            "prerequisites": ["loki_01"], 
+            "rewards": {
+                "unlock_heroes": ["valkyrie"]
+            }
+        },
+        "loki_02": {
+            "name": "Trickster's Gambit",
+            "description": "Loki has one last trick up his sleeve.",
+            "villain": "loki",
+            "mode": "standard",
+            "prerequisites": ["hela_01"], 
+            "rewards": {
+                "keys": 1,
+                "trophies": 2,
+                "unlock_heroes": ["beta_ray_bill"]
+            }
+        },
+        "ultron_02": {
+            "name": "System Override",
+            "description": "Ultron has breached the Avengers' firewalls.",
+            "villain": "ultron",
+            "mode": "standard",
+            "prerequisites": ["red_skull_01"], 
+            "rewards": {
+                "keys": 1,
+                "trophies": 2,
+                "unlock_heroes": ["nick_fury", "scarlet_witch", "quicksilver", "black_panther"]
+            }
+        },
+        "rhino_02": {
+            "name": "Charging Forth",
+            "description": "Rhino is breaking through the barriers.",
+            "villain": "rhino",
+            "mode": "standard",
+            "prerequisites": ["red_skull_01"], 
+            "rewards": {
+                "shields": 1,
+                "trophies": 2
+            }
+        },
+        "black_dwarf_01": {
+            "name": "The Obsidian Siege",
+            "description": "Black Dwarf brings the fight to Wakanda.",
+            "villain": "black_dwarf",
+            "mode": "standard",
+            "prerequisites": ["red_skull_01"], 
+            "rewards": {
+                "unlock_heroes": ["captain_marvel"]
+            }
+        },
+        "taskmaster_01": {
+            "name": "Photo-Reflexive Combat",
+            "description": "Taskmaster has mimicked your every move.",
+            "villain": "taskmaster",
+            "mode": "standard",
+            "prerequisites": ["red_skull_01"], 
+            "rewards": {
+                "unlock_heroes": ["spider-woman"]
+            }
+        },
+        "killmonger_01": {
+            "name": "The Usurper",
+            "description": "Killmonger challenges the throne.",
+            "villain": "killmonger",
+            "mode": "standard",
+            "prerequisites": ["ultron_02"], 
+            "rewards": {
+                "blue_bolts": 1,
+                "keys": 1,
+                "trophies": 1,
+                "unlock_heroes": ["okoye", "shuri"]
+            }
+        },
+        "red_skull_02": {
+            "name": "Hydra Supreme",
+            "description": "Red Skull wields the terrifying power of the Cosmic Cube.",
+            "villain": "red_skull",
+            "mode": "standard",
+            "prerequisites": ["ultron_02"], 
+            "rewards": {
+                "keys": 1,
+                "trophies": 1,
+                "unlock_heroes": ["america_chavez"]
+            }
+        },
+        "ebony_maw_01": {
+            "name": "Master of Whispers",
+            "description": "Ebony Maw is breaking the minds of Earth's defenders.",
+            "villain": "ebony_maw",
+            "mode": "standard",
+            "prerequisites": ["ultron_02"], 
+            "rewards": {
+                "keys": 1,
+                "trophies": 1,
+                "unlock_heroes": ["star-lord"]
+            }
+        },
+        "proxima_midnight_01": {
+            "name": "No Quarter",
+            "description": "Proxima Midnight leaves no survivors in her hunt for the Stones.",
+            "villain": "proxima_midnight",
+            "mode": "standard",
+            "prerequisites": ["ebony_maw_01"], 
+            "rewards": {
+                "unlock_heroes": ["drax", "gamora", "groot", "rocket"]
+            }
+        },
+        "carnage_02": {
+            "name": "Absolute Carnage",
+            "description": "The symbiote slaughter has reached catastrophic levels.",
+            "villain": "carnage",
+            "mode": "standard",
+            "prerequisites": ["proxima_midnight_01"], 
+            "rewards": {
+                "shields": 1,
+                "trophies": 2
+            }
+        },
+        "ronan_01": {
+            "name": "Kree Justice",
+            "description": "Ronan the Accuser has come to pass judgment on Earth.",
+            "villain": "ronan",
+            "mode": "standard",
+            "prerequisites": ["proxima_midnight_01"], 
+            "rewards": {
+                "blue_bolts": 1,
+                "trophies": 1,
+                "unlock_heroes": ["yondu", "mantis"]
+            }
+        },
+        "ronan_02": {
+            "name": "Universal Weapon",
+            "description": "Ronan unleashes the full destructive might of the Kree empire.",
+            "villain": "ronan",
+            "mode": "standard",
+            "prerequisites": ["proxima_midnight_01"], 
+            "rewards": {
+                "keys": 1,
+                "trophies": 2
+            }
+        },
+        "kang_02": {
+            "name": "Chronopolis Ascendant",
+            "description": "Kang has shattered the timeline to ensure his absolute victory.",
+            "villain": "kang",
+            "mode": "standard",
+            "prerequisites": ["proxima_midnight_01"], 
+            "rewards": {
+                "keys": 1,
+                "trophies": 2,
+                "unlock_heroes": ["howard_the_duck"]
+            }
+        },
+        "corvus_glaive_01": {
+            "name": "The Immortal Blade",
+            "description": "The Mad Titan's chief tactician is dismantling our defenses.",
+            "villain": "corvus_glaive",
+            "mode": "standard",
+            "prerequisites": ["proxima_midnight_01"], 
+            "rewards": {
+                "unlock_heroes": ["nebula"]
+            }
+        },
+        "modok_01": {
+            "name": "A.I.M. Incursion",
+            "description": "M.O.D.O.K. is analyzing your weaknesses.",
+            "villain": "modok",
+            "mode": "standard",
+            "prerequisites": ["ultron_02"], 
+            "rewards": {
+            }
+        },
+        "dormammu_01": {
+            "name": "The Dark Dimension",
+            "description": "Dormammu threatens to consume our reality.",
+            "villain": "dormammu",
+            "mode": "standard",
+            "prerequisites": ["modok_01"], 
+            "rewards": {
+                "blue_bolts": 1,
+                "trophies": 2,
+                "unlock_heroes": ["moon_knight"]
+            }
+        },
+        "kingpin_02": {
+            "name": "Underworld Emperor",
+            "description": "Fisk has tightened his absolute grip on the city's criminal empire.",
+            "villain": "kingpin",
+            "mode": "standard",
+            "prerequisites": ["modok_01"], 
+            "rewards": {
+                "unlock_heroes": ["punisher"]
+            }
+        },
+        "zemo_02": {
+            "name": "Zemo's Retribution",
+            "description": "The Baron has returned with a master plan to humiliate the heroes.",
+            "villain": "baron_zemo",
+            "mode": "standard",
+            "prerequisites": ["kingpin_02"], 
+            "rewards": {
+                "keys": 1,
+                "trophies": 1,
+                "unlock_heroes": ["ghost_rider"]
+            }
+        },
+        "taskmaster_02": {
+            "name": "The Mimic's Masterclass",
+            "description": "Taskmaster knows your next move before you even make it.",
+            "villain": "taskmaster",
+            "mode": "standard",
+            "prerequisites": ["kingpin_02"], 
+            "rewards": {
+                "blue_bolts": 1,
+                "trophies": 1,
+                "unlock_heroes": ["iron_fist", "nick_fury"]
+            }
+        },
+        "venom_02": {
+            "name": "We Are Venom",
+            "description": "The symbiote has fully bonded, and its hunger is insatiable.",
+            "villain": "venom",
+            "mode": "standard",
+            "prerequisites": ["modok_01"], 
+            "rewards": {
+            }
+        },
+        "hela_02": {
+            "name": "Twilight of the Gods",
+            "description": "Hela's undead army threatens to swallow all of Midgard.",
+            "villain": "hela",
+            "mode": "standard",
+            "prerequisites": ["venom_02"], 
+            "rewards": {
+                "crosses": 1,
+                "trophies": 1,
+                "unlock_heroes": ["adam_warlock"]
+            }
+        },
+        "infinity_gauntlet_boss": {
+            "name": "The Infinity War",
+            "description": "Thanos seeks the Stones. The Universe hangs in the balance.",
+            "villain": "infinity_gauntlet",
+            "mode": "standard",
+            "prerequisites": ["modok_01"], 
+            "rewards": {
+                "trophies": 6
+            }
+        },
+        "goblin_01": {
+            "name": "Oscorp Sabotage",
+            "description": "Green Goblin is raining fire on the city.",
+            "villain": "green_goblin",
+            "mode": "standard",
+            "prerequisites": [],
+            "rewards": {
+                "keys": 1,
+                "trophies": 1
+            }
+        },
+        "sandman_01": {
+            "name": "The Great Sandstorm",
+            "description": "Sandman is suffocating Central Park.",
+            "villain": "sandman",
+            "mode": "standard",
+            "prerequisites": [],
+            "rewards": {
+                "shields": 1,
+                "keys": 1,
+                "trophies": 1,
+                "unlock_heroes": ["daredevil"]
+            }
+        },
+        "electro_01": {
+            "name": "City Wide Blackout",
+            "description": "Electro is overloading the power grid.",
+            "villain": "electro",
+            "mode": "standard",
+            "prerequisites": [],
+            "rewards": {
+                "blue_bolts": 1,
+                "keys": 1,
+                "trophies": 1,
+                "unlock_heroes": ["daredevil"]
+            }
+        },
+        "doc_ock_01": {
+            "name": "Master Planner",
+            "description": "Doc Ock is stealing tech from Stark Labs.",
+            "villain": "doctor_octopus",
+            "mode": "standard",
+            "prerequisites": [],
+            "rewards": {
+                "crosses": 1,
+                "trophies": 1,
+                "unlock_heroes": ["daredevil"]
+            }
+        },
+        "bullseye_01": {
+            "name": "Assassin's Mark",
+            "description": "Bullseye never misses.",
+            "villain": "bullseye",
+            "mode": "standard",
+            "prerequisites": {
+                "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
+            },
+            "rewards": {
+                "unlock_heroes": ["elektra"]
+            }
+        },
+        "bullseye_02": {
+            "name": "Target Acquired",
+            "description": "The contract is out on the heroes.",
+            "villain": "bullseye",
+            "mode": "standard",
+            "prerequisites": ["bullseye_01"],
+            "rewards": {
+                "crosses": 1,
+                "trophies": 1
+            }
+        },
+        "kraven_01": {
+            "name": "The Last Hunt",
+            "description": "Kraven is stalking his prey.",
+            "villain": "kraven",
+            "mode": "standard",
+            "prerequisites": {
+                "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
+            },
+            "rewards": {
+                "keys": 1,
+                "trophies": 1
+            }
+        },
+        "vulture_01": {
+            "name": "High-Flying Heist",
+            "description": "Vulture is making a getaway.",
+            "villain": "vulture",
+            "mode": "standard",
+            "prerequisites": {
+                "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
+            },
+            "rewards": {
+                "shields": 2,
+                "trophies": 1
+            }
+        },
+        "rhino_01": {
+            "name": "Stampede",
+            "description": "Rhino is rampaging through downtown.",
+            "villain": "rhino",
+            "mode": "standard",
+            "prerequisites": {
+                "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
+            },
+            "rewards": {
+                "unlock_heroes": ["black_cat"]
+            }
+        },
+        "mysterio_01": {
+            "name": "Hall of Mirrors",
+            "description": "Don't believe what you see.",
+            "villain": "mysterio",
+            "mode": "standard",
+            "prerequisites": {
+                "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
+            },
+            "rewards": {
+                "blue_bolts": 3,
+                "trophies": 1
+            }
+        },
+        "green_goblin_02": {
+            "name": "Goblin's Reign",
+            "description": "Osborn is taking over the city.",
+            "villain": "green_goblin",
+            "mode": "standard",
+            "prerequisites": {
+                "any_of": ["kraven_01", "vulture_01", "rhino_01", "mysterio_01"]
+            },
+            "rewards": {
+                "unlock_heroes": ["ghost-spider"]
+            }
+        },
+        "doc_ock_02": {
+            "name": "The Octo-Heist",
+            "description": "Doc Ock is upgrading his arms.",
+            "villain": "doctor_octopus",
+            "mode": "standard",
+            "prerequisites": ["green_goblin_02"],
+            "rewards": {
+                "crosses": 3,
+                "trophies": 1,
+                "unlock_heroes": ["spider-man_2099"]
+            }
+        },
+        "venom_01": {
+            "name": "Lethal Protector",
+            "description": "The symbiote is out for blood.",
+            "villain": "venom",
+            "mode": "standard",
+            "prerequisites": {
+                "any_of": ["kraven_01", "vulture_01", "rhino_01", "mysterio_01"]
+            },
+            "rewards": {
+                "keys": 1,
+                "trophies": 1
+            }
+        },
+        "carnage_01": {
+            "name": "Maximum Carnage",
+            "description": "Absolute chaos in the streets.",
+            "villain": "carnage",
+            "mode": "standard",
+            "prerequisites": ["venom_01"],
+            "rewards": {
+                "unlock_heroes": ["venom"]
+            }
+        },
+        "sinister_six_boss": {
+            "name": "The Sinister Assembly",
+            "description": "The surviving villains have united! (Requires defeating Sandman, Electro, and Doc Ock).",
+            "villain": "sinister_six", 
+            "mode": "sinister_six",
+            "prerequisites": ["doc_ock_02", "carnage_01"],
+            "rewards": {
+                "trophies": 4,
+                "unlock_heroes": ["spider-ham"]
+            }
+        }
+    }
+}

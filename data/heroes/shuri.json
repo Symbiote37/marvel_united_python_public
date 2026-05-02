@@ -1,0 +1,18 @@
+{
+  "internal_id": "shuri",
+  "name": "Shuri",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["heroic"] },
+    { "id": 4, "actions": ["heroic"] },
+    { "id": 5, "actions": ["heroic", "heroic"] },
+    { "id": 6, "actions": ["heroic", "attack"] },
+    { "id": 7, "actions": ["attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Young Genius", "actions": ["wild"], "special_id": "shuri_young_engineer", "auto_trigger": true, "effect_text": "Give 1 wild token from the pool to any Hero. They may draw cards until they have 3 in their hand." },
+    { "id": 11, "name": "Young Genius", "actions": ["wild"], "special_id": "shuri_young_engineer", "auto_trigger": true, "effect_text": "Give 1 wild token from the pool to any Hero. They may draw cards until they have 3 in their hand." },
+    { "id": 12, "name": "Young Genius", "actions": ["wild"], "special_id": "shuri_young_engineer", "auto_trigger": true, "effect_text": "Give 1 wild token from the pool to any Hero. They may draw cards until they have 3 in their hand." }
+  ]
+}

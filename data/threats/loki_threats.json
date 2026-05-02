@@ -1,0 +1,50 @@
+[
+  {
+    "id": "frost_giant",
+    "name": "Frost Giant",
+    "hp": 5,
+    "bam_id": "light_damage_bam",
+    "short_effect": "BAM: +1DMG",
+    "effect_text": "BAM! Deal 1 damage to each Hero in this Location."
+  },
+  {
+    "id": "frost_giant",
+    "name": "Frost Giant",
+    "hp": 5,
+    "bam_id": "light_damage_bam",
+    "short_effect": "BAM: +1DMG",
+    "effect_text": "BAM! Deal 1 damage to each Hero in this Location."
+  },
+  {
+    "id": "illusion",
+    "name": "Illusion",
+    "heroic_req": 3,
+    "id_internal": "illusion",
+    "short_effect": "No DMG",
+    "effect_text": "Loki can't take any damage as long as he's at this Location."
+  },
+  {
+    "id": "illusion",
+    "name": "Illusion",
+    "heroic_req": 3,
+    "id_internal": "illusion",
+    "short_effect": "No DMG",
+    "effect_text": "Loki can't take any damage as long as he's at this Location."
+  },
+  {
+    "id": "master_trickster",
+    "name": "Master Trickster",
+    "heroic_req": 3,
+    "id_internal": "master_trickster",
+    "short_effect": "+1DMG/HIT",
+    "effect_text": "If Loki takes any damage while in this Location, each Hero in this Location also takes 1 damage."
+  },
+  {
+    "id": "master_trickster",
+    "name": "Master Trickster",
+    "heroic_req": 3,
+    "id_internal": "master_trickster",
+    "short_effect": "+1DMG/HIT",
+    "effect_text": "If Loki takes any damage while in this Location, each Hero in this Location also takes 1 damage."
+  }
+]

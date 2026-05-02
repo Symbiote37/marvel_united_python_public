@@ -1,0 +1,18 @@
+{
+  "internal_id": "rocket",
+  "name": "Rocket",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "attack"] },
+    { "id": 3, "actions": ["move", "attack"] },
+    { "id": 4, "actions": ["heroic"] },
+    { "id": 5, "actions": ["attack"] },
+    { "id": 6, "actions": ["attack"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Master Tinkerer", "actions": ["move"], "special_id": "rocket_master_tinkerer", "auto_trigger": true, "effect_text": "Gain 1 ❖ token OR your Action tokens can be used twice this turn." },
+    { "id": 11, "name": "Master Tinkerer", "actions": ["attack"], "special_id": "rocket_master_tinkerer", "auto_trigger": true, "effect_text": "Gain 1 ❖ token OR your Action tokens can be used twice this turn." },
+    { "id": 12, "name": "Raccoon Senses", "actions": ["heroic"], "special_id": "rocket_raccoon_senses", "auto_trigger": true, "effect_text": "Gain 1 ❖ token OR convert any number of Action tokens you own into ❖ tokens." }
+  ]
+}

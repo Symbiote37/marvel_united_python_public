@@ -1,0 +1,18 @@
+{
+  "internal_id": "groot",
+  "name": "Groot",
+  "deck": [
+    { "id": 1, "name": "I Am Groot?", "actions": ["move"], "special_id": "groot_i_am_groot?", "effect_text": "Move any other Hero to a Location adjacent to them." },
+    { "id": 2, "name": "I Am Groot?", "actions": ["move"], "special_id": "groot_i_am_groot?", "effect_text": "Move any other Hero to a Location adjacent to them." },
+    { "id": 3, "name": "I Am Groot?", "actions": ["move"], "special_id": "groot_i_am_groot?", "effect_text": "Move any other Hero to a Location adjacent to them." },
+    { "id": 4, "name": "We Are Groot", "actions": ["heroic"], "special_id": "groot_we_are_groot", "auto_trigger": true, "effect_text": "You and another Hero draw 1 card." },
+    { "id": 5, "name": "We Are Groot", "actions": ["heroic"], "special_id": "groot_we_are_groot", "auto_trigger": true, "effect_text": "You and another Hero draw 1 card." },
+    { "id": 6, "name": "We Are Groot", "actions": ["heroic"], "special_id": "groot_we_are_groot", "auto_trigger": true, "effect_text": "You and another Hero draw 1 card." },
+     { "id": 7, "name": "I Am Groot!", "actions": ["attack"], "special_id": "groot_i_am_groot!", "effect_text": "You and another Hero deal ✸ in your respective Locations." },
+    { "id": 8, "name": "I Am Groot!", "actions": ["attack"], "special_id": "groot_i_am_groot!", "effect_text": "You and another Hero deal ✸ in your respective Locations." },
+    { "id": 9, "name": "I Am Groot!", "actions": ["attack"], "special_id": "groot_i_am_groot!", "effect_text": "You and another Hero deal ✸ in your respective Locations." },
+    { "id": 10, "name": "I Am Groot!", "actions": ["attack"], "special_id": "groot_i_am_groot!", "effect_text": "You and another Hero deal ✸ in your respective Locations." },
+    { "id": 11, "actions": ["wild"] },
+    { "id": 12, "actions": ["wild", "wild"] }
+  ]
+}

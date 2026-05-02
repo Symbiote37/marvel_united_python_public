@@ -1,0 +1,24 @@
+{
+  "name": "Doctor Octopus",
+  "internal_id": "doctor_octopus",
+  "health_map": {
+    "2": 3,
+    "3": 6,
+    "4": 8
+  },
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": true, "trigger": false },
+    { "id": 2, "move": 1, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 3, "move": 1, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 4, "move": 2, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 5, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 6, "move": 3, "bam": false, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 7, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 8, "move": 5, "bam": true, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 1}, "right": {"thugs": 1, "civilians": 1}, "center": {"thugs": 1, "civilians": 1}} },
+    { "id": 9, "move": 3, "bam": false, "trigger": false, "special_id": "master_planner", "display_name": "Master Planner", "effect_text": " Deal 1 damage to each Hero in all Locations with Crisis tokens. Then, place 1 Crisis token on Dr. Octopus' Location." },
+    { "id": 10, "move": 3, "bam": false, "trigger": false, "special_id": "master_planner", "display_name": "Master Planner", "effect_text": " Deal 1 damage to each Hero in all Locations with Crisis tokens. Then, place 1 Crisis token on Dr. Octopus' Location." },
+    { "id": 11, "move": "cw", "bam": false, "trigger": false, "special_id": "tentacle_grasp", "display_name": "Tentacle Grasp", "effect_text": "Move all Heroes 1 Location closer to Doctor Octopus. Then BAM!" },
+    { "id": 12, "move": "cw", "bam": false, "trigger": false, "special_id": "tentacle_grasp", "display_name": "Tentacle Grasp", "effect_text": "Move all Heroes 1 Location closer to Doctor Octopus. Then BAM!" }
+  ]
+}
+

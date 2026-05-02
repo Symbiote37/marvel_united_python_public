@@ -1,0 +1,18 @@
+{
+  "internal_id": "black_widow",
+  "name": "Black Widow",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["move", "attack"] },
+    { "id": 5, "actions": ["heroic", "heroic"] },
+    { "id": 6, "actions": ["attack"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Interrogate", "actions": ["attack"], "special_id": "widow_interrogate", "auto_trigger": true, "effect_text": "Look at the top card of the Master Plan deck. You may place it on the bottom." },
+    { "id": 11, "name": "Interrogate", "actions": ["attack"], "special_id": "widow_interrogate", "auto_trigger": true, "effect_text": "Look at the top card of the Master Plan deck. You may place it on the bottom." },
+    { "id": 12, "name": "Interrogate", "actions": ["attack"], "special_id": "widow_interrogate", "auto_trigger": true, "effect_text": "Look at the top card of the Master Plan deck. You may place it on the bottom." }
+  ]
+}

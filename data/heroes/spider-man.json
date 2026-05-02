@@ -1,0 +1,18 @@
+{
+  "internal_id": "spider-man",
+  "name": "Spider-Man",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["move", "attack"] },
+    { "id": 5, "actions": ["heroic", "heroic"] },
+    { "id": 6, "actions": ["attack"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Great Power", "actions": ["move"], "special_id": "spider-man_great_power", "auto_trigger": true, "effect_text": "✸ ✸ ✸ - For each T defeated with this Special Effect, gain 1 ★ token." },
+    { "id": 11, "name": "Great Responsibility", "actions": ["move"], "special_id": "spider-man_great_responsibility", "effect_text": "Rescue up to 3 C in your Location. For each C rescued with his Special Effect, gain one ✸ token." },
+    { "id": 12, "name": "Webslinging", "actions": ["move"], "special_id": "spider-man_webslinging", "auto_trigger": true, "effect_text": "Gain 2 ➡ tokens." }
+  ]
+}

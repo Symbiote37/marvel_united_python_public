@@ -1,0 +1,23 @@
+{
+  "name": "Hela",
+  "internal_id": "hela",
+  "health_map": {
+    "2": 4,
+    "3": 7,
+    "4": 10
+  },
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": false, "trigger": false, "special_id": "banished", "display_name": "Banished", "effect_text": "Hela will enter play when resolving her first BAM! effect." },
+    { "id": 2, "move": 0, "bam": false, "trigger": false, "special_id": "raise_undead_army", "display_name": "Raise Undead Army", "effect_text": "Add x2 T to each Location. Then, if Fenris Wolf is not in play, place his Threat card in the first clockwise Location with no threat." },
+    { "id": 3, "move": 0, "bam": false, "trigger": false, "special_id": "raise_undead_army", "display_name": "Raise Undead Army", "effect_text": "Add x2 T to each Location. Then, if Fenris Wolf is not in play, place his Threat card in the first clockwise Location with no threat." },
+    { "id": 4, "move": 0, "bam": false, "trigger": false, "special_id": "raise_undead_army", "display_name": "Raise Undead Army", "effect_text": "Add x2 T to each Location. Then, if Fenris Wolf is not in play, place his Threat card in the first clockwise Location with no threat." },
+    { "id": 5, "move": 0, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 6, "move": 0, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 7, "move": 0, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 8, "move": 0, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 9, "move": 0, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 10, "move": 0, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 11, "move": 0, "bam": true, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 1}, "right": {"thugs": 1, "civilians": 1}, "center": {"thugs": 1, "civilians": 1}} },
+    { "id": 12, "move": 0, "bam": true, "trigger": false }
+  ]
+}

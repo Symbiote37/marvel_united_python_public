@@ -1,0 +1,50 @@
+[
+  {
+    "id": "move_trap",
+    "name": "Quicksand",
+    "heroic_req": 3,
+    "id_internal": "move_trap",
+    "short_effect": "2➡/Move",
+    "effect_text": "Heroes using ➡ to leave this Location must use ➡➡ instead."
+  },
+  {
+    "id": "move_trap",
+    "name": "Quicksand",
+    "heroic_req": 3,
+    "id_internal": "move_trap",
+    "short_effect": "2➡/Move",
+    "effect_text": "Heroes using ➡ to leave this Location must use ➡➡ instead."
+  },
+  {
+    "id": "sandstorm",
+    "name": "Sandstorm",
+    "heroic_req": 3,
+    "id_internal": "sandstorm",
+    "short_effect": "No DMG",
+    "effect_text": "If the Harder Master Plan is in the Storyline, Sandman cannot take damage."
+  },
+  {
+    "id": "sandstorm",
+    "name": "Sandstorm",
+    "heroic_req": 3,
+    "id_internal": "sandstorm",
+    "short_effect": "No DMG",
+    "effect_text": "If the Harder Master Plan is in the Storyline, Sandman cannot take damage."
+  },
+  {
+    "id": "doctor_octopus",
+    "name": "Doctor Octopus",
+    "hp": 4,
+    "bam_id": "light_dmg_single_bam",
+    "short_effect": "BAM: +1 DMG",
+    "effect_text": "BAM!: Deal 1 damage to 1 Hero in this Location."
+  },
+  {
+    "id": "electro",
+    "name": "Electro",
+    "hp": 4,
+    "bam_id": "light_damage_bam",
+    "short_effect": "+1 DMG",
+    "effect_text": "BAM!: Deal 1 damage to each Hero in this Location. If there are no Heroes in this Location, deal 1 damage to each Hero in adjacent Locations."
+  }
+]

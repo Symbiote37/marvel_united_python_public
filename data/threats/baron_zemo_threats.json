@@ -1,0 +1,50 @@
+[
+  {
+    "id": "moonstone",
+    "name": "Moonstone",
+    "hp": 5,
+    "bam_id": "heavy_dmg_adj_bam",
+    "short_effect": "BAM: +2D/ADJ",
+    "effect_text": "BAM! Deal 2 damage to each Hero in this Location and 1 damage to each Hero in adjacent Locations."
+  },
+  {
+    "id": "fixer",
+    "name": "Fixer",
+    "hp": 3,
+    "bam_id": "fixer_bam",
+    "short_effect": "BAM: -C/LOC",
+    "effect_text": "BAM! Discard 1 C from this Location. Fixer can also be defeated ★★ in a single turn."
+  },
+  {
+    "id": "screaming_mimi",
+    "name": "Screaming Mimi",
+    "hp": 3,
+    "bam_id": "light_adj_bam",
+    "short_effect": "BAM: +1D/ADJ",
+    "effect_text": "Deal 1 damage to each Hero in adjacent Locations. Screaming Mimi can also be defeated by using ★★ in a single turn."
+  },
+  {
+    "id": "beetle",
+    "name": "Beetle",
+    "hp": 4,
+    "bam_id": "beetle_bam",
+    "short_effect": "BAM: -T/LOC",
+    "effect_text": "BAM! Discard 1 T from this Location. Beetle can also be defeated ★★ in a single turn."
+  },
+  {
+    "id": "goliath",
+    "name": "Goliath",
+    "hp": 5,
+    "bam_id": "heavy_dmg_single_bam",
+    "short_effect": "BAM: +2DMG/LOC",
+    "effect_text": "BAM! Deal 2 damage to 1 Hero in this Location. Goliath can also be defeated ★★★ in a single turn."
+  },
+  {
+    "id": "masters_of_evil",
+    "name": "Masters of Evil",
+    "heroic_req": 3,
+    "id_internal": "masters_of_evil",
+    "short_effect": "No DMG",
+    "effect_text": "As long as this card is in play, Henchmen cannot take any damage."
+  }
+]

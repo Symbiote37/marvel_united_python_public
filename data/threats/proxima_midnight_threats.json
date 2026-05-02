@@ -1,0 +1,50 @@
+[
+  {
+    "id": "masterful_fighter",
+    "name": "Masterful Fighter",
+    "heroic_req": 3,
+    "id_internal": "masterful_fighter",
+    "short_effect": "No Prev. ACT",
+    "effect_text": "While in this Location, Proxima Midnight ignores the first ✸ used against her each turn."
+  },
+  {
+    "id": "masterful_fighter",
+    "name": "Masterful Fighter",
+    "heroic_req": 3,
+    "id_internal": "masterful_fighter",
+    "short_effect": "Ignore 1DMG",
+    "effect_text": "While in this Location, Proxima Midnight ignores the first ✸ used against her each turn."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Prisoner Camp",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Prisoner Camp",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "tactical_support",
+    "name": "Tactical Support",
+    "heroic_req": 3,
+    "trigger_id": "tactical_support",
+    "short_effect": "+1 DMG",
+    "effect_text": "Heroes in this Location suffer 1 extra damage whenever they take damage."
+  },
+  {
+    "id": "tactical_support",
+    "name": "Tactical Support",
+    "heroic_req": 3,
+    "trigger_id": "tactical_support",
+    "short_effect": "+1 DMG",
+    "effect_text": "Heroes in this Location suffer 1 extra damage whenever they take damage."
+  }
+]

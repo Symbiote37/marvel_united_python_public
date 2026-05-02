@@ -1,0 +1,50 @@
+[
+  {
+    "id": "heroic_trap",
+    "name": "Symbiote Ambush",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Symbiote Ambush",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "heroic_trap",
+    "name": "Symbiote Ambush",
+    "heroic_req": 3,
+    "id_internal": "heroic_trap",
+    "short_effect": "2★/Civilian",
+    "effect_text": "Each C in this Location requires 1 extra ★ to be rescued."
+  },
+  {
+    "id": "carnage_offspring",
+    "name": "Carnage's Offspring",
+    "hp": 4,
+    "bam_id": "carnage_offspring",
+    "short_effect": "BAM: Crisis/Civ",
+    "effect_text": "Place 1 Crisis token above 1 C in this Location (if present). Add C to this Location. Then, deal 1 damage to each Hero here."
+  },
+  {
+    "id": "carnage_offspring",
+    "name": "Carnage's Offspring",
+    "hp": 4,
+    "bam_id": "carnage_offspring",
+    "short_effect": "BAM: Crisis/Civ",
+    "effect_text": "Place 1 Crisis token above 1 C in this Location (if present). Add C to this Location. Then, deal 1 damage to each Hero here."
+  },
+  {
+    "id": "carnage_offspring",
+    "name": "Carnage's Offspring",
+    "hp": 4,
+    "bam_id": "carnage_offspring",
+    "short_effect": "BAM: Crisis/Civ",
+    "effect_text": "Place 1 Crisis token above 1 C in this Location (if present). Add C to this Location. Then, deal 1 damage to each Hero here."
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "internal_id": "blade",
+  "name": "Blade",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["move", "attack"] },
+    { "id": 5, "actions": ["move", "attack"] },
+    { "id": 6, "actions": ["heroic"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Blood Bath", "actions": ["move"], "special_id": "blade_blood_bath", "effect_text": "Defeat all T in your Location." },
+    { "id": 11, "name": "Hunter Skills", "actions": ["heroic"], "special_id": "blade_hunter_skills", "auto_trigger": true, "effect_text": "Double each ✸ you use against a single enemy this turn." },
+    { "id": 12, "name": "Vampiric Healing", "actions": ["attack"], "special_id": "blade_vampiric_healing", "auto_trigger": true, "effect_text": "Draw 1 card." }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Black Dwarf",
+  "internal_id": "black_dwarf",
+  "health_map": {
+    "2": 6,
+    "3": 9,
+    "4": 12
+  },
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": false, "trigger": false, "special_id": "axe_swing", "display_name": "Axe Swing", "effect_text": "Deal 1 damage to each hero in Black Dwarf's and adjacent Locations." },
+    { "id": 2, "move": 0, "bam": false, "trigger": false, "special_id": "axe_swing", "display_name": "Axe Swing", "effect_text": "Deal 1 damage to each hero in Black Dwarf's and adjacent Locations." },
+    { "id": 3, "move": 3, "bam": false, "trigger": false, "special_id": "healing_factor", "display_name": "Healing Factor", "effect_text": "Black Dwarf heals up to 3 Health (up to his starting value). If he's at full Health, deal 1 damage to each Hero in his Location instead." },
+    { "id": 4, "move": 3, "bam": false, "trigger": false, "special_id": "healing_factor", "display_name": "Healing Factor", "effect_text": "Black Dwarf heals up to 3 Health (up to his starting value). If he's at full Health, deal 1 damage to each Hero in his Location instead." },
+    { "id": 5, "move": 0, "bam": true, "trigger": false },
+    { "id": 6, "move": 1, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 1}} },
+    { "id": 7, "move": 1, "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 8, "move": 2, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 1}} },
+    { "id": 9, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 10, "move": 3, "bam": false, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 1}} },
+    { "id": 11, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 12, "move": 5, "bam": false, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 1}, "right": {"thugs": 1, "civilians": 1}, "center": {"thugs": 2, "civilians": 1}} }
+  ]
+}

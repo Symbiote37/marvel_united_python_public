@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "name": "Heimdall Observatory",
+    "capacity": 4,
+    "start_thugs": 0,
+    "start_civs": 1,
+    "end_effect": {
+      "logic_key": "move_all_heroes",
+      "text": "You may move any number of Heroes from any Locations to this Location."
+    },
+    "short_effect": "Move Heroes\nHere"
+  },
+  { 
+    "id": 1, 
+    "name": "Valhalla", 
+    "capacity": 4, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "swap_out_hand", 
+      "text": "You may discard any number The cards from your hand to the bottom of your deck and draw back that many (discarding all hand does not KO)." 
+    }, 
+    "short_effect": "Swap\nCards" 
+  },
+  { 
+    "id": 2, 
+    "name": "Odin's Vault", 
+    "capacity": 2, 
+    "start_thugs": 0, 
+    "start_civs": 0, 
+        "end_effect": { 
+      "logic_key": "heal_1", 
+      "text": "If you have 1 or 2 cards in hand, you may draw 1 card." 
+    }, 
+    "short_effect": "Heal Up\n+1 Card" 
+  },
+  { 
+    "id": 3, 
+    "name": "Asgardian Palace", 
+    "capacity": 4, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "add_civilian_thug", 
+      "text": "You may add up to 2 C and/or T to any Location." 
+    }, 
+    "short_effect": "Add\nTokens" 
+  },
+  { 
+    "id": 4, 
+    "name": "Throne Room", 
+    "capacity": 5, 
+    "start_thugs": 1, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "throne_room_move", 
+      "text": "You may move any other Hero to a Location adjacent to them." 
+    }, 
+    "short_effect": "Move Heroes\nAdj"
+  },
+  { 
+    "id": 5, 
+    "name": "Bifrost Bridge", 
+    "capacity": 3, 
+    "start_thugs": 1, 
+    "start_civs": 0, 
+    "end_effect": { 
+      "logic_key": "bifrost_bridge_move", 
+      "text": "You may move all Heroes from this Location to another Location." 
+    }, 
+    "short_effect": "Move From\nHere" 
+  }
+]

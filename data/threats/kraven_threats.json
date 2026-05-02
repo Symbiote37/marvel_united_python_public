@@ -1,0 +1,50 @@
+[
+  {
+    "id": "decoys",
+    "name": "Decoys",
+    "heroic_req": 3,
+    "id_internal": "decoys",
+    "short_effect": "-1 DMG",
+    "effect_text": "Every time Kraven takes damage in this Location, he ignores the first damage received."
+  },
+  {
+    "id": "decoys",
+    "name": "Decoys",
+    "heroic_req": 3,
+    "id_internal": "decoys",
+    "short_effect": "-1 DMG",
+    "effect_text": "Every time Kraven takes damage in this Location, he ignores the first damage received."
+  },
+  {
+    "id": "decoys",
+    "name": "Decoys",
+    "heroic_req": 3,
+    "id_internal": "decoys",
+    "short_effect": "-1 DMG",
+    "effect_text": "Every time Kraven takes damage in this Location, he ignores the first damage received."
+  },
+  {
+    "id": "traps",
+    "name": "Traps",
+    "heroic_req": 3,
+    "id_internal": "traps",
+    "short_effect": "+1 DMG",
+    "effect_text": "If there are no C or T at this Location, when a Hero takes damage here, they take 1 extra damage."
+  },
+  {
+    "id": "traps",
+    "name": "Traps",
+    "heroic_req": 3,
+    "id_internal": "traps",
+    "short_effect": "+1 DMG",
+    "effect_text": "If there are no C or T at this Location, when a Hero takes damage here, they take 1 extra damage."
+  },
+  {
+    "id": "traps",
+    "name": "Traps",
+    "heroic_req": 3,
+    "id_internal": "traps",
+    "short_effect": "+1 DMG",
+    "effect_text": "If there are no C or T at this Location, when a Hero takes damage here, they take 1 extra damage."
+  }
+]

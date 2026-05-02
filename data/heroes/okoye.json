@@ -1,0 +1,18 @@
+{
+  "internal_id": "okoye",
+  "name": "Okoye",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "attack"] },
+    { "id": 4, "actions": ["move", "attack"] },
+    { "id": 5, "actions": ["heroic", "attack"] },
+    { "id": 6, "actions": ["heroic", "heroic"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Dora Milaje", "actions": ["heroic", "heroic"], "special_id": "okoye_dora_milaje", "auto_trigger": true, "effect_text": "Until the beginning of your next turn, if another Hero in your Location takes damage, you can take that damage instead." },
+    { "id": 11, "name": "Vibranium Spear", "actions": ["attack"], "special_id": "okoye_vibranium_spear", "effect_text": "✸ ✸ in an adjacent Location." },
+    { "id": 12, "name": "Accomplished Strategist", "actions": ["wild"], "special_id": "okoye_accomplished_strategist", "auto_trigger": true, "effect_text": "Reveal the top card of your deck. You may put it at the bottom of your deck." }
+  ]
+}

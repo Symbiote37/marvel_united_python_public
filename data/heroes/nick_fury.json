@@ -1,0 +1,18 @@
+{
+  "internal_id": "nick_fury",
+  "name": "Nick Fury",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "move"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["heroic"] },
+    { "id": 5, "actions": ["heroic", "heroic"] },
+    { "id": 6, "actions": ["attack"] },
+    { "id": 7, "actions": ["attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Director of S.H.I.E.L.D. ➡", "actions": ["wild"], "special_id": "nick_fury_director_of_shield", "effect_text": "A Hero of your choice immediately performs ➡ ➡." },
+    { "id": 11, "name": "Director of S.H.I.E.L.D. ★", "actions": ["wild"], "special_id": "nick_fury_director_of_shield", "effect_text": "A Hero of your choice immediately performs ★ ★." },
+    { "id": 12, "name": "Director of S.H.I.E.L.D. ✸", "actions": ["wild"], "special_id": "nick_fury_director_of_shield", "effect_text": "A Hero of your choice immediately performs ✸ ✸." }
+  ]
+}

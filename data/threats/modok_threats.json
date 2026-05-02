@@ -1,0 +1,50 @@
+[
+  {
+    "id": "energy_projection",
+    "name": "Energy Projection",
+    "heroic_req": 3,
+    "trigger_id": "energy_projection",
+    "short_effect": "Flip 1 Card",
+    "effect_text": "Flip 1 Hero card."
+  },
+  {
+    "id": "psionic_powers",
+    "name": "Psionic Powers",
+    "heroic_req": 3,
+    "id_internal": "psionic_powers",
+    "short_effect": "Facedown",
+    "effect_text": "Heroes starting their turn in this Location must play their card facedown in the Storyline (they get no benefit from their own card)."
+  },
+  {
+    "id": "technopathy",
+    "name": "Technopathy",
+    "heroic_req": 3,
+    "trigger_id": "technopathy",
+    "short_effect": "-Actions",
+    "effect_text": "Heroes lose all their Action tokens. If they have none, or wish to keep them, flip 2 Hero cards."
+  },
+  {
+    "id": "chameleon",
+    "name": "Chameleon",
+    "hp": 4,
+    "bam_id": "chameleon",
+    "short_effect": "BAM: DMG/Hero",
+    "effect_text": "Deal damage to 1 Hero in this Location equal to the number of ✸ at the bottom of the last 2 Hero cards in the Storyline."
+  },
+  {
+    "id": "living_laser",
+    "name": "Living Laser",
+    "hp": 4,
+    "bam_id": "light_damage_bam",
+    "short_effect": "BAM: +1 DMG",
+    "effect_text": "Deal 1 damage to each Hero in this Location. If there are no Heroes in this Location, flip 1 Hero card."
+  },
+  {
+    "id": "spot",
+    "name": "Spot",
+    "hp": 4,
+    "bam_id": "spot",
+    "short_effect": "BAM: Flip Card",
+    "effect_text": " Flip as many Hero cards as the number of ★ at the bottom of the last 2 Hero cards in the Storyline."
+  }
+]

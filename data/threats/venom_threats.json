@@ -1,0 +1,50 @@
+[
+  {
+    "id": "infect",
+    "name": "Infect",
+    "heroic_req": 3,
+    "trigger_id": "infect",
+    "short_effect": "+1 Crisis",
+    "effect_text": "Give 1 Crisis to any Hero (Heroes choose)."
+  },
+  {
+    "id": "infect",
+    "name": "Infect",
+    "heroic_req": 3,
+    "trigger_id": "infect",
+    "short_effect": "+1 Crisis",
+    "effect_text": "Give 1 Crisis to any Hero (Heroes choose)."
+  },
+  {
+    "id": "organic_fangs",
+    "name": "Organic Fangs",
+    "heroic_req": 3,
+    "id_internal": "organic_fangs",
+    "short_effect": "+DMG",
+    "effect_text": "When taking damage, Heroes in this Location take 1 extra damage."
+  },
+  {
+    "id": "organic_fangs",
+    "name": "Organic Fangs",
+    "heroic_req": 3,
+    "id_internal": "organic_fangs",
+    "short_effect": "+DMG",
+    "effect_text": "When taking damage, Heroes in this Location take 1 extra damage."
+  },
+  {
+    "id": "shapeshifting",
+    "name": "Shapeshifting",
+    "heroic_req": 3,
+    "id_internal": "shapeshifting",
+    "short_effect": "+Crisis/Turn",
+    "effect_text": "Heroes ending their turn in this Location get 1 Crisis token."
+  },
+  {
+    "id": "shapeshifting",
+    "name": "Shapeshifting",
+    "heroic_req": 3,
+    "id_internal": "shapeshifting",
+    "short_effect": "+Crisis/Turn",
+    "effect_text": "Heroes ending their turn in this Location get 1 Crisis token."
+  }
+]

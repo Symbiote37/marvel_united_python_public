@@ -1,0 +1,46 @@
+{
+  "infinity_stones": [
+    {
+      "id": "stone_power",
+      "type": "infinity_stone",
+      "name": "POWER STONE",
+      "special_id": "thanos_power_stone",
+      "effect_text": "Deal 1 damage to each Hero in the game."
+    },
+    {
+      "id": "stone_space",
+      "type": "infinity_stone",
+      "name": "SPACE STONE",
+      "special_id": "thanos_space_stone",
+      "effect_text": "From now on, Heroes must ignore 1 ➡ each turn."
+    },
+    {
+      "id": "stone_reality",
+      "type": "infinity_stone",
+      "name": "REALITY STONE",
+      "special_id": "thanos_reality_stone",
+      "effect_text": "Put all already completed Mission cards back into play."
+    },
+    {
+      "id": "stone_soul",
+      "type": "infinity_stone",
+      "name": "SOUL STONE",
+      "special_id": "thanos_soul_stone",
+      "effect_text": "Thanos gains 6 Health (may go above the starting value)."
+    },
+    {
+      "id": "stone_time",
+      "type": "infinity_stone",
+      "name": "TIME STONE",
+      "special_id": "thanos_time_stone",
+      "effect_text": "Play 2 other Master Plan cards in sequence."
+    },
+    {
+      "id": "stone_mind",
+      "type": "infinity_stone",
+      "name": "MIND STONE",
+      "special_id": "thanos_mind_stone",
+      "effect_text": "From now on, Heroes must play their Hero card randomly on their turn."
+    }
+  ]
+}

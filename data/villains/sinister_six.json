@@ -1,0 +1,190 @@
+{
+  "name": "The Sinister Six",
+  "internal_id": "sinister_six",
+  "health_map": {
+    "2": 2,
+    "3": 3,
+    "4": 4
+  },
+  "master_plan": [
+    { 
+      "id": 1, 
+      "villain_order": ["doctor_octopus", "mysterio", "kraven", "sandman", "electro", "vulture"],
+      "move": 1, 
+      "bam": true, 
+      "trigger": false,
+      "add": {
+        "active_1": { "civilians": 1, "thugs": 1 },
+        "active_2": { "civilians": 1, "thugs": 1 }
+      },
+      "special_id": "return_of_sinister_six", 
+      "display_name": "Return of the Sinister Six", 
+      "effect_text": "Activate ALL undefeated villains (start with Doctor Octopus and go clockwise on the dashboard)." 
+    },
+    { 
+      "id": 2, 
+      "villain_order": ["doctor_octopus", "sandman", "vulture", "mysterio", "kraven", "electro"],
+      "move": 1, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 3, 
+      "villain_order": ["sandman", "vulture", "mysterio", "electro", "doctor_octopus", "kraven"],
+      "move": 1, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 4, 
+      "villain_order": ["doctor_octopus", "electro", "mysterio", "kraven", "sandman", "vulture"],
+      "move": 1, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 5, 
+      "villain_order": ["mysterio", "sandman", "kraven", "doctor_octopus", "vulture", "electro"],
+      "move": 1, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 6, 
+      "villain_order": ["sandman", "kraven", "electro", "mysterio", "vulture", "doctor_octopus"],
+      "move": 1, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 7, 
+      "villain_order": ["kraven", "vulture", "mysterio", "electro", "doctor_octopus", "sandman"],
+      "move": 1, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 8, 
+      "villain_order": ["mysterio", "electro", "vulture", "kraven", "sandman", "doctor_octopus"],
+      "move": 1, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 9, 
+      "villain_order": ["sandman", "electro", "doctor_octopus", "kraven", "mysterio", "vulture"],
+      "move": 2, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 10, 
+      "villain_order": ["doctor_octopus", "mysterio", "sandman", "kraven", "electro", "vulture"],
+      "move": 2, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 11, 
+      "villain_order": ["mysterio", "vulture", "doctor_octopus", "electro", "kraven", "sandman"],
+      "move": 2, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 12, 
+      "villain_order": ["doctor_octopus", "vulture", "sandman", "electro", "mysterio", "kraven"],
+      "move": 2, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 13, 
+      "villain_order": ["kraven", "electro", "doctor_octopus", "sandman", "vulture", "mysterio"],
+      "move": 2, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 14, 
+      "villain_order": ["doctor_octopus", "kraven", "electro", "sandman", "vulture", "mysterio"],
+      "move": 2, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 15, 
+      "villain_order": ["mysterio", "kraven", "electro", "sandman", "doctor_octopus", "vulture"],
+      "move": 2, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    },
+    { 
+      "id": 16, 
+      "villain_order": ["electro", "vulture", "sandman", "kraven", "mysterio", "doctor_octopus"],
+      "move": 2, 
+      "bam": true, 
+      "trigger": true,
+      "add": {
+        "active_1": { "thugs": 1 },
+        "active_2": { "civilians": 1 }
+      }
+    }
+  ]
+}

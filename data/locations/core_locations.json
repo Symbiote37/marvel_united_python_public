@@ -1,0 +1,98 @@
+[
+  {
+    "id": 0,
+    "name": "S.H.I.E.L.D. HQ",
+    "capacity": 4,
+    "start_thugs": 1,
+    "start_civs": 1,
+    "end_effect": {
+      "logic_key": "remove_crisis_effect",
+      "text": "You may discard 1 card from your hand to bottom of deck to remove 1 Crisis token from anywhere."
+    },
+    "short_effect": "Clear\n1 Crisis"
+  },
+  { 
+    "id": 1, 
+    "name": "Stark Labs", 
+    "capacity": 4, 
+    "start_thugs": 2, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "swap_with_storyline", 
+      "text": "You may swap 1 card from your hand with 1 of your cards in the Storyline." 
+    }, 
+    "short_effect": "Swap with\nStoryline" 
+  },
+  { 
+    "id": 2, 
+    "name": "Central Park", 
+    "capacity": 5, 
+    "start_thugs": 2, 
+    "start_civs": 2, 
+    "end_effect": { 
+      "logic_key": "token_swap_loc", 
+      "text": "You may move up to 2 C or T in any combination, from this Location to any other Location(s)." 
+    }, 
+    "short_effect": "Move Up\nto x2 C/T" 
+  },
+  { 
+    "id": 3, 
+    "name": "Avengers Mansion", 
+    "capacity": 3, 
+    "start_thugs": 0, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "heal_3", 
+      "text": "You may draw cards until you have 3 in your hand." 
+    }, 
+    "short_effect": "Heal Up\n3 Cards" 
+  },
+  { 
+    "id": 4, 
+    "name": "Times Square", 
+    "capacity": 5, 
+    "start_thugs": 1, 
+    "start_civs": 2, 
+    "end_effect": { 
+      "logic_key": "rescue_civilian", 
+      "text": "You may rescue a C from this Location." 
+    }, 
+    "short_effect": "Rescue\nCivilian" 
+  },
+  { 
+    "id": 5, 
+    "name": "Avengers Tower", 
+    "capacity": 3, 
+    "start_thugs": 0, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "pick_next_card", 
+      "text": "You may search your deck for one card and set it aside. Then, shuffle your deck and place that card on top." 
+    }, 
+    "short_effect": "Pick Your\nNext Card" 
+  },
+  { 
+    "id": 6, 
+    "name": "SHIELD Helicarrier", 
+    "capacity": 4, 
+    "start_thugs": 2, 
+    "start_civs": 1, 
+    "end_effect": { 
+      "logic_key": "move_anywhere", 
+      "text": "You may move to any other Location." 
+    }, 
+    "short_effect": "Move\nAnywhere" 
+  },
+  { 
+    "id": 7, 
+    "name": "NYPD Headquarters", 
+    "capacity": 4, 
+    "start_thugs": 1, 
+    "start_civs": 2, 
+    "end_effect": { 
+      "logic_key": "discard_thug", 
+      "text": "You may discard a T from any location. " 
+    }, 
+    "short_effect": "Discard\n1 Thug" 
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "internal_id": "adam_warlock",
+  "name": "Adam Warlock",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "move"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["heroic", "attack"] },
+    { "id": 5, "actions": ["heroic", "attack"] },
+    { "id": 6, "actions": ["attack"] },
+    { "id": 7, "actions": ["wild"] },
+    { "id": 8, "actions": ["wild", "wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Quantum Magic", "actions": ["attack"], "special_id": "adam_warlock_quantum_magic", "auto_trigger": true, "effect_text": "Look at the top 3 Master Plan cards and put them back on top in any order." },
+    { "id": 11, "name": "Immortality", "actions": ["wild"], "special_id": "adam_warlock_immortality", "auto_trigger": true, "effect_text": "As long as this card is faceup in the Storyline, you cannot be forced to discard your last card." },
+    { "id": 12, "name": "Avatar of Life", "actions": ["attack"], "special_id": "adam_warlock_avatar_of_life", "auto_trigger": true, "effect_text": "The next Master Plan card will be played facedown with no effect." }
+  ]
+}

@@ -1,0 +1,55 @@
+[
+  {
+    "id": "fenris_wolf",
+    "name": "Fenris Wolf",
+    "hp": 4,
+    "bam_id": "light_dmg_single_bam",
+    "short_effect": "BAM: +1DMG",
+    "effect_text": "BAM! Deal 1 damage to 1 Hero in this Location. Hela can't take any damage as long as Fenris Wolf is in play."
+  },
+  {
+    "id": "necroswords",
+    "name": "Necroswords",
+    "heroic_req": 2,
+    "move_req": 1,
+    "bam_id": "light_dmg_single_bam",
+    "short_effect": "+1-2 DMG/Hero",
+    "effect_text": "Deal 1 damage to 1 Hero in this Location. If there are any T in this Location, deal 2 damage instead."
+  },
+  {
+    "id": "necroswords",
+    "name": "Necroswords",
+    "heroic_req": 2,
+    "move_req": 1,
+    "bam_id": "light_dmg_single_bam",
+    "short_effect": "+1-2 DMG/Hero",
+    "effect_text": "Deal 1 damage to 1 Hero in this Location. If there are any T in this Location, deal 2 damage instead."
+  },
+  {
+    "id": "necroswords",
+    "name": "Necroswords",
+    "heroic_req": 2,
+    "move_req": 1,
+    "bam_id": "light_dmg_single_bam",
+    "short_effect": "+1-2 DMG/Hero",
+    "effect_text": "Deal 1 damage to 1 Hero in this Location. If there are any T in this Location, deal 2 damage instead."
+  },
+  {
+    "id": "necroswords",
+    "name": "Necroswords",
+    "heroic_req": 2,
+    "move_req": 1,
+    "bam_id": "light_dmg_single_bam",
+    "short_effect": "+1-2 DMG/Hero",
+    "effect_text": "Deal 1 damage to 1 Hero in this Location. If there are any T in this Location, deal 2 damage instead."
+  },
+  {
+    "id": "necroswords",
+    "name": "Necroswords",
+    "heroic_req": 2,
+    "move_req": 1,
+    "bam_id": "light_dmg_single_bam",
+    "short_effect": "+1-2 DMG/Hero",
+    "effect_text": "Deal 1 damage to 1 Hero in this Location. If there are any T in this Location, deal 2 damage instead."
+  }
+]

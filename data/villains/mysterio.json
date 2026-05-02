@@ -1,0 +1,24 @@
+{
+  "name": "Mysterio",
+  "internal_id": "mysterio",
+  "health_map": {
+    "2": 3,
+    "3": 6,
+    "4": 8
+  },
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 2, "move": 1, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 3, "move": 1, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 4, "move": 2, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 5, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 6, "move": 3, "bam": false, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 7, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 8, "move": 5, "bam": false, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 2}, "right": {"thugs": 2, "civilians": 1}, "center": {"thugs": 1, "civilians": 2}} },
+    { "id": 9, "move": 3, "bam": false, "trigger": false, "special_id": "holographic_technology", "display_name": "Holographic Technology", "effect_text": "Shuffle all Threat cards in play (discarding any tokens on them). Then, put them back facedown starting on Mysterio's Location and going clockwise." },
+    { "id": 10, "move": 3, "bam": false, "trigger": false, "special_id": "holographic_technology", "display_name": "Holographic Technology", "effect_text": "Shuffle all Threat cards in play (discarding any tokens on them). Then, put them back facedown starting on Mysterio's Location and going clockwise." },
+    { "id": 11, "move": "cw", "bam": false, "trigger": false, "special_id": "fake_heroics", "display_name": "Fake Heroics", "effect_text": "Discard all C and T in Mysterio's Location. Then, draw another Master Plan card and add it facedown to the Storyline." },
+    { "id": 12, "move": "cw", "bam": false, "trigger": false, "special_id": "fake_heroics", "display_name": "Fake Heroics", "effect_text": "Discard all C and T in Mysterio's Location. Then, draw another Master Plan card and add it facedown to the Storyline." }
+  ]
+}
+

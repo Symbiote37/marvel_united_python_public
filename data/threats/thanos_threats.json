@@ -1,0 +1,50 @@
+[
+  {
+    "id": "corvus_glaive",
+    "name": "Corvus Glaive",
+    "hp": 5,
+    "trigger_id": "corvus_glaive",
+    "short_effect": "+2 T",
+    "effect_text": "Add x2 T to this Location."
+  },
+  {
+    "id": "ebony_maw",
+    "name": "Ebony Maw",
+    "hp": 4,
+    "trigger_id": "ebony_maw",
+    "short_effect": "+1 Master Plan",
+    "effect_text": "After resolving the current Master Plan card, immediately play another Master Plan card."
+  },
+  {
+    "id": "proxima_midnight",
+    "name": "Proxima Midnight",
+    "hp": 4,
+    "bam_id": "proxima_midnight",
+    "short_effect": "BAM: +1DMG/Civ",
+    "effect_text": "BAM! Discard all C from this Location. If there are no C in this Location, deal 1 damage to 1 Hero anywhere."
+  },
+  {
+    "id": "black_dwarf",
+    "name": "Black Dwarf",
+    "hp": 6,
+    "bam_id": "light_damage_bam",
+    "short_effect": "BAM: +1DMG",
+    "effect_text": "BAM! Deal 1 damage to each Hero in this Location."
+  },
+  {
+    "id": "chitauri",
+    "name": "Chitauri",
+    "heroic_req": 3,
+    "id_internal": "chitauri",
+    "short_effect": "3✸/Thug",
+    "effect_text": "Each T in this Location requires 3 damage to be defeated."
+  },
+  {
+    "id": "chitauri",
+    "name": "Chitauri",
+    "heroic_req": 3,
+    "id_internal": "chitauri",
+    "short_effect": "3✸/Thug",
+    "effect_text": "Each T in this Location requires 3 damage to be defeated."
+  }
+]

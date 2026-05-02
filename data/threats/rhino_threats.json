@@ -1,0 +1,50 @@
+[
+  {
+    "id": "open_field",
+    "name": "Open Field",
+    "heroic_req": 3,
+    "id_internal": "open_field",
+    "short_effect": "DMG/Crisis",
+    "effect_text": "Heroes that take damage at this Location also get 1 Crisis token."
+  },
+  {
+    "id": "open_field",
+    "name": "Open Field",
+    "heroic_req": 3,
+    "id_internal": "open_field",
+    "short_effect": "DMG/Crisis",
+    "effect_text": "Heroes that take damage at this Location also get 1 Crisis token."
+  },
+  {
+    "id": "open_field",
+    "name": "Open Field",
+    "heroic_req": 3,
+    "id_internal": "open_field",
+    "short_effect": "DMG/Crisis",
+    "effect_text": "Heroes that take damage at this Location also get 1 Crisis token."
+  },
+  {
+    "id": "no_cover",
+    "name": "No Cover",
+    "heroic_req": 3,
+    "id_internal": "no_cover",
+    "short_effect": "+Crisis/Turn",
+    "effect_text": "Heroes ending their turn in this Location get 1 Crisis token."
+  },
+  {
+    "id": "no_cover",
+    "name": "No Cover",
+    "heroic_req": 3,
+    "id_internal": "no_cover",
+    "short_effect": "+Crisis/Turn",
+    "effect_text": "Heroes ending their turn in this Location get 1 Crisis token."
+  },
+  {
+    "id": "no_cover",
+    "name": "No Cover",
+    "heroic_req": 3,
+    "id_internal": "no_cover",
+    "short_effect": "+Crisis/Turn",
+    "effect_text": "Heroes ending their turn in this Location get 1 Crisis token."
+  }
+]

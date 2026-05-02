@@ -1,0 +1,25 @@
+{
+  "name": "Proxima Midnight",
+  "internal_id": "proxima_midnight",
+  "health_map": {
+    "2": 4,
+    "3": 7,
+    "4": 10
+  },
+  "plot_name": "Slaughter Track",
+  "plot_max": 12,
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": false, "trigger": false, "special_id": "cleansing", "display_name": "Cleansing", "effect_text": "Discard all C in both adjacent Locations and increase the Slaughter Track by the number of C discarded. Heroes in these Locations may take 1 damage for each C they want to keep their Location." },
+    { "id": 2, "move": 0, "bam": false, "trigger": false, "special_id": "cleansing", "display_name": "Cleansing", "effect_text": "Discard all C in both adjacent Locations and increase the Slaughter Track by the number of C discarded. Heroes in these Locations may take 1 damage for each C they want to keep their Location." },
+    { "id": 3, "move": 0, "bam": false, "trigger": false, "special_id": "hunting_spear", "display_name": "Hunting Spear", "effect_text": "Discard all C in Proxima Midnight's Location and increase her Track by the number of C discarded. Heroes in her Location may take 1 damage for each C they want to keep in that Location." },
+    { "id": 4, "move": 0, "bam": false, "trigger": false, "special_id": "hunting_spear", "display_name": "Hunting Spear", "effect_text": "Discard all C in Proxima Midnight's Location and increase her Track by the number of C discarded. Heroes in her Location may take 1 damage for each C they want to keep in that Location." },
+    { "id": 5, "move": 0, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 6, "move": 1, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 7, "move": 1, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 8, "move": 2, "bam": false, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 9, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 2}} },
+    { "id": 10, "move": 3, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 11, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 12, "move": 5, "bam": false, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 2}, "right": {"thugs": 1, "civilians": 2}, "center": {"thugs": 1, "civilians": 2}} }
+  ]
+}

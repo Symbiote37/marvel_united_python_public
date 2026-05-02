@@ -1,0 +1,23 @@
+{
+  "name": "Baron Zemo",
+  "internal_id": "baron_zemo",
+  "health_map": {
+    "2": 3,
+    "3": 5,
+    "4": 8
+  },
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": true },
+    { "id": 2, "move": 1, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 3, "move": 1, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 4, "move": 2, "bam": true, "trigger": false, "add": {"left": {"civilians": 2}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 5, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 6, "move": 3, "bam": false, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 7, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 8, "move": 5, "bam": false, "trigger": true, "add": {"left": {"thugs": 2, "civilians": 2}, "right": {"thugs": 2, "civilians": 2}, "center": {"thugs": 1, "civilians": 1}} },
+    { "id": 9, "move": 3, "bam": false, "trigger": false, "special_id": "thunderbolts", "display_name": "Thunderbolts!", "effect_text": "Add x3 T to Baron Zemo 's Location. Then BAM!" },
+    { "id": 10, "move": 3, "bam": false, "trigger": false, "special_id": "thunderbolts", "display_name": "Thunderbolts!", "effect_text": "Add x3 T to Baron Zemo 's Location. Then BAM!" },
+    { "id": 11, "move": 0, "bam": false, "trigger": false, "special_id": "citizen_v", "display_name": "Citizen V", "effect_text": "Discard all T and C in Baron Zemo's Location." },
+    { "id": 12, "move": 0, "bam": false, "trigger": false, "special_id": "citizen_v", "display_name": "Citizen V", "effect_text": "Discard all T and C in Baron Zemo's Location." }
+  ]
+}

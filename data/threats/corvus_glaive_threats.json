@@ -1,0 +1,50 @@
+[
+  {
+    "id": "civilians_in_peril",
+    "name": "Civilians in Peril",
+    "heroic_req": 3,
+    "trigger_id": "civilians_in_peril",
+    "short_effect": "-C/Loc",
+    "effect_text": "Discard all C from this Location. If any C are discarded this way, play another Master Plan card after resolving the current one."
+  },
+  {
+    "id": "civilians_in_peril",
+    "name": "Civilians in Peril",
+    "heroic_req": 3,
+    "trigger_id": "civilians_in_peril",
+    "short_effect": "-C/Loc",
+    "effect_text": "Discard all C from this Location. If any C are discarded this way, play another Master Plan card after resolving the current one."
+  },
+  {
+    "id": "dangerous_terrain",
+    "name": "Dangerous Terrain",
+    "heroic_req": 3,
+    "id_internal": "dangerous_terrain",
+    "short_effect": "+DMG",
+    "effect_text": "When taking damage, Heroes in this Location take 1 extra damage."
+  },
+  {
+    "id": "dangerous_terrain",
+    "name": "Dangerous Terrain",
+    "heroic_req": 3,
+    "id_internal": "dangerous_terrain",
+    "short_effect": "+DMG",
+    "effect_text": "When taking damage, Heroes in this Location take 1 extra damage."
+  },
+  {
+    "id": "hidden_traps",
+    "name": "Hidden Traps",
+    "heroic_req": 3,
+    "id_internal": "hidden_traps",
+    "short_effect": "+1DMG/Turn",
+    "effect_text": "Heroes ending their turn on this location take 1 damage."
+  },
+  {
+    "id": "hidden_traps",
+    "name": "Hidden Traps",
+    "heroic_req": 3,
+    "id_internal": "hidden_traps",
+    "short_effect": "+1DMG/Turn",
+    "effect_text": "Heroes ending their turn on this location take 1 damage."
+  }
+]

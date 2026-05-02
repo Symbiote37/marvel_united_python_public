@@ -1,0 +1,18 @@
+{
+  "internal_id": "ghost-spider",
+  "name": "Ghost Spider",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["move", "attack"] },
+    { "id": 5, "actions": ["heroic"] },
+    { "id": 6, "actions": ["heroic", "heroic"] },
+    { "id": 7, "actions": ["attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Webdancer", "actions": ["move"], "special_id": "invulnerability", "auto_trigger": true, "effect_text": "You cannot take any damage until the beginning of your next turn." },
+    { "id": 11, "name": "Webweaver", "actions": ["heroic"], "special_id": "ghost-spider_webweaver", "effect_text": "Swap 2 Threat cards in play." },
+    { "id": 12, "name": "Acrobatic Fighting", "actions": ["attack"], "special_id": "ghost-spider_acrobatic_fighting", "effect_text": "Defeat all T in your Location." }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "diversion",
+    "name": "Diversion",
+    "heroic_req": 3,
+    "id_internal": "diversion",
+    "short_effect": "No Win",
+    "effect_text": "As long as this Threat is in play, Heroes cannot defeat Bullseye nor win the game by any means."
+  },
+  {
+    "id": "diversion",
+    "name": "Diversion",
+    "heroic_req": 3,
+    "id_internal": "diversion",
+    "short_effect": "No Win",
+    "effect_text": "As long as this Threat is in play, Heroes cannot defeat Bullseye nor win the game by any means."
+  },
+  {
+    "id": "hiding_place",
+    "name": "Hiding Place",
+    "heroic_req": 3,
+    "id_internal": "hiding_place",
+    "short_effect": "No DMG",
+    "effect_text": "If Bullseye is in this Location, he cannot take any damage."
+  },
+  {
+    "id": "hiding_place",
+    "name": "Hiding Place",
+    "heroic_req": 3,
+    "id_internal": "hiding_place",
+    "short_effect": "No DMG",
+    "effect_text": "If Bullseye is in this Location, he cannot take any damage."
+  },
+  {
+    "id": "striking_unseen",
+    "name": "Striking Unseen",
+    "heroic_req": 3,
+    "id_internal": "striking_unseen",
+    "short_effect": "+1 DMG",
+    "effect_text": "Heroes that take damage on this Location take 1 extra damage."
+  },
+  {
+    "id": "striking_unseen",
+    "name": "Striking Unseen",
+    "heroic_req": 3,
+    "id_internal": "striking_unseen",
+    "short_effect": "+1 DMG",
+    "effect_text": "Heroes that take damage on this Location take 1 extra damage."
+  }
+]

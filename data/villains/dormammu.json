@@ -1,0 +1,26 @@
+{
+  "name": "Dormammu",
+  "internal_id": "dormammu",
+  "health_map": {
+    "2": 6,
+    "3": 9,
+    "4": 12
+  },
+  "plot_name": "Ritual Track",
+  "plot_max": 20,
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": true, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 1}, "right": {"thugs": 1, "civilians": 1}, "center": {"thugs": 1, "civilians": 1}} },
+    { "id": 2, "move": 1, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 2}} },
+    { "id": 3, "move": 1, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 2}} },
+    { "id": 4, "move": 2, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 2}} },
+    { "id": 5, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 2}} },
+    { "id": 6, "move": 3, "bam": false, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 1}, "right": {"thugs": 1, "civilians": 1}, "center": {"thugs": 1, "civilians": 1}} },
+    { "id": 7, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 2}} },
+    { "id": 8, "move": 5, "bam": true, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 1}, "right": {"thugs": 1, "civilians": 1}, "center": {"thugs": 1, "civilians": 1}} },
+    { "id": 9, "move": 3, "bam": false, "trigger": true, "special_id": "ritual", "display_name": "Ritual", "effect_text": "Increase the Ritual Track by the number of C and T in Dormammu's Location.", "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 1}} },
+    { "id": 10, "move": 3, "bam": false, "trigger": true, "special_id": "ritual", "display_name": "Ritual", "effect_text": "Increase the Ritual Track by the number of C and T in Dormammu's Location.", "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 1}} },
+    { "id": 11, "move": 3, "bam": false, "trigger": true, "special_id": "ritual", "display_name": "Ritual", "effect_text": "Increase the Ritual Track by the number of C and T in Dormammu's Location.", "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 1}} },
+    { "id": 12, "move": 3, "bam": false, "trigger": true, "special_id": "ritual", "display_name": "Ritual", "effect_text": "Increase the Ritual Track by the number of C and T in Dormammu's Location.", "add": {"left": {"thugs": 1}, "right": {"thugs": 1}, "center": {"thugs": 1}} }
+  ]
+}
+

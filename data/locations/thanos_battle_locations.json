@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "name": "Sanctuary", 
+    "capacity": 3, 
+    "start_thugs": 0, 
+    "start_civs": 3, 
+    "end_effect": { 
+      "logic_key": "move_anywhere", 
+      "text": "You may move to any other Location." 
+    }, 
+    "short_effect": "Move\nAnywhere" 
+  },
+  { 
+    "id": 1, 
+    "name": "Avengers Mansion", 
+    "capacity": 3, 
+    "start_thugs": 0, 
+    "start_civs": 3, 
+    "end_effect": { 
+      "logic_key": "heal_3", 
+      "text": "You may draw cards until you have 3 in your hand." 
+    }, 
+    "short_effect": "Heal Up\n3 Cards" 
+  },
+  { 
+    "id": 2, 
+    "name": "Wakanda Fields", 
+    "capacity": 5, 
+    "start_thugs": 0, 
+    "start_civs": 5, 
+    "end_effect": { 
+      "logic_key": "token_from_heroes", 
+      "text": "You may gain 1 ❖ token for each other Hero in this Location." 
+    }, 
+    "short_effect": "+❖ token\n/Hero Here" 
+  },
+  { 
+    "id": 3, 
+    "name": "Thanos' Palace", 
+    "capacity": 4, 
+    "start_thugs": 0, 
+    "start_civs": 4, 
+    "end_effect": { 
+      "logic_key": "discard_for_tokens", 
+      "text": "You may discard 1 card from your hand to the bottom of your deck to gain 2 ✸ tokens." 
+    }, 
+    "short_effect": "Discard 1\n+2✸ tokens" 
+  },
+  { 
+    "id": 4, 
+    "name": "Titan", 
+    "capacity": 5, 
+    "start_thugs": 0, 
+    "start_civs": 5, 
+    "end_effect": { 
+      "logic_key": "move_thanos", 
+      "text": "You may move Thanos to this Location." 
+    }, 
+    "short_effect": "Move\nThanos" 
+  },
+  { 
+    "id": 5, 
+    "name": "Quantum Tunneling", 
+    "capacity": 4, 
+    "start_thugs": 0, 
+    "start_civs": 4, 
+    "end_effect": { 
+      "logic_key": "swap_the_storyline", 
+      "text": "You may swap the position of any 2 Hero cards of your choice in the Storyline." 
+    }, 
+    "short_effect": "Pick Your\nActions" 
+  }
+]

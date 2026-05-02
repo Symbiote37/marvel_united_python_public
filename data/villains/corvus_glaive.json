@@ -1,0 +1,24 @@
+{
+  "name": "Corvus Glaive",
+  "internal_id": "corvus_glaive",
+  "health_map": {
+    "2": 5,
+    "3": 8,
+    "4": 11
+  },
+  "master_plan": [
+    { "id": 1, "move": 0, "bam": true, "trigger": false },
+    { "id": 2, "move": 1, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 3, "move": 1, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 4, "move": 2, "bam": true, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 5, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 6, "move": 3, "bam": false, "trigger": true, "add": {"left": {"civilians": 2}, "right": {"civilians": 2}, "center": {"civilians": 1}} },
+    { "id": 7, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 1}} },
+    { "id": 8, "move": 5, "bam": false, "trigger": true, "add": {"left": {"thugs": 1, "civilians": 1}, "right": {"thugs": 1, "civilians": 1}, "center": {"thugs": 1, "civilians": 1}} },
+    { "id": 9, "move": "cw", "bam": false, "trigger": false, "special_id": "glaive_attack", "display_name": "Glaive Attack", "effect_text": "Move clockwise to the next Location with only 1 Hero and deal 2 damage to them. If there is no such Location, do not move and deal one damage to each Hero." },
+    { "id": 10, "move": "cw", "bam": false, "trigger": false, "special_id": "glaive_attack", "display_name": "Glaive Attack", "effect_text": "Move clockwise to the next Location with only 1 Hero and deal 2 damage to them. If there is no such Location, do not move and deal one damage to each Hero." },
+    { "id": 11, "move": "cw", "bam": false, "trigger": false, "special_id": "slaughter", "display_name": "Slaughter", "effect_text": "Deal 1 damage to each Hero in Corvus Glaive's Location." },
+    { "id": 12, "move": "cw", "bam": false, "trigger": false, "special_id": "slaughter", "display_name": "Slaughter", "effect_text": "Deal 1 damage to each Hero in Corvus Glaive's Location." }
+  ]
+}
+

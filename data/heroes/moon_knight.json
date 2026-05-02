@@ -1,0 +1,18 @@
+{
+  "internal_id": "moon_knight",
+  "name": "Moon Knight",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "attack"] },
+    { "id": 4, "actions": ["heroic"] },
+    { "id": 5, "actions": ["heroic", "heroic"] },
+    { "id": 6, "actions": ["heroic", "attack"] },
+    { "id": 7, "actions": ["attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Khonshu's Power", "actions": ["move"], "special_id": "moon_knight_khonshu_power", "auto_trigger": true, "effect_text": "❖ for each of your Special Effect cards in the Storyline (including this one)." },
+    { "id": 11, "name": "Moon Knight's Suit", "actions": ["heroic"], "special_id": "moon_knight_suit", "auto_trigger": true, "effect_text": "Until the beginning of your next turn, if you take damage, ignore it and move to any Location instead." },
+    { "id": 12, "name": "Dissociative Identity Disorder", "actions": ["attack", "attack"], "special_id": "moon_knight_", "auto_trigger": true, "effect_text": "Shuffle your hand and your deck together. Draw 3 cards." }
+  ]
+}

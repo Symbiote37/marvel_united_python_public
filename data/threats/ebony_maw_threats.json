@@ -1,0 +1,50 @@
+[
+  {
+    "id": "debilitating_torture",
+    "name": "Debilitating Torture",
+    "heroic_req": 3,
+    "id_internal": "debilitating_torture",
+    "short_effect": "No Prev. ACT",
+    "effect_text": "Heroes starting their turn in this Location, do not get actions from the previous Hero card in the Storyline."
+  },
+  {
+    "id": "debilitating_torture",
+    "name": "Debilitating Torture",
+    "heroic_req": 3,
+    "id_internal": "debilitating_torture",
+    "short_effect": "No Prev. ACT",
+    "effect_text": "Heroes starting their turn in this Location, do not get actions from the previous Hero card in the Storyline."
+  },
+  {
+    "id": "persuasion",
+    "name": "Persuasion",
+    "heroic_req": 3,
+    "trigger_id": "persuasion",
+    "short_effect": "+1 Crisis",
+    "effect_text": "Each Hero in this Location takes 1 Crisis token. If there are no Heroes here, play another Master Plan card after resolving the current one."
+  },
+  {
+    "id": "persuasion",
+    "name": "Persuasion",
+    "heroic_req": 3,
+    "trigger_id": "persuasion",
+    "short_effect": "+1 Crisis",
+    "effect_text": "Each Hero in this Location takes 1 Crisis token. If there are no Heroes here, play another Master Plan card after resolving the current one."
+  },
+  {
+    "id": "telekinesis",
+    "name": "Telekinesis",
+    "heroic_req": 3,
+    "trigger_id": "telekinesis",
+    "short_effect": "+1 DMG/ADJ",
+    "effect_text": "Deal 1 damage to each Hero in this and adjacent Locations."
+  },
+  {
+    "id": "telekinesis",
+    "name": "Telekinesis",
+    "heroic_req": 3,
+    "trigger_id": "telekinesis",
+    "short_effect": "+1 DMG/ADJ",
+    "effect_text": "Deal 1 damage to each Hero in this and adjacent Locations."
+  }
+]

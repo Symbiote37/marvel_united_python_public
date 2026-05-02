@@ -1,0 +1,18 @@
+{
+  "internal_id": "doctor_strange",
+  "name": "Doctor Strange",
+  "deck": [
+    { "id": 1, "actions": ["move", "heroic"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["heroic", "heroic"] },
+    { "id": 5, "actions": ["attack"] },
+    { "id": 6, "actions": ["wild"] },
+    { "id": 7, "actions": ["wild", "wild"] },
+    { "id": 8, "name": "Book of Vishanti", "actions": ["heroic"], "special_id": "doctor_strange_book_of_vishanti", "auto_trigger": true, "effect_text": "You may search the Master Plan deck, remove 1 card from the game, then reshuffle the deck." },
+    { "id": 9, "name": "Cloak of Levitation", "actions": ["wild"], "special_id": "doctor_strange_cloak_of_levitation", "effect_text": "Either ✸ in an adjacent Location or ➡." },
+    { "id": 10, "name": "Dimensional Portal", "actions": ["wild"], "special_id": "doctor_strange_dimensional_portal", "effect_text": "Move to any Location." },
+    { "id": 11, "name": "Eye of Agamotto", "actions": ["wild"], "special_id": "doctor_strange_eye_of_agamotto", "auto_trigger": true, "effect_text": "You may take any Master Plan card from the Storyline and reshuffle it into the Master Plan deck." },
+    { "id": 12, "name": "Orb of Agamotto", "actions": [], "special_id": "doctor_strange_orb_of_agamotto", "auto_trigger": true, "effect_text": "As long as this card is faceup in the Storyline, the top card of the Master Plan deck is revealed." }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "internal_id": "captain_marvel",
+  "name": "Captain Marvel",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "move"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["heroic", "heroic"] },
+    { "id": 5, "actions": ["attack", "attack"] },
+    { "id": 6, "actions": ["attack", "attack"] },
+    { "id": 7, "actions": ["wild"] },
+    { "id": 8, "actions": ["wild", "wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Photon Blast", "actions": ["attack"], "special_id": "cap_photon_blast", "effect_text": "✸ ✸ in one adjacent Location." },
+    { "id": 11, "name": "Photon Blast", "actions": ["attack"], "special_id": "cap_photon_blast", "effect_text": "✸ ✸ in one adjacent Location." },
+    { "id": 12, "name": "Photon Blast", "actions": ["attack"], "special_id": "cap_photon_blast", "effect_text": "✸ ✸ in one adjacent Location." }
+  ]
+}

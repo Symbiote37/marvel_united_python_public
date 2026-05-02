@@ -1,0 +1,18 @@
+{
+  "internal_id": "spider-man_2099",
+  "name": "Spider-Man 2099",
+  "deck": [
+    { "id": 1, "actions": ["move"] },
+    { "id": 2, "actions": ["move", "heroic"] },
+    { "id": 3, "actions": ["move", "heroic"] },
+    { "id": 4, "actions": ["move", "attack"] },
+    { "id": 5, "actions": ["move", "attack"] },
+    { "id": 6, "actions": ["heroic"] },
+    { "id": 7, "actions": ["attack", "attack"] },
+    { "id": 8, "actions": ["wild"] },
+    { "id": 9, "actions": ["wild", "wild"] },
+    { "id": 10, "name": "Lyla Assistance", "actions": ["move", "attack"], "special_id": "spider-man_2099_lyla_assistance", "effect_text": "★ in any Location." },
+    { "id": 11, "name": "Enhanced Senses", "actions": ["heroic"], "special_id": "invulnerability", "auto_trigger": true, "effect_text": "You cannot take damage until the beginning of your next turn." },
+    { "id": 12, "name": "Claws", "actions": ["attack"], "special_id": "spider-man_2099_claws", "effect_text": "✸ ✸ against a single enemy. Damage you deal this turn can't be reduced." }
+  ]
+}

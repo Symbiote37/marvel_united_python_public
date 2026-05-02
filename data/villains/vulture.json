@@ -1,0 +1,23 @@
+{
+  "name": "Vulture",
+  "internal_id": "vulture",
+  "health_map": {
+    "2": 3,
+    "3": 6,
+    "4": 8
+  },
+  "master_plan": [
+    { "id": 1, "move": 3, "bam": false, "trigger": false, "special_id": "heist_plan", "display_name": "Heist Plan", "effect_text": "If this is not the first Heist Plan card in the Storyline, steal 1 Crisis token from each Location without Heroes." },
+    { "id": 2, "move": 3, "bam": false, "trigger": false, "special_id": "heist_plan", "display_name": "Heist Plan", "effect_text": "If this is not the first Heist Plan card in the Storyline, steal 1 Crisis token from each Location without Heroes." },
+    { "id": 3, "move": 3, "bam": false, "trigger": false, "special_id": "heist_plan", "display_name": "Heist Plan", "effect_text": "If this is not the first Heist Plan card in the Storyline, steal 1 Crisis token from each Location without Heroes." },
+    { "id": 4, "move": 3, "bam": false, "trigger": false, "special_id": "heist_plan", "display_name": "Heist Plan", "effect_text": "If this is not the first Heist Plan card in the Storyline, steal 1 Crisis token from each Location without Heroes." },
+    { "id": 5, "move": 1, "bam": false, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 6, "move": 1, "bam": false, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 0}} },
+    { "id": 7, "move": 2, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 8, "move": 2, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 0}} },
+    { "id": 9, "move": 4, "bam": true, "trigger": true, "add": {"left": {"civilians": 1}, "right": {"civilians": 1}, "center": {"civilians": 2}} },
+    { "id": 10, "move": 4, "bam": true, "trigger": true, "add": {"left": {"thugs": 2}, "right": {"thugs": 2}, "center": {"thugs": 0}} },
+    { "id": 11, "move": 5, "bam": true, "trigger": false },
+    { "id": 12, "move": 5, "bam": false, "trigger": true, "add": {"left": {"thugs": 2, "civilians": 1}, "right": {"thugs": 2, "civilians": 1}, "center": { "civilians": 2}} }
+  ]
+}
