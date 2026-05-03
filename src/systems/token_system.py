@@ -89,6 +89,10 @@ class TokenSystem:
         
         amt_str = f" (+{multiplier})" if multiplier > 1 else ""
         engine.log.append(f" ✨ {hero.name} activated a {ICON.get(token_val, token_val)} token{amt_str}. ")
+        
+        # 🕸️ GENERIC HOOK: Broadcast that a token was explicitly cashed in
+        if hasattr(hero, 'process_triggers'):
+            hero.process_triggers("on_token_used", engine, token_type=pool_key)
         return True
 
     @staticmethod
@@ -155,11 +159,11 @@ class TokenSystem:
                 if MissionSystem.increment_mission(engine, "civilians"):
                     engine.log.append(f" {ICON['civilian']} Civilian Rescued! ")
                     
-                    if StatusSystem.has_status(hero, "man_without_fear"):
-                        hero.add_token("move")
-                        engine.log.append(Col.wrap(f"   ⚖️ MAN WITHOUT FEAR: Gained 1 {ICON['move']} token!", Col.RED))
-                    return True
+                    # 🚨 THE CLEAN FIX: Broadcast the rescue to the Bus
+                    from src.systems.special_abilities import SpecialAbilitySystem
+                    SpecialAbilitySystem.trigger_event(engine, hero, "on_civilian_rescued")
                     
+                    return True
         elif target_type == "t":
             loc.threat.heroic_req -= amount
             if loc.threat.heroic_req <= 0:
@@ -201,13 +205,13 @@ class TokenSystem:
                 if MissionSystem.increment_mission(engine, "thugs"):
                     engine.log.append(f" {ICON['thug']} {hero.name} defeated a Thug. ")
                     
-                    # ⚖️ Daredevil legacy logic (Still here as a standard status check)
-                    if StatusSystem.has_status(hero, "blind_justice"):
-                        hero.add_token("move")
-                        engine.log.append(Col.wrap(f"   ⚖️ BLIND JUSTICE: Gained 1 {ICON['move']} token!", Col.RED))
+                    # 🚨 THE CLEAN FIX: Broadcast the defeat to the Bus
+                    from src.systems.special_abilities import SpecialAbilitySystem
+                    SpecialAbilitySystem.trigger_event(engine, hero, "on_thug_defeated")
                     
-                    # 🕸️ GENERIC HOOK: Broadens to any registered listener
-                    hero.process_triggers("on_thug_defeat", engine)
+                    # 🕸️ GENERIC HOOK: Broadens to any registered listener (Legacy Support)
+                    if hasattr(hero, 'process_triggers'):
+                        hero.process_triggers("on_thug_defeat", engine)
                 
             return True
         return False

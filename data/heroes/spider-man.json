@@ -1,6 +1,18 @@
 {
   "internal_id": "spider-man",
   "name": "Spider-Man",
+  "secret_identity": "Peter Parker",
+  "accolades": {
+    "ultimate_spider_man": {
+      "required_keys": [
+        "spider-man_great_power", 
+        "spider-man_great_responsibility", 
+        "spider-man_webslinging"
+      ],
+      "title": "FRIENDLY NEIGHBORHOOD HERO",
+      "text": "Utilizing his entire arsenal of abilities, Spider-Man swung across the battlefield, clearing threats and saving lives with perfect execution."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

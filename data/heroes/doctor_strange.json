@@ -1,6 +1,20 @@
 {
   "internal_id": "doctor_strange",
   "name": "Doctor Strange",
+  "secret_identity": "Stephen Strange",
+  "accolades": {
+    "ultimate_doctor_strange": {
+      "required_keys": [
+        "doctor_strange_book_of_vishanti",
+        "doctor_strange_cloak_of_levitation",
+        "doctor_strange_dimensional_portal",
+        "doctor_strange_eye_of_agamotto",
+        "doctor_strange_orb_of_agamotto"
+      ],
+      "title": "SORCERER SUPREME",
+      "text": "Wielding an unmatched arsenal of mystic arts, Doctor Strange bent space, time, and reality itself to completely unravel the villain's grand design."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move", "heroic"] },
     { "id": 2, "actions": ["move", "heroic"] },

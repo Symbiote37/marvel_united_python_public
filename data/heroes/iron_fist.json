@@ -1,6 +1,14 @@
 {
   "internal_id": "iron_fist",
   "name": "Iron Fist",
+  "secret_identity": "Danny Rand",
+  "accolades": {
+    "ultimate_iron_fist": {
+      "threshold": 3,
+      "title": "THE IMMORTAL WEAPON",
+      "text": "Focusing his chi, Iron Fist unleashed devastating martial arts strikes across multiple fronts with flawless precision."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

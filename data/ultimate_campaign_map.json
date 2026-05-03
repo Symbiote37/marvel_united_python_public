@@ -84,6 +84,7 @@
             "description": "Red Skull is seeking the Tesseract.",
             "villain": "red_skull",
             "mode": "standard",
+            "location_set": "core_locations.json",
             "prerequisites": ["zemo_01"], 
             "rewards": {
                 "keys": 1,
@@ -96,6 +97,7 @@
             "description": "The machine evolution has begun.",
             "villain": "ultron",
             "mode": "standard",
+            "location_set": "core_locations.json",
             "prerequisites": ["zemo_01"], 
             "rewards": {
                 "unlock_heroes": ["vision"]
@@ -106,6 +108,7 @@
             "description": "The God of Mischief plots his throne.",
             "villain": "loki",
             "mode": "standard",
+            "location_set": "asgard_locations.json",
             "prerequisites": ["zemo_01"], 
             "rewards": {
                 "unlock_heroes": ["thor"]
@@ -116,6 +119,7 @@
             "description": "Hela rises to claim the Nine Realms.",
             "villain": "hela",
             "mode": "standard",
+            "location_set": "asgard_locations.json",
             "prerequisites": ["loki_01"], 
             "rewards": {
                 "unlock_heroes": ["valkyrie"]
@@ -126,6 +130,7 @@
             "description": "Loki has one last trick up his sleeve.",
             "villain": "loki",
             "mode": "standard",
+            "location_set": "asgard_locations.json",
             "prerequisites": ["hela_01"], 
             "rewards": {
                 "keys": 1,
@@ -138,6 +143,7 @@
             "description": "Ultron has breached the Avengers' firewalls.",
             "villain": "ultron",
             "mode": "standard",
+            "location_set": "core_locations.json",
             "prerequisites": ["red_skull_01"], 
             "rewards": {
                 "keys": 1,
@@ -150,6 +156,7 @@
             "description": "Rhino is breaking through the barriers.",
             "villain": "rhino",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": ["red_skull_01"], 
             "rewards": {
                 "shields": 1,
@@ -161,6 +168,7 @@
             "description": "Black Dwarf brings the fight to Wakanda.",
             "villain": "black_dwarf",
             "mode": "standard",
+            "location_set": "infinity_gauntlet_locations.json",
             "prerequisites": ["red_skull_01"], 
             "rewards": {
                 "unlock_heroes": ["captain_marvel"]
@@ -171,6 +179,7 @@
             "description": "Taskmaster has mimicked your every move.",
             "villain": "taskmaster",
             "mode": "standard",
+            "location_set": "core_locations.json",
             "prerequisites": ["red_skull_01"], 
             "rewards": {
                 "unlock_heroes": ["spider-woman"]
@@ -181,6 +190,7 @@
             "description": "Killmonger challenges the throne.",
             "villain": "killmonger",
             "mode": "standard",
+            "location_set": "black_panther_locations.json",
             "prerequisites": ["ultron_02"], 
             "rewards": {
                 "blue_bolts": 1,
@@ -194,6 +204,7 @@
             "description": "Red Skull wields the terrifying power of the Cosmic Cube.",
             "villain": "red_skull",
             "mode": "standard",
+            "location_set": "core_locations.json",
             "prerequisites": ["ultron_02"], 
             "rewards": {
                 "keys": 1,
@@ -206,6 +217,7 @@
             "description": "Ebony Maw is breaking the minds of Earth's defenders.",
             "villain": "ebony_maw",
             "mode": "standard",
+            "location_set": "infinity_gauntlet_locations.json",
             "prerequisites": ["ultron_02"], 
             "rewards": {
                 "keys": 1,
@@ -218,6 +230,7 @@
             "description": "Proxima Midnight leaves no survivors in her hunt for the Stones.",
             "villain": "proxima_midnight",
             "mode": "standard",
+            "location_set": "infinity_gauntlet_locations.json",
             "prerequisites": ["ebony_maw_01"], 
             "rewards": {
                 "unlock_heroes": ["drax", "gamora", "groot", "rocket"]
@@ -228,6 +241,7 @@
             "description": "The symbiote slaughter has reached catastrophic levels.",
             "villain": "carnage",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": ["proxima_midnight_01"], 
             "rewards": {
                 "shields": 1,
@@ -239,6 +253,7 @@
             "description": "Ronan the Accuser has come to pass judgment on Earth.",
             "villain": "ronan",
             "mode": "standard",
+            "location_set": "gotg_remix_locations.json",
             "prerequisites": ["proxima_midnight_01"], 
             "rewards": {
                 "blue_bolts": 1,
@@ -251,6 +266,7 @@
             "description": "Ronan unleashes the full destructive might of the Kree empire.",
             "villain": "ronan",
             "mode": "standard",
+            "location_set": "gotg_remix_locations.json",
             "prerequisites": ["proxima_midnight_01"], 
             "rewards": {
                 "keys": 1,
@@ -274,6 +290,7 @@
             "description": "The Mad Titan's chief tactician is dismantling our defenses.",
             "villain": "corvus_glaive",
             "mode": "standard",
+            "location_set": "infinity_gauntlet_locations.json",
             "prerequisites": ["proxima_midnight_01"], 
             "rewards": {
                 "unlock_heroes": ["nebula"]
@@ -305,6 +322,7 @@
             "description": "Fisk has tightened his absolute grip on the city's criminal empire.",
             "villain": "kingpin",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": ["modok_01"], 
             "rewards": {
                 "unlock_heroes": ["punisher"]
@@ -327,6 +345,7 @@
             "description": "Taskmaster knows your next move before you even make it.",
             "villain": "taskmaster",
             "mode": "standard",
+            "location_set": "core_locations.json",
             "prerequisites": ["kingpin_02"], 
             "rewards": {
                 "blue_bolts": 1,
@@ -339,6 +358,7 @@
             "description": "The symbiote has fully bonded, and its hunger is insatiable.",
             "villain": "venom",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": ["modok_01"], 
             "rewards": {
             }
@@ -348,6 +368,7 @@
             "description": "Hela's undead army threatens to swallow all of Midgard.",
             "villain": "hela",
             "mode": "standard",
+            "location_set": "asgard_locations.json",
             "prerequisites": ["venom_02"], 
             "rewards": {
                 "crosses": 1,
@@ -369,6 +390,7 @@
             "name": "Oscorp Sabotage",
             "description": "Green Goblin is raining fire on the city.",
             "villain": "green_goblin",
+            "location_set": "spider_verse_locations.json",
             "mode": "standard",
             "prerequisites": [],
             "rewards": {
@@ -381,6 +403,7 @@
             "description": "Sandman is suffocating Central Park.",
             "villain": "sandman",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": [],
             "rewards": {
                 "shields": 1,
@@ -394,6 +417,7 @@
             "description": "Electro is overloading the power grid.",
             "villain": "electro",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": [],
             "rewards": {
                 "blue_bolts": 1,
@@ -407,6 +431,7 @@
             "description": "Doc Ock is stealing tech from Stark Labs.",
             "villain": "doctor_octopus",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": [],
             "rewards": {
                 "crosses": 1,
@@ -419,6 +444,7 @@
             "description": "Bullseye never misses.",
             "villain": "bullseye",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": {
                 "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
             },
@@ -431,6 +457,7 @@
             "description": "The contract is out on the heroes.",
             "villain": "bullseye",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": ["bullseye_01"],
             "rewards": {
                 "crosses": 1,
@@ -442,6 +469,7 @@
             "description": "Kraven is stalking his prey.",
             "villain": "kraven",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": {
                 "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
             },
@@ -455,6 +483,7 @@
             "description": "Vulture is making a getaway.",
             "villain": "vulture",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": {
                 "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
             },
@@ -468,6 +497,7 @@
             "description": "Rhino is rampaging through downtown.",
             "villain": "rhino",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": {
                 "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
             },
@@ -480,6 +510,7 @@
             "description": "Don't believe what you see.",
             "villain": "mysterio",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": {
                 "any_of": ["sandman_01", "electro_01", "doc_ock_01"]
             },
@@ -493,6 +524,7 @@
             "description": "Osborn is taking over the city.",
             "villain": "green_goblin",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": {
                 "any_of": ["kraven_01", "vulture_01", "rhino_01", "mysterio_01"]
             },
@@ -505,6 +537,7 @@
             "description": "Doc Ock is upgrading his arms.",
             "villain": "doctor_octopus",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": ["green_goblin_02"],
             "rewards": {
                 "crosses": 3,
@@ -517,6 +550,7 @@
             "description": "The symbiote is out for blood.",
             "villain": "venom",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": {
                 "any_of": ["kraven_01", "vulture_01", "rhino_01", "mysterio_01"]
             },
@@ -530,6 +564,7 @@
             "description": "Absolute chaos in the streets.",
             "villain": "carnage",
             "mode": "standard",
+            "location_set": "spider_verse_locations.json",
             "prerequisites": ["venom_01"],
             "rewards": {
                 "unlock_heroes": ["venom"]

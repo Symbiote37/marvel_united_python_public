@@ -1,6 +1,18 @@
 {
   "internal_id": "ms_marvel",
   "name": "Ms Marvel",
+  "secret_identity": "Kamala Khan",
+  "accolades": {
+    "ultimate_ms_marvel": {
+      "required_keys": [
+        "ms_marvel_elongation",
+        "ms_marvel_morphogenetics",
+        "ms_marvel_appearance_alteration"
+      ],
+      "title": "EMBIGGEN!",
+      "text": "Kamala adapted to every conceivable threat, stretching her reach, shifting her form, and rewriting the timeline to pull off the ultimate combo."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

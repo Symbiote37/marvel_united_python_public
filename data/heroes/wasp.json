@@ -1,6 +1,18 @@
 {
   "internal_id": "wasp",
   "name": "Wasp",
+  "secret_identity": "Hope Van Dyne",
+  "accolades": {
+    "ultimate_wasp": {
+      "required_keys": [
+        "wasp_wings",
+        "wasp_energy_projection",
+        "invulnerability"
+      ],
+      "title": "THE WINSOME WASP",
+      "text": "Untouchable and unstoppable, Wasp mobilized the entire squad, evaded every counterattack, and delivered pinpoint energy blasts."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

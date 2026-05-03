@@ -1,6 +1,18 @@
 {
   "internal_id": "adam_warlock",
   "name": "Adam Warlock",
+  "secret_identity": "Him",
+  "accolades": {
+    "ultimate_adam_warlock": {
+      "required_keys": [
+        "adam_warlock_quantum_magic",
+        "adam_warlock_immortality",
+        "adam_warlock_avatar_of_life"
+      ],
+      "title": "MASTER OF DESTINY",
+      "text": "Manipulating the very threads of fate, Adam Warlock completely dismantled the villain's master plan while proving utterly unkillable."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "move"] },

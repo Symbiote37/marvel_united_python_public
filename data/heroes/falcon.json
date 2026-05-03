@@ -1,6 +1,14 @@
 {
   "internal_id": "falcon",
   "name": "Falcon",
+  "secret_identity": "Sam Wilson",
+  "accolades": {
+    "ultimate_falcon": {
+      "threshold": 3,
+      "title": "DEATH FROM ABOVE",
+      "text": "Falcon commanded the skies, executing pinpoint Air Strikes across multiple locations to keep the enemy completely pinned down."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

@@ -1,6 +1,18 @@
 {
   "internal_id": "war_machine",
   "name": "War Machine",
+  "secret_identity": "James Rhodes",
+  "accolades": {
+    "ultimate_war_machine": {
+      "required_keys": [
+        "war_machine_beam_weapon",
+        "war_machine_rocket_launcher",
+        "war_machine_strafing_gun"
+      ],
+      "title": "HEAVY ARTILLERY",
+      "text": "Rhodey unleashed his complete arsenal, devastating multiple zones simultaneously with a relentless barrage of heavy ordnance."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

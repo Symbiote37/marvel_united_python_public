@@ -155,7 +155,22 @@ class ChallengeSystem:
                 if hero.exposure_tokens >= 3:
                     hero.is_exposed = True
                     hero.force_facedown_exposure = True
-                    engine.log.append(Col.wrap(f" 🚨 IDENTITY EXPOSED! {hero.name} is swarmed by the press! ", Col.RED + Col.BOLD))
+                    
+                    # 🎭 THE SECRET IDENTITY HOOK
+                    real_name = getattr(hero, 'raw_data', {}).get("secret_identity")
+                    alias_exposed = False
+                    
+                    if real_name and hero.name != real_name:
+                        old_name = hero.name
+                        hero.name = real_name
+                        engine.log.append(Col.wrap(f" 📸 FRONT PAGE NEWS: The press has revealed {old_name}'s secret identity as {real_name}!", Col.RED + Col.BOLD))
+                        alias_exposed = True
+                    else:
+                        engine.log.append(Col.wrap(f" 🚨 EXPOSED! {hero.name} is swarmed by the press! ", Col.RED + Col.BOLD))
+                        
+                    # Standard Penalty
+                    if alias_exposed:
+                        engine.log.append(Col.wrap(f" ⚠️ The fallout hits {real_name} hard!", Col.YLW))
                     from src.systems.damage_system import DamageSystem
                     DamageSystem.deal_hero_damage(engine, hero, 1)
 

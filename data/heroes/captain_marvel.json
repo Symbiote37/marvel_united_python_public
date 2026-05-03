@@ -1,6 +1,14 @@
 {
   "internal_id": "captain_marvel",
   "name": "Captain Marvel",
+  "secret_identity": "Carol Danvers",
+    "accolades": {
+    "cap_photon_blast": {
+      "threshold": 3,
+      "title": "HIGHER, FURTHER, FASTER",
+      "text": "Captain Marvel went binary, devastating adjacent battlefields with relentless photon energy."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "move"] },

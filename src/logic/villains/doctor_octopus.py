@@ -210,6 +210,13 @@ class DoctorOctopusLogic(BaseVillainLogic):
             BaseVillainLogic._hit_sector(engine, loc_idx, 1, "Sandman's sandstorm", single_target=False)
 
         elif "vulture" in t_id:
+            # 🚨 THE FIX: Prevent loop-chasing by locking Vulture to the current Storyline clock
+            story_cards = getattr(engine.storyline, 'cards', engine.storyline) if hasattr(engine, 'storyline') else []
+            current_step = len(story_cards)
+            if getattr(threat, '_last_bam_step', -1) == current_step:
+                return
+            threat._last_bam_step = current_step
+
             # 1. Base Attack
             BaseVillainLogic._hit_sector(engine, loc_idx, 1, "Vulture's swoop", single_target=True)
 

@@ -1,6 +1,13 @@
 {
   "internal_id": "shang_chi",
   "name": "Shang Chi",
+  "accolades": {
+    "ultimate_shang_chi": {
+      "threshold": 3,
+      "title": "MASTER OF KUNG FU",
+      "text": "Striking with perfect rhythm, Shang-Chi flowed effortlessly through the enemy ranks, multiplying the team's momentum into an unstoppable assault."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move", "heroic"] },
     { "id": 2, "actions": ["move", "attack"] },

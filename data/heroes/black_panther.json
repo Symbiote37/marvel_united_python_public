@@ -1,6 +1,15 @@
 {
   "internal_id": "black_panther",
   "name": "Black Panther",
+  "secret_identity": "T'Challa",
+  "accolades": {
+    "ultimate_black_panther": {
+      "threshold": 3,
+      "title": "THE KING OF WAKANDA",
+      "text": "Black Panther fully utilized the vibranium Panther Habit, effortlessly generating resources and adapting to every phase of the battle."
+    }
+  },
+
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "move"] },

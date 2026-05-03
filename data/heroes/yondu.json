@@ -1,6 +1,17 @@
 {
   "internal_id": "yondu",
   "name": "Yondu",
+  "accolades": {
+    "ultimate_yondu": {
+      "required_keys": [
+        "yondu_turncoat",
+        "yondu_yaka_arrow_flurry",
+        "yondu_yaka_arrow_whirlwind"
+      ],
+      "title": "RAVAGER CAPTAIN",
+      "text": "With a single whistle, Yondu cleared the entire battlefield, turning enemy assets against themselves while his Yaka Arrow tore through the ranks."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

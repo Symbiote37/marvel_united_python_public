@@ -1,6 +1,18 @@
 {
   "internal_id": "spider-ham",
   "name": "Spider-Ham",
+  "secret_identity": "Peter Porker",
+  "accolades": {
+    "ultimate_spider_ham": {
+      "required_keys": [
+        "spider_ham_toony_web",
+        "spider_ham_toony_essence",
+        "spider_ham_toony_weapon"
+      ],
+      "title": "SPECTACULAR SPIDER-HAM",
+      "text": "Defying all laws of physics (and logic), Spider-Ham utilized pure cartoon nonsense to completely dismantle the villain's operation."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

@@ -1,6 +1,18 @@
 {
   "internal_id": "spider-man_2099",
   "name": "Spider-Man 2099",
+  "secret_identity": "Miguel O'Hara",
+  "accolades": {
+    "ultimate_spider_man_2099": {
+      "required_keys": [
+        "spider-man_2099_lyla_assistance",
+        "invulnerability",
+        "spider-man_2099_claws"
+      ],
+      "title": "MIGUEL O'HARA",
+      "text": "Striking from the future, Spider-Man 2099 utilized advanced AI support and razor-sharp claws to shred through the enemy defenses."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

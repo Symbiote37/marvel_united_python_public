@@ -184,3 +184,43 @@ class ZemoLogic(BaseVillainLogic):
         MissionSystem.increment_mission(engine, "threats")
         engine.log.append(Col.wrap(f" 🕊️ DIPLOMACY: {loc.threat.name} has been outmaneuvered!", Col.GRN))
         return True
+        
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Helmut Zemo is a tactical genius who doesn't just want to \n"
+                "defeat the Avengers; he wants to humiliate them. He leads \n"
+                "the Masters of Evil, focusing on sabotage and disruption."
+            ),
+            "rules": (
+                "\"Tactical Sabotage\"\n"
+                "Zemo's primary weapon is the Crisis token. At the end of \n"
+                "your turn, any Crisis tokens you hold MUST be used to cover \n"
+                "action symbols on the card you just played. \n\n"
+                "Covered symbols grant NO actions. This completely severs \n"
+                "the team's communication, leaving the next hero with nothing \n"
+                "to inherit for their turn."
+            ),
+            "bam": (
+                "\"Collateral Targeting\"\n"
+                "Zemo strikes with surgical precision. He deals 1 damage to \n"
+                "a single hero in his sector, but the psychological impact \n"
+                "ripples outward, immediately placing a Crisis token on the \n"
+                "nearest hero to disrupt their upcoming turn."
+            ),
+            "overflow": (
+                "\"Spreading Panic\"\n"
+                "When a sector overruns, Zemo capitalizes on the chaos. \n"
+                "The hero stationed nearest to the overflowing location is \n"
+                "immediately hit with a Crisis token."
+            ),
+            "threats": (
+                "The Masters of Evil have assembled.\n"
+                "- Unified Front: While active, no Henchmen can take damage.\n"
+                "- The Roster: Beetle, Fixer, Goliath, Moonstone, and Screaming Mimi.\n"
+                "- Tactical Weakness: Many of these elites can bypass damage immunity \n"
+                "  if you coordinate 2 to 3 Heroic (★) actions in a single turn."
+            )
+        }

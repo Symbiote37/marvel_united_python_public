@@ -1,6 +1,17 @@
 {
   "internal_id": "miles_morales",
   "name": "Miles Morales",
+  "accolades": {
+    "ultimate_miles": {
+      "required_keys": [
+        "invulnerability",
+        "miles_morales_venom_strike",
+        "miles_morales_web"
+      ],
+      "title": "DOING MY OWN THING",
+      "text": "Fading into the shadows, locking down the enemy, and delivering devastating Venom Strikes, Miles completely controlled the pace of the battle."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

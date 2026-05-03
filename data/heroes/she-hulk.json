@@ -1,6 +1,14 @@
 {
   "internal_id": "she-hulk",
   "name": "She-Hulk",
+  "secret_identity": "Jennifer Walters",
+  "accolades": {
+    "ultimate_she_hulk": {
+      "threshold": 3,
+      "title": "SENSATIONAL",
+      "text": "Jennifer Walters absolutely dominated the court and the battlefield, chaining her transformations together for exponential damage."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move", "attack"] },
     { "id": 2, "actions": ["heroic"] },

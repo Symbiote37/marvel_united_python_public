@@ -12,14 +12,17 @@ class VillainSystem:
         from src.systems.status_system import StatusSystem
         loc = engine.locations[loc_idx]
 
-        # Generic Reinforcement Block 
+        # 🛑 GATE 1: Destroyed Locations (Doctor Octopus mechanics)
+        if getattr(loc, 'is_destroyed', False):
+            return None
+
+        # 🛑 GATE 2: Spymaster Block (Generic Reinforcement Block)
         if StatusSystem.has_status(loc, "block_reinforcements"): 
-            engine.log.append(Col.wrap(f" {loc.name} is secured against reinforcements!", Col.CYAN)) 
+            engine.log.append(Col.wrap(f" 🛡️ SPYMASTER: {loc.name} is secured against reinforcements!", Col.CYAN)) 
             return 0 
             
         # Hand off the actual math and internal bouncer-logic to the Location entity
         return loc.add_figures(engine, thugs=thugs, civs=civs)
-
 
     @staticmethod
     def _check_turn_skipped(engine, forced_extra_card):

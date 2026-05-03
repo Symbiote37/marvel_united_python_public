@@ -1,6 +1,17 @@
 {
   "internal_id": "luke_cage",
   "name": "Luke Cage",
+  "accolades": {
+    "ultimate_luke_cage": {
+      "required_keys": [
+        "luke_cage_superhuman_strength",
+        "invulnerability",
+        "luke_cage_healing_factor"
+      ],
+      "title": "HERO FOR HIRE",
+      "text": "Absolutely unbreakable, Luke Cage tanked the heaviest hits, rapidly healed his wounds, and responded with terrifying superhuman strength."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

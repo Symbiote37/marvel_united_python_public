@@ -105,6 +105,10 @@ class ActionSystem:
         elif "execute" in selected: selected["execute"](engine)
         elif selected["id"] == "t_m":
             TokenSystem.apply_threat_token(engine, loc, "move")
+        # 🚨 THE BUS BROADCAST: Radar Sense needs this!
+        if selected["id"] in ["mc", "mcc"]:
+            from src.systems.special_abilities import SpecialAbilitySystem
+            SpecialAbilitySystem.trigger_event(engine, hero, "on_location_entered")
 
         # 🚨 THE FIX: Inject the mobility sensor here!
         if selected["id"] in ["mc", "mcc"]:
@@ -297,7 +301,6 @@ class ActionSystem:
         return False # Fail closed to prevent 'Ghost' targets
 
     @staticmethod
-    @staticmethod
     def _handle_targeted_attack(engine, hero, target_idx, damage=1, burst_mode=False):
         # ✅ Clean local imports grouped at the top of the method
         from src.logic.registry import get_villain_logic
@@ -370,6 +373,7 @@ class ActionSystem:
                             DamageSystem.deal_enemy_damage(engine, target_loc.threat, is_action=True)
                 elif selected["id"] == "m":
                     TokenSystem.apply_thug_defeat(engine, target_loc, hero, amount=1)
+                    
                     if burst_mode:
                         engine.log.append(Col.wrap(f"   💥 {thug_name} obliterated! ({remaining_dmg - spent_dmg} Damage Overkill) ", Col.DARK_GRAY))
                 elif selected["id"] == "t_a":

@@ -1,6 +1,18 @@
 {
   "internal_id": "ghost-spider",
   "name": "Ghost Spider",
+  "secret_identity": "Gwen Stacy",
+  "accolades": {
+    "ultimate_ghost_spider": {
+      "required_keys": [
+        "invulnerability",
+        "ghost-spider_webweaver",
+        "ghost-spider_acrobatic_fighting"
+      ],
+      "title": "GWENOMOUS AGILITY",
+      "text": "Untouchable and hyper-agile, Ghost Spider effortlessly manipulated the board's threats before clearing the zone with flawless acrobatics."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

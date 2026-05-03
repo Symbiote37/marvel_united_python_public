@@ -1,6 +1,13 @@
 {
   "internal_id": "shuri",
   "name": "Shuri",
+  "accolades": {
+    "ultimate_shuri": {
+      "threshold": 3,
+      "title": "WAKANDAN PRODIGY",
+      "text": "Operating miles ahead of the competition, Shuri continuously supplied the team with cutting-edge tech and vital tactical resources."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

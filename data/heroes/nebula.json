@@ -1,6 +1,17 @@
 {
   "internal_id": "nebula",
   "name": "Nebula",
+  "accolades": {
+    "ultimate_nebula": {
+      "required_keys": [
+        "draw_up_to_3",
+        "nebula_electroshock_batons",
+        "nebula_image_projection"
+      ],
+      "title": "LUPHOMOID CYBORG",
+      "text": "Cold and calculating, Nebula bypassed the villain's defenses entirely, repairing her systems and coordinating massive tactical shifts."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

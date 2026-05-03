@@ -1,6 +1,17 @@
 {
   "internal_id": "mockingbird",
   "name": "Mockingbird",
+  "secret_identity": "Bobbi Morse",
+  "accolades": {
+    "ultimate_mockingbird": {
+      "required_keys": [
+        "mockingbird_spymaster",
+        "mockingbird_battle_staves"
+      ],
+      "title": "S.H.I.E.L.D. AGENT 19",
+      "text": "Mockingbird secured the perimeter with complete authority, locking down enemy reinforcements before clearing the zone in hand-to-hand combat."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

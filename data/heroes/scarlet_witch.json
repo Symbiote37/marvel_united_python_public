@@ -1,6 +1,18 @@
 {
   "internal_id": "scarlet_witch",
   "name": "Scarlet Witch",
+  "secret_identity": "Wanda Maximoff",
+  "accolades": {
+    "ultimate_scarlet_witch": {
+      "required_keys": [
+        "scarlet_witch_chaos_magic",
+        "scarlet_witch_psionic_energy_blast",
+        "scarlet_witch_psionic_energy_field"
+      ],
+      "title": "CHAOS MAGIC",
+      "text": "Scarlet Witch fundamentally rewrote reality, shielding her allies and warping the battlefield with terrifying psionic energy."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

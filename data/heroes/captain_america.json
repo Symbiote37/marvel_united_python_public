@@ -1,6 +1,14 @@
 {
   "internal_id": "captain_america",
   "name": "Captain America",
+  "secret_identity": "Steve Rogers",
+  "accolades": {
+    "cap_leadership": {
+      "threshold": 3,
+      "title": "AVENGERS ASSEMBLE",
+      "text": "Captain America held the line, orchestrating the team with flawless tactical leadership and critical support."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

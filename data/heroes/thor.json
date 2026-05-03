@@ -1,6 +1,13 @@
 {
   "internal_id": "thor",
   "name": "Thor",
+  "accolades": {
+    "ultimate_thor": {
+      "threshold": 3,
+      "title": "GOD OF THUNDER",
+      "text": "Thor called down the lightning, wielding Mjolnir with godlike power to utterly obliterate any target foolish enough to stand in his way."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move", "heroic"] },
     { "id": 2, "actions": ["move", "heroic"] },

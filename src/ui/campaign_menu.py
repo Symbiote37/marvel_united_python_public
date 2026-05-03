@@ -48,6 +48,9 @@ class CampaignMenu:
             node_data = self.campaign_data["nodes"][mission_node]
             villain_id = node_data["villain"]
             
+            # 🚨 NEW: Display S.H.I.E.L.D. Intel before squad selection
+            self._display_intel_report(villain_id)
+            
             # 1. Assemble the Strike Team
             deployed_squad = self._select_campaign_squad()
             if not deployed_squad: 
@@ -111,14 +114,32 @@ class CampaignMenu:
             
             # 🚨 THE FIX: Read mode directly from state, no unpacking needed
             is_solo = self.manager.state.get("campaign_mode") == "solo"
+            
+            # 🗺️ THE INJECTION: Extract the location set from the campaign node
+            preferred_loc = node_data.get("location_set")
+            
+            # 🎲 THE RANDOMIZER: Pick a random set if one isn't explicitly requested
+            if not preferred_loc:
+                import random
+                try:
+                    valid_sets = [
+                        f for f in os.listdir("data/locations") 
+                        if f.endswith('.json') and f != "thanos_battle_locations.json"
+                    ]
+                    if valid_sets:
+                        preferred_loc = random.choice(valid_sets)
+                except FileNotFoundError:
+                    pass # Engine will handle missing directories gracefully
+            
             game.setup_campaign_mission(
                 villain_id, 
                 deployed_squad, 
                 is_solo=is_solo,
-                active_challenges=active_challenges
+                active_challenges=active_challenges,
+                location_set=preferred_loc
             ) 
             game.run_game_loop()
-            
+
             # 3. Post-Battle Resolution
             self._resolve_mission_results(game, mission_node, node_data, deployed_squad)
 
@@ -184,7 +205,11 @@ class CampaignMenu:
     def _view_map(self):
         """Displays all nodes and allows mission selection."""
         print(f"\n--- {Col.wrap('TACTICAL MAP', Col.CYAN)} ---")
+        
         available_nodes = {}
+        completed_display = []
+        available_display = []
+        
         counter = 1
         
         for node_id, node_data in self.campaign_data["nodes"].items():
@@ -202,12 +227,45 @@ class CampaignMenu:
                 
                 if is_completed:
                     status = Col.wrap("[✅ CLEARED]", Col.GRN)
-                    print(f"   {status} {node_data['name']} (Defeated {v_name}{bolt})")
+                    completed_display.append(f"   {status} {node_data['name']} (Defeated {v_name}{bolt})")
                 elif is_unlocked:
                     status = Col.wrap(f"[{counter}] AVAILABLE", Col.YLW + Col.BOLD)
-                    print(f" {status} : {node_data['name']} vs {v_name}{bolt}")
+                    
+                    # 🎁 Parse and build the reward L-bracket (ONLY for available nodes)
+                    rewards = node_data.get("rewards", {})
+                    reward_icons = {
+                        "keys": "🗝️", "trophies": "🏆", "blue_bolts": "✨",
+                        "shields": "🛡️", "crosses": "✝️ "
+                    }
+                    
+                    reward_parts = []
+                    for r_key, icon in reward_icons.items():
+                        if r_key in rewards:
+                            reward_parts.append(icon * rewards[r_key])
+                            
+                    if "unlock_heroes" in rewards:
+                        for h in rewards["unlock_heroes"]:
+                            reward_parts.append(f"[{h.replace('_', ' ').title()}]")
+                    
+                    # Build the two-line display string
+                    node_text = f" {status} : {node_data['name']} vs {v_name}{bolt}"
+                    if reward_parts:
+                        reward_str = " ".join(reward_parts)
+                        node_text += f"\n{Col.wrap(f'      └─ {reward_str} ', Col.CYAN)}                "
+                        
+                    available_display.append(node_text)
                     available_nodes[str(counter)] = node_id
                     counter += 1
+
+        # 🖨️ RENDER PHASE: Print completed first, then available
+        for text in completed_display:
+            print(text)
+            
+        if completed_display and available_display:
+            print(Col.wrap("   ---", Col.DARK_GRAY)) # Visual separator
+            
+        for text in available_display:
+            print(text)
                 
         print("\n [0] Back to Hub")
         choice = input(" Select Mission to Launch >> ").strip()
@@ -258,6 +316,49 @@ class CampaignMenu:
                 print(f" • {name}" + (f" ({counts[h_id]}x)" if h_id == "nick_fury" else ""))
 
         input(f"\n{Col.wrap('Press Enter to return...', Col.DARK_GRAY)}")
+
+    def _display_intel_report(self, villain_id):
+        """Fetches and renders the S.H.I.E.L.D. dossier for the target."""
+        from src.logic.registry import get_villain_logic
+        logic_class = get_villain_logic(villain_id)
+        
+        # Clear the screen for dramatic effect
+        sys.stdout.write("\033c")
+        sys.stdout.flush()
+
+        if hasattr(logic_class, 'get_intel_report'):
+            intel = logic_class.get_intel_report()
+            v_name = villain_id.replace('_', ' ').upper()
+            
+            print(Col.wrap(f"{'='*53}", Col.CYAN))
+            print(Col.wrap(f" 📁 S.H.I.E.L.D. TARGET INTEL: {v_name} ", Col.CYAN + Col.BOLD))
+            print(Col.wrap(f"{'='*53}", Col.CYAN))
+            
+            if "profile" in intel:
+                print(Col.wrap("\n 👤 PROFILE: ", Col.CYAN + Col.BOLD))
+                print(f" {intel['profile']}")
+                
+            if "rules" in intel:
+                print(Col.wrap("\n ⚠️ MODUS OPERANDI (Special Rules): ", Col.YLW + Col.BOLD))
+                print(f" {intel['rules']}")
+                
+            if "bam" in intel:
+                print(Col.wrap("\n 💥 SIGNATURE STRIKE (BAM!): ", Col.RED + Col.BOLD))
+                print(f" {intel['bam']}")
+                
+            if "overflow" in intel:
+                print(Col.wrap("\n 🌊 COLLATERAL (Overflow): ", Col.PURP + Col.BOLD))
+                print(f" {intel['overflow']}")
+                
+            if "threats" in intel:
+                print(Col.wrap("\n 🦹 KNOWN THREATS: ", Col.WHT + Col.BOLD))
+                print(f" {intel['threats']}")
+                
+            print(Col.wrap(f"\n{'='*53}", Col.CYAN))
+            input(Col.wrap(" Press [ENTER] to Assemble Strike Team... ", Col.DARK_GRAY))
+        else:
+            print(Col.wrap(f"\n ⚠️ WARNING: No S.H.I.E.L.D. intel on record for {villain_id.upper()}. ", Col.RED))
+            input(Col.wrap(" Press [ENTER] to deploy blindly... ", Col.DARK_GRAY))
 
     def _select_campaign_squad(self):
         """Assembles the team and confirms Protocol selection."""

@@ -88,12 +88,18 @@ class GameEngine:
         
         return selected
 
-    def setup_campaign_mission(self, villain_id, hero_ids, is_solo=False, active_challenges=None):
+    def setup_campaign_mission(self, villain_id, hero_ids, is_solo=False, active_challenges=None, location_set=None):
         """Bypasses the manual terminal prompts for Campaign Mode and explicitly sets mode flags."""
         self.selected_villain = villain_id
         self.selected_heroes = hero_ids
-        self.is_solo_mode = is_solo # Explicitly flags Solo Mode from external wrappers
+        self.is_solo_mode = is_solo 
         self.active_challenges = active_challenges or []
+        
+        # 🗺️ THE OVERRIDE: Lock in the specific location set if the campaign node demands it
+        if location_set:
+            self.location_file = f"data/locations/{location_set}"
+        else:
+            self.location_file = "data/locations/core_locations.json"
         
     def _reset_state(self):
         self.storyline.cards = []
@@ -122,7 +128,9 @@ class GameEngine:
         return v_data
 
     def _load_locations(self):
+        # Purely trusts the engine's location_file attribute (set by Menu or Campaign)
         loc_path = getattr(self, 'location_file', "data/locations/core_locations.json")
+
         try:
             with open(loc_path, 'r', encoding='utf-8') as f:
                 loc_data = json.load(f)
@@ -136,7 +144,7 @@ class GameEngine:
 
         random.shuffle(loc_data)
         self.locations = [Location(d) for d in loc_data[:6]]
-
+        
     def _load_threats(self):
         threat_path = f"data/threats/{self.villain.internal_id}_threats.json"
         try:

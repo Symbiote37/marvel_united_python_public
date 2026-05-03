@@ -1,6 +1,14 @@
 {
   "internal_id": "star-lord",
   "name": "Star-Lord",
+  "secret_identity": "Peter Quill",
+  "accolades": {
+    "ultimate_star_lord": {
+      "threshold": 3,
+      "title": "LEGENDARY OUTLAW",
+      "text": "Star-Lord led the charge with reckless improvisation, tossing critical gear to the squad and solving every problem with sheer audacity."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move", "move"] },
     { "id": 2, "actions": ["move", "heroic"] },

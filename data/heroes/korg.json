@@ -1,6 +1,13 @@
 {
   "internal_id": "korg",
   "name": "Korg",
+  "accolades": {
+    "ultimate_korg": {
+      "threshold": 3,
+      "title": "THE REVOLUTIONARY",
+      "text": "Korg proved to be a one-rock army, crushing enemies in every direction and leading the charge with unstoppable Kronan force."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

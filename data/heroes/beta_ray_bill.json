@@ -1,6 +1,14 @@
 {
   "internal_id": "beta_ray_bill",
   "name": "Beta Ray Bill",
+  "accolades": {
+    "ultimate_beta_ray_bill": {
+      "threshold": 3,
+      "title": "THE KORBINITE CHAMPION",
+      "text": "Wielding Stormbreaker with righteous fury, Beta Ray Bill unleashed a relentless, unstoppable onslaught that crushed the enemy forces."
+    }
+  },
+
   "deck": [
     { "id": 1, "actions": ["move", "heroic"] },
     { "id": 2, "actions": ["move", "heroic"] },

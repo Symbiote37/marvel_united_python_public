@@ -1,6 +1,13 @@
 {
   "internal_id": "nick_fury",
   "name": "Nick Fury",
+  "accolades": {
+    "ultimate_nick_fury": {
+      "threshold": 3,
+      "title": "THE MAN ON THE WALL",
+      "text": "Operating with absolute authority, Nick Fury directed the entire battlefield, feeding crucial tactical commands to his operatives when they needed it most."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "move"] },

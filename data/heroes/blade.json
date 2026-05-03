@@ -1,6 +1,19 @@
 {
   "internal_id": "blade",
   "name": "Blade",
+  "secret_identity": "Eric Brooks",
+  "accolades": {
+    "ultimate_blade": {
+      "required_keys": [
+        "blade_blood_bath",
+        "blade_hunter_skills",
+        "blade_vampiric_healing"
+      ],
+      "title": "THE DAYWALKER",
+      "text": "Blade unleashed a total blood bath, striking with lethal hunter precision while drawing on vampiric resilience to stay in the fight."
+    }
+  },
+
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

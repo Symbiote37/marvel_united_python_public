@@ -1,6 +1,18 @@
 {
   "internal_id": "punisher",
   "name": "Punisher",
+  "secret_identity": "Frank Castle",
+  "accolades": {
+    "ultimate_punisher": {
+      "required_keys": [
+        "punisher_special_ops_training",
+        "punisher_heavy_firepower",
+        "punisher_precision_shot"
+      ],
+      "title": "ONE-MAN ARMY",
+      "text": "Punisher waged a terrifying, uncompromising war on the criminal underground, deploying enough raw firepower to level the entire city block."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move", "attack"] },
     { "id": 2, "actions": ["move", "attack"] },

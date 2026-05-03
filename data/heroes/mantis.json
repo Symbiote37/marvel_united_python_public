@@ -1,6 +1,18 @@
 {
   "internal_id": "mantis",
   "name": "Mantis",
+  "secret_identity": "Brandt",
+  "accolades": {
+    "ultimate_mantis": {
+      "required_keys": [
+        "mantis_astral_projection",
+        "mantis_psychic_healing",
+        "mantis_emphatic"
+      ],
+      "title": "THE CELESTIAL MADONNA",
+      "text": "Mantis manipulated the flow of combat flawlessly, neutralizing the villain's worst attacks while projecting her powers across the entire battlefield."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

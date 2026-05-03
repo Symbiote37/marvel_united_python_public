@@ -1,6 +1,18 @@
 {
   "internal_id": "venom",
   "name": "Venom",
+  "secret_identity": "Eddie Brock",
+  "accolades": {
+    "ultimate_venom": {
+      "required_keys": [
+        "draw_up_to_3",
+        "venom_symbiote_enhancement",
+        "venom_tracking"
+      ],
+      "title": "LETHAL PROTECTOR",
+      "text": "Relentless and terrifying, Venom rapidly regenerated from his wounds before tracking his prey across the city with brutal symbiote efficiency."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

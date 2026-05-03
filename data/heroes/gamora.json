@@ -1,6 +1,13 @@
 {
   "internal_id": "gamora",
   "name": "Gamora",
+  "accolades": {
+    "ultimate_gamora": {
+      "threshold": 3,
+      "title": "DEADLIEST WOMAN IN THE GALAXY",
+      "text": "Gamora lived up to her fearsome reputation, converting every available resource into a relentless, lethal flurry of strikes."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

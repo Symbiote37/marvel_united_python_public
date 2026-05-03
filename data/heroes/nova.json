@@ -1,6 +1,14 @@
 {
   "internal_id": "nova",
   "name": "Nova",
+  "secret_identity": "Sam Alexander",
+  "accolades": {
+    "ultimate_nova": {
+      "threshold": 3,
+      "title": "HUMAN ROCKET",
+      "text": "Nova flew in at supersonic speeds, providing massive, explosive support across adjacent battlefields."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

@@ -1,6 +1,17 @@
 {
   "internal_id": "groot",
   "name": "Groot",
+  "accolades": {
+    "ultimate_groot": {
+      "required_keys": [
+        "groot_i_am_groot?",
+        "groot_we_are_groot",
+        "groot_i_am_groot!"
+      ],
+      "title": "WE ARE GROOT",
+      "text": "I am Groot. I am Groot! We... are Groot. (Groot expertly repositioned allies, shared vital resources, and coordinated simultaneous attacks across the battlefield.)"
+    }
+  },
   "deck": [
     { "id": 1, "name": "I Am Groot?", "actions": ["move"], "special_id": "groot_i_am_groot?", "effect_text": "Move any other Hero to a Location adjacent to them." },
     { "id": 2, "name": "I Am Groot?", "actions": ["move"], "special_id": "groot_i_am_groot?", "effect_text": "Move any other Hero to a Location adjacent to them." },

@@ -1,6 +1,13 @@
 {
   "internal_id": "winter_soldier",
   "name": "Winter Soldier",
+    "accolades": {
+    "winter_expert_assassin": {
+      "threshold": 3,
+      "title": "LETHAL OPERATIVE",
+      "text": "Striking with ruthless precision, Bucky accumulated a massive arsenal to dismantle the enemy forces."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

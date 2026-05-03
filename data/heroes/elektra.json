@@ -1,6 +1,17 @@
 {
   "internal_id": "elektra",
   "name": "Elektra",
+  "accolades": {
+    "ultimate_elektra": {
+      "required_keys": [
+        "elektra_master_assassin",
+        "elektra_ninja_training",
+        "elektra_sai"
+      ],
+      "title": "SCARLET ASSASSIN",
+      "text": "A blur of lethal martial arts and flashing sais, Elektra proved beyond a shadow of a doubt why she is considered a master assassin."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

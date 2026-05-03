@@ -1,6 +1,13 @@
 {
   "internal_id": "black_widow",
   "name": "Black Widow",
+    "accolades": {
+    "widow_interrogate": {
+      "threshold": 3,
+      "title": "MASTER SPY",
+      "text": "Operating in the shadows, Black Widow kept the enemy completely off-balance by intercepting their every move."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

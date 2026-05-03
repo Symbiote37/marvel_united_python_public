@@ -135,3 +135,41 @@ class BullseyeLogic(BaseVillainLogic):
             engine.victory_status = "VILLAIN_WINS"
             engine.loss_reason = f"Bullseye completed his contract by KO'ing the entire team!"
             
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Benjamin Poindexter is a psychopathic assassin who turns \n"
+                "anything into a lethal projectile. He avoids direct brawls, \n"
+                "preferring to establish kill zones and strike from afar."
+            ),
+            "rules": (
+                "\"The Hit List & Sniper's Vantage\"\n"
+                "Bullseye doesn't frenzy when a hero falls; he just crosses \n"
+                "a name off his contract. If the total number of KOs equals \n"
+                "your squad size, the mission is a failure.\n\n"
+                "Furthermore, when relocating, he actively avoids close combat. \n"
+                "He will skip occupied sectors to find an empty location to aim."
+            ),
+            "bam": (
+                "\"Ricochet & Impossible Shots\"\n"
+                "He rarely shoots at what's right in front of him. Bullseye \n"
+                "deals damage to EVERY hero standing in the two sectors \n"
+                "directly adjacent to him. Beware his Master Plan deck: he \n"
+                "can even snipe heroes on the exact opposite side of the map!"
+            ),
+            "overflow": (
+                "\"Perfect Execution\"\n"
+                "Bullseye's plot relies on perfectly orchestrated collateral \n"
+                "damage. If ANY location overflows with unplaceable tokens, \n"
+                "he uses the resulting chaos to finish his contract and \n"
+                "escape. An overflow results in immediate game over."
+            ),
+            "threats": (
+                "He rigs the city with lethal traps and sniper nests.\n"
+                "- Diversion: You cannot achieve victory while this is active.\n"
+                "- Hiding Place: Bullseye is immune to damage while here.\n"
+                "- Striking Unseen: Sniper tax. Damage taken here is increased by 1."
+            )
+        }

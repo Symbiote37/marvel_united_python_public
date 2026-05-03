@@ -1,6 +1,18 @@
 {
   "internal_id": "moon_knight",
   "name": "Moon Knight",
+  "secret_identity": "Marc Spector",
+  "accolades": {
+    "ultimate_moon_knight": {
+      "required_keys": [
+        "moon_knight_khonshu_power",
+        "moon_knight_suit",
+        "moon_knight_"
+      ],
+      "title": "FIST OF KHONSHU",
+      "text": "Embracing the chaos, Moon Knight shifted tactics wildly, absorbing impossible damage and multiplying his power in the name of Khonshu."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

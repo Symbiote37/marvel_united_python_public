@@ -1,6 +1,18 @@
 {
   "internal_id": "daredevil",
   "name": "Daredevil",
+  "secret_identity": "Matt Murdock",
+  "accolades": {
+    "ultimate_daredevil": {
+      "required_keys": [
+        "daredevil_radar_sense",
+        "daredevil_man_without_fear",
+        "daredevil_blind_justice"
+      ],
+      "title": "THE DEVIL OF HELL'S KITCHEN",
+      "text": "Using his radar sense to map the battlefield, Daredevil dispensed blind justice and protected the innocent without an ounce of fear."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move", "heroic"] },
     { "id": 2, "actions": ["move", "attack"] },

@@ -1,6 +1,16 @@
 {
   "internal_id": "rocket",
   "name": "Rocket",
+  "accolades": {
+    "ultimate_rocket": {
+      "required_keys": [
+        "rocket_master_tinkerer",
+        "rocket_raccoon_senses"
+      ],
+      "title": "AIN'T NO THING LIKE ME",
+      "text": "Rocket aggressively optimized his arsenal, tinkering with the team's tech and amplifying their combat effectiveness to an absurd degree."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

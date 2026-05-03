@@ -1,6 +1,18 @@
 {
   "internal_id": "quicksilver",
   "name": "Quicksilver",
+  "secret_identity": "Pietro Maximoff",
+  "accolades": {
+    "ultimate_quicksilver": {
+      "required_keys": [
+        "quicksilver_run_to_the_rescue",
+        "quicksilver_speed_fighting",
+        "quicksilver_superhuman_speed"
+      ],
+      "title": "FASTER THAN RADIO",
+      "text": "Moving faster than the eye could track, Quicksilver blurred across the map, rescuing bystanders, clearing threats, and completely breaking the villain's tempo."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move", "move"] },
     { "id": 2, "actions": ["move", "heroic"] },

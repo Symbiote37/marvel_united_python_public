@@ -1,6 +1,17 @@
 {
   "internal_id": "iron_man",
   "name": "Iron Man",
+  "accolades": {
+    "ultimate_iron_man": {
+      "required_keys": [
+        "iron_man_advanced_combat_analysis", 
+        "draw_up_to_3", 
+        "iron_man_stark_resources"
+      ],
+      "title": "STARK TECH OMNI-UPGRADE",
+      "text": "Tony Stark deployed his full suite of technological upgrades, dominating the airspace and fully equipping the team for victory."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

@@ -1,6 +1,13 @@
 {
   "internal_id": "hulk",
   "name": "Hulk",
+  "accolades": {
+    "hulk_smash": {
+      "threshold": 3,
+      "title": "THE STRONGEST ONE THERE IS",
+      "text": "The battlefield was left in ruins as Hulk unleashed a devastating series of Smash attacks."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

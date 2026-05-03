@@ -82,10 +82,10 @@ class RhinoLogic(BaseVillainLogic):
             for _ in range(damage):
                 h.take_damage(engine)
             
-            # THE SHIFT: Move hero 1 location clockwise
-            h.location_index = (h.location_index + 1) % 6
-            new_loc = engine.locations[h.location_index].name
-            engine.log.append(f"   🌪️ {h.name} is sent flying to {new_loc}!")
+            if damage > 0:
+                h.location_index = (h.location_index + 1) % 6
+                new_loc = engine.locations[h.location_index].name
+                engine.log.append(f"   🌪️ {h.name} is sent flying to {new_loc}!")
 
     @staticmethod
     def on_overflow(engine, villain, loc, t_type):
@@ -129,3 +129,38 @@ class RhinoLogic(BaseVillainLogic):
         hero.crisis_tokens = getattr(hero, 'crisis_tokens', 0) + 1
         engine.log.append(Col.wrap(f" 😵 DAZED: {hero.name} is too rattled to focus!", Col.PURP))
         
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Aleksei Sytsevich is a walking battering ram. He relies \n"
+                "on pure kinetic energy and sheer mass. The longer his \n"
+                "runway, the more devastating the impact."
+            ),
+            "rules": (
+                "\"Concussive Blows\"\n"
+                "Rhino doesn't follow up on a downed target like other \n"
+                "threats. If he KOs a hero, he leaves them severely \n"
+                "disoriented, granting a Crisis token instead of a BAM.\n\n"
+                "If you start your turn with a Crisis token, you must play \n"
+                "your action card FACEDOWN (blind) before discarding it."
+            ),
+            "bam": (
+                "\"Momentum Strike\"\n"
+                "Rhino deals damage to everyone in his sector equal to \n"
+                "the number of locations he just crossed. Any hero who \n"
+                "takes damage is violently launched one location clockwise."
+            ),
+            "overflow": (
+                "\"Accelerated Chaos\"\n"
+                "If a sector overruns with unplaceable tokens, the panic \n"
+                "provides him cover. For every overflowing location, one \n"
+                "Master Plan card is immediately played facedown."
+            ),
+            "threats": (
+                "Expect heavily armored Mercenaries and barricades.\n"
+                "- Open Field: Taking damage here grants a Crisis token.\n"
+                "- No Cover: Ending your turn here grants a Crisis token."
+            )
+        }

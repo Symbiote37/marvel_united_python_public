@@ -1,6 +1,17 @@
 {
   "internal_id": "jessica_jones",
   "name": "Jessica Jones",
+  "accolades": {
+    "ultimate_jessica_jones": {
+      "required_keys": [
+        "jessica_jones_expert_detective",
+        "draw_up_to_3",
+        "jessica_jones_private_investigator"
+      ],
+      "title": "ALIAS INVESTIGATIONS",
+      "text": "Operating two steps ahead, Jessica Jones cracked the case, shrugging off hits while systematically dismantling the villain's master plan."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

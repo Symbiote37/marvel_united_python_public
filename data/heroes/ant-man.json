@@ -1,6 +1,18 @@
 {
   "internal_id": "ant-man",
   "name": "Ant-Man",
+  "secret_identity": "Scott Lang",
+  "accolades": {
+    "ultimate_ant_man": {
+      "required_keys": [
+        "ant-man_grow",
+        "invulnerability",
+        "ant-man_quantum_leap"
+      ],
+      "title": "PYM PARTICLE MASTERY",
+      "text": "Shifting sizes and bending the timeline, Ant-Man executed a flawless combination of overwhelming force and impossible evasive maneuvers."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

@@ -1,6 +1,18 @@
 {
   "internal_id": "hawkeye",
   "name": "Hawkeye",
+  "secret_identity": "Clint Barton",
+  "accolades": {
+    "ultimate_hawkeye": {
+      "required_keys": [
+        "hawkeye_master_marksman",
+        "hawkeye_longshot",
+        "hawkeye_martial_artist"
+      ],
+      "title": "THE AVENGING ARCHER",
+      "text": "Clint Barton proved he never misses, raining arrows from across the city while seamlessly turning the enemy's own attacks against them."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

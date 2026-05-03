@@ -89,3 +89,43 @@ class ComicWriter:
             k_word = "time" if kos == 1 else "times"
             print(Col.wrap(f"\n 🛡️ THE MARTYR: {names}", Col.DARK_GRAY + Col.BOLD))
             print(f"    Sacrificing everything, {names} acted as the team's shield, falling {kos} {k_word}.")
+        # 🚨 GLOBAL TEAM ACCOMPLISHMENTS
+        if engine.victory_status == "HEROES_WIN":
+            # The "Down to the Wire" check
+            if len(engine.villain.plan_deck) < 2:
+                print(Col.wrap("\n ⏳ COMING IN CLUTCH!", Col.CYAN + Col.BOLD))
+                print("    The heroes secured victory with mere seconds remaining on the doomsday clock.")
+
+            # The "Above and Beyond" checks
+            if engine.missions["civilians"] >= engine.missions.get("civilians_max", 9) + 3:
+                 print(Col.wrap("\n 🌟 ABOVE AND BEYOND: SEARCH & RESCUE", Col.CYAN + Col.BOLD))
+                 print("    The team went out of their way to ensure the absolute safety of the city's populace.")
+                 
+            if engine.missions["thugs"] >= engine.missions.get("thugs_max", 9) + 3:
+                 print(Col.wrap("\n 🌟 ABOVE AND BEYOND: STREET SWEEPER", Col.CYAN + Col.BOLD))
+                 print("    The team didn't just defeat the villain; they completely dismantled the criminal underground.")
+
+        # 🚨 HERO-SPECIFIC ACCOMPLISHMENTS (Driven strictly by JSON)
+        accolades_printed = False
+        for h in engine.heroes:
+            # Safely fetch the hero's specific accolade dictionary
+            accolades = getattr(h, 'raw_data', {}).get("accolades", {})
+            
+            for accolade_id, details in accolades.items():
+                earned = False
+                
+                # Scenario A: Toolkit Mastery (Needs 1 of each unique key)
+                if "required_keys" in details:
+                    earned = all(engine.match_stats.get(h.internal_id, {}).get(k, 0) >= 1 for k in details["required_keys"])
+                    
+                # Scenario B: 3-of-a-kind (Needs threshold of the specific key)
+                elif "threshold" in details:
+                    earned = engine.match_stats.get(h.internal_id, {}).get(accolade_id, 0) >= details["threshold"]
+                
+                if earned:
+                    if not accolades_printed:
+                         print(f"\n{Col.wrap('-'*50, Col.DARK_GRAY)}")
+                         accolades_printed = True
+                         
+                    print(Col.wrap(f"\n 🎖️ {details['title']}: {h.name.upper()}", Col.YLW + Col.BOLD))
+                    print(f"    {details['text']}")

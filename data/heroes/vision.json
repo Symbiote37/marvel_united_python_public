@@ -1,6 +1,17 @@
 {
   "internal_id": "vision",
   "name": "Vision",
+  "accolades": {
+    "ultimate_vision": {
+      "required_keys": [
+        "invulnerability",
+        "vision_evolving_intellect",
+        "vision_solar_gem_blast"
+      ],
+      "title": "SYNTHEZOID",
+      "text": "Calculating every variable, Vision phased through incoming fire, adapted to the board state, and discharged pure solar energy."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move", "heroic"] },
     { "id": 2, "actions": ["move", "heroic"] },

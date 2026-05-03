@@ -1,6 +1,18 @@
 {
   "internal_id": "black_cat",
   "name": "Black Cat",
+  "secret_identity": "Felicia Hardy",
+  "accolades": {
+    "ultimate_black_cat": {
+      "required_keys": [
+        "black_cat_cat_instincts",
+        "black_cat_cat_luck",
+        "black_cat_cat_claws"
+      ],
+      "title": "BAD LUCK FOR YOU",
+      "text": "Black Cat danced effortlessly through the danger, stealing exactly what she needed while leaving the villain's plans in tatters."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

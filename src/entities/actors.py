@@ -70,26 +70,35 @@ class Hero:
         if self.is_ko: return 
         self.stashed_tokens.append(token_char)
 
-    def process_triggers(self, trigger_type, engine):
+    def process_triggers(self, trigger_type, engine, **kwargs):
         """
-        🚨 THE FIX: Scans the Storyline for special cards belonging to this 
-        hero that respond to specific game events.
+        🚨 THE FIX: Handles both innate Hero passives and Storyline card triggers.
         """
         from src.logic.registry import get_hero_logic
+        import inspect
         
         # 1. Fetch logic handler via the Neutral Ground (Registry)
         logic_class = get_hero_logic(self.internal_id)
         if not logic_class:
             return
 
-        # 2. Scan Storyline
-        story_cards = getattr(engine.storyline, 'cards', engine.storyline)
-        for card in story_cards:
-            if card.get('owner') == self.name and card.get('special_id'):
-                handler = getattr(logic_class, trigger_type, None)
-                if handler:
-                    handler(engine, self, card)
+        handler = getattr(logic_class, trigger_type, None)
+        if not handler:
+            return
+
+        sig = inspect.signature(handler)
         
+        # 2A. Scenario A: The trigger requires a specific card in the timeline
+        if 'card' in sig.parameters:
+            story_cards = getattr(engine.storyline, 'cards', engine.storyline)
+            for card in story_cards:
+                if card.get('owner') == self.name and card.get('special_id'):
+                    handler(engine, self, card, **kwargs)
+                    
+        # 2B. Scenario B: The trigger is an innate hero passive (like Gamora)
+        else:
+            handler(engine, self, **kwargs)
+
 class Villain:
     def __init__(self, data, hero_count=2):
         self.raw_data = data 

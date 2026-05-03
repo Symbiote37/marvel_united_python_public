@@ -1,6 +1,14 @@
 {
   "internal_id": "valkyrie",
   "name": "Valkyrie",
+  "secret_identity": "Brunnhilde",
+  "accolades": {
+    "ultimate_valkyrie": {
+      "threshold": 3,
+      "title": "SHIELD-MAIDEN OF ASGARD",
+      "text": "Soaring above the chaos, Valkyrie dictated the terms of the battle, effortlessly deploying across the city to strike where she was needed most."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

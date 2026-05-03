@@ -1,6 +1,13 @@
 {
   "internal_id": "drax",
   "name": "Drax",
+  "accolades": {
+    "ultimate_drax": {
+      "threshold": 3,
+      "title": "THE DESTROYER",
+      "text": "Fueled by pure vengeance, Drax the Destroyer carved a relentless, unstoppable path of destruction through the enemy ranks."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

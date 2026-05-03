@@ -1,6 +1,17 @@
 {
   "internal_id": "okoye",
   "name": "Okoye",
+  "accolades": {
+    "ultimate_okoye": {
+      "required_keys": [
+        "okoye_dora_milaje",
+        "okoye_vibranium_spear",
+        "okoye_accomplished_strategist"
+      ],
+      "title": "GENERAL OF THE DORA MILAJE",
+      "text": "Unwavering and lethal, Okoye commanded the battlefield, absorbing brutal damage for her allies before retaliating with deadly precision."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

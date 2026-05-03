@@ -1,6 +1,17 @@
 {
   "internal_id": "howard_the_duck",
   "name": "Howard the Duck",
+  "accolades": {
+    "ultimate_howard_the_duck": {
+      "required_keys": [
+        "howard_the_duck_big_freaking_gun",
+        "howard_the_duck_neutron_disintegrator",
+        "howard_the_duck_no_more_mr_nice_duck"
+      ],
+      "title": "WAUGH!",
+      "text": "Howard the Duck proved he was absolutely no joke, pulling out impossibly large sci-fi weaponry to vaporize everything in his path."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move"] },

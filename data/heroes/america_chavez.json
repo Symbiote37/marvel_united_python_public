@@ -1,6 +1,17 @@
 {
   "internal_id": "america_chavez",
   "name": "America Chavez",
+  "accolades": {
+    "ultimate_america_chavez": {
+      "required_keys": [
+        "america_chavez_star_portal",
+        "invulnerability",
+        "america_chavez_energy_infusion"
+      ],
+      "title": "MULTIVERSAL HEAVYWEIGHT",
+      "text": "America Chavez punched holes through reality itself, tanking massive damage while funneling pure cosmic energy into devastating strikes."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },

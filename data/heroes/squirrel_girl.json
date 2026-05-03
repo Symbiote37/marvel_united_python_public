@@ -1,6 +1,18 @@
 {
   "internal_id": "squirrel_girl",
   "name": "Squirrel Girl",
+  "secret_identity": "Doreen Green",
+  "accolades": {
+    "ultimate_squirrel_girl": {
+      "required_keys": [
+        "squirrel_girl_squirrel_army",
+        "squirrel_girl_night_vision",
+        "squirrel_girl_common_sense"
+      ],
+      "title": "UNBEATABLE",
+      "text": "Using nothing but an army of rodents and incredible common sense, Squirrel Girl pulled off the statistically impossible."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "attack"] },

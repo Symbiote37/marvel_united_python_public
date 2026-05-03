@@ -67,14 +67,18 @@ class SpecialAbilitySystem:
 
     @staticmethod
     def initialize_interceptors(engine):
-        """
-        Safety Net: Ensures all heroes in the map are initialized.
-        (The decorator handles this now, but this is good for manual resets).
-        """
         for logic_class in SpecialAbilitySystem.HERO_LOGIC_MAP.values():
             if hasattr(logic_class, 'initialize'):
                 logic_class.initialize()
 
-# 🚥 THE CRITICAL FIX: Move the hero roll-call to the BOTTOM.
-# This ensures the class above is FULLY DEFINED before the heroes try to import it.
+    @classmethod
+    def trigger_event(cls, engine, hero, event_name, **kwargs):
+        """The Radio Tower: Shouts events to the hero logic brain."""
+        h_id = (getattr(hero, 'internal_id', '')).replace("-", "_").lower()
+        logic_class = cls.HERO_LOGIC_MAP.get(h_id)
+        
+        if logic_class and hasattr(logic_class, event_name):
+            getattr(logic_class, event_name)(engine, hero, **kwargs)
+
+# Move the import to the absolute bottom, unindented
 import src.logic.heroes 

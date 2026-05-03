@@ -1,6 +1,18 @@
 {
   "internal_id": "ghost_rider",
   "name": "Ghost Rider",
+  "secret_identity": "Robbie Reyes",
+  "accolades": {
+    "ultimate_ghost_rider": {
+      "required_keys": [
+        "ghost_rider_hellfire_manipulation",
+        "ghost_rider_mystical_chain",
+        "ghost_rider_supernatural_awareness"
+      ],
+      "title": "SPIRIT OF VENGEANCE",
+      "text": "Ghost Rider unleashed the full fury of Hellfire, chaining enemies together and burning through the villain's ranks with supernatural precision."
+    }
+  },
   "deck": [
     { "id": 1, "actions": ["move"] },
     { "id": 2, "actions": ["move", "heroic"] },
