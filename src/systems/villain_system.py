@@ -1,4 +1,4 @@
-# src/systems/villain_system.py
+## src/systems/villain_system.py
 from src.utils.helpers import Col, wait_for_user, ICON
 from src.systems.turn_system import TurnSystem
 
@@ -73,8 +73,15 @@ class VillainSystem:
 
         # 3. BAM!
         if plan.get("bam"):
-            from src.systems.event_system import EventSystem
-            EventSystem.broadcast_bam(engine)
+            from src.systems.status_system import StatusSystem
+            # 🚨 THE INTERCEPTOR: Catch Empathic Manipulation before it reaches the Event System
+            if StatusSystem.has_status(engine, "cancel_next_bam"):
+                engine.log.append(Col.wrap("\n 🛑 BAM! CANCELLED by Empathic Manipulation!", Col.GRN + Col.BOLD))
+                StatusSystem.remove_status(engine, "cancel_next_bam")
+            else:
+                from src.systems.event_system import EventSystem
+                EventSystem.broadcast_bam(engine)
+            
             VillainSystem.process_event_queue(engine)
 
         # 4. TOKEN DISTRIBUTION

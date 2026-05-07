@@ -118,3 +118,41 @@ class EbonyMawLogic(BaseVillainLogic):
             engine.log.append(Col.wrap(f" 🧠 PSYCHOLOGICAL PRESSURE: Your mind fractures! ", Col.YLW))
             
         return mods
+        
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Ebony Maw is the telekinetic and telepathic mastermind of the \n"
+                "Black Order. He avoids physical confrontation, preferring to \n"
+                "break the minds of his enemies and turn their plans into chaos."
+            ),
+            "rules": (
+                "\"Psychological Pressure & Genius Intellect\"\n"
+                "Maw's Crisis tokens represent severe mental strain. If you start \n"
+                "your turn with a Crisis token, your mind fractures: you are FORCED \n"
+                "to play a card completely at random from your hand, discarding 1 \n"
+                "token afterward.\n\n"
+                "Do not hoard these tokens. His 'Genius Intellect' Master Plan card \n"
+                "allows him to play an EXTRA Master Plan card for EVERY Crisis token \n"
+                "currently on the board. This can cascade into an instant loss."
+            ),
+            "bam": (
+                "\"Psychic Invasion\"\n"
+                "Maw invades the minds of anyone too close. He deals 1 damage \n"
+                "AND grants 1 Crisis token to every hero in his current location."
+            ),
+            "overflow": (
+                "\"Mental Overload\"\n"
+                "When a sector collapses into chaos, the psychic noise is deafening. \n"
+                "Every hero standing in an overflowing location takes 1 Crisis token."
+            ),
+            "threats": (
+                "His psychic constructs completely disrupt team cohesion.\n"
+                "- Debilitating Torture: Amnesia. You ignore all inherited actions here.\n"
+                "- Persuasion: Grants Crisis tokens to heroes. If left unattended \n"
+                "  (no heroes present), it forces an extra Master Plan card play!\n"
+                "- Telekinesis: Flying debris damages this and both adjacent locations."
+            )
+        }

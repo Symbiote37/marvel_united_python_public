@@ -4,6 +4,7 @@ from src.utils.helpers import Col, wait_for_user
 # 🚨 FIXED: Updated the path to reflect the move to core/
 from src.core.campaign_manager import CampaignManager 
 from src.ui.campaign_menu import CampaignMenu
+from src.ui.controllers import HybridController
 
 class MainMenu:
     @staticmethod
@@ -228,8 +229,27 @@ class MainMenu:
                 # --- LAUNCH ENGINE ---
                 print(Col.wrap(f"\n 🚀 INITIATING SIMULATION: vs {selected_v.replace('_', ' ').upper()}...", Col.YLW))
                 
+                # 🚨 THE CO-OP ROUTER INTERCEPT 🚨
+                print(Col.wrap("\n Who should S.H.I.E.L.D. control?", Col.CYAN))
+                print(" Enter numbers (1, 2, 3) corresponding to the order you selected your heroes.")
+                print(" Example: If you selected Captain America, Black Widow, Miles Morales.")
+                print(" Entering '2, 3' means the bot plays Black Widow and Miles.")
+                print(" Press Enter to play fully manual.")
+                
+                bot_input = input(" >> ").strip()
+                bot_seats = []
+                if bot_input:
+                    try:
+                        # Convert human-readable "1, 2" into code-readable index [0, 1]
+                        bot_seats = [int(x.strip()) - 1 for x in bot_input.split(',')]
+                    except ValueError:
+                        print(Col.wrap(" [!] Invalid input, defaulting to Manual play.", Col.RED))
+                
                 # 🚨 Pass the selected location file to the engine
                 game = GameEngine(location_file=selected_location_file)
+                
+                # Assign the Hybrid Controller
+                game.ui = HybridController(game, bot_indices=bot_seats)
                 
                 # 🚨 Pre-load the selected heroes and villains into the engine manually 
                 game.selected_heroes = selected_squad

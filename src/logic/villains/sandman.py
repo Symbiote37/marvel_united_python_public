@@ -19,7 +19,7 @@ class SandmanLogic(BaseVillainLogic):
         # Sync the visual plot tracker to his current HP for UI purposes
         engine.villain.plot_value = engine.villain.hp
 
-        if engine.villain.hp >= 20:
+        if engine.villain.plot_value >= 20:
             engine.game_over = True
             engine.victory_status = "VILLAIN_WINS"
             engine.loss_reason = "UNSTOPPABLE FORCE: Sandman grew too massive and buried the city in sand! "
@@ -191,17 +191,18 @@ class SandmanLogic(BaseVillainLogic):
     def _resolve_faster(engine, v_idx):
         engine.log.append(Col.wrap("  FASTER: A concentrated sand twister forms! ", Col.YLW))
         targets = [h for h in engine.heroes if h.location_index == v_idx and not getattr(h, 'is_ko', False)]
+        
         if targets:
-            # 1 damage base, PLUS 1 damage for each OTHER hero (which equals the total number of heroes)
+            # 1 damage base, PLUS 1 damage for each OTHER hero
             dmg = len(targets) 
             
-            # If multiple heroes, let the players pick who takes the hit
+            # ⚡ FIXED INDENTATION: Aligned all logic levels
             if len(targets) > 1:
                 # 🔌 UI ADAPTER: Standardized prompt sequence
                 print(Col.wrap(f"\n TARGET FOR 'FASTER' (Incoming Damage: {dmg}):", Col.YLW))
                 for i, h in enumerate(targets, 1):
-                    # 🚨 THE FIX: Swapped 'h.hp' for 'len(h.hand)'
-                    print(f" [{i}] {h.name} (Hand: {len(h.hand)}) ")
+                    print(f" [{i}] {h.name} (HP: {h.hp}) ")
+                
                 choice = engine.ui.ask_choice(" Choose >> ", 1, len(targets))
                 target = targets[choice - 1]
             else:
@@ -210,7 +211,7 @@ class SandmanLogic(BaseVillainLogic):
             
             engine.log.append(Col.wrap(f"   🎯 The twister hits {target.name} for {dmg} damage! ", Col.RED))
             
-            # 🚨 SAFELY APPLY DAMAGE: Check KO status before each hit so we don't overkill
+            # 🚨 SAFELY APPLY DAMAGE: Check KO status before each hit
             for _ in range(dmg):
                 if not getattr(target, 'is_ko', False):
                     target.take_damage(engine)

@@ -20,11 +20,85 @@ class InfinityGauntletLocationLogic:
 
     @staticmethod
     def action_boost(engine, hero, effect):
-        loc = engine.locations[hero.location_index]
-        if not loc.threat or getattr(loc.threat, 'cleared', False): return
-        if Col.prompt_y_n("🪄 THREAT BOOST", effect['text']):
-            from src.systems.token_system import TokenSystem
-            TokenSystem.apply_threat_token(engine, loc, "wild")
+        options = []
+        
+        # 1. Scan for Uncleared Threats
+        for l in engine.locations:
+            if getattr(l, 'threat', None) and not getattr(l.threat, 'cleared', False):
+                options.append({
+                    "type": "threat",
+                    "label": f"{l.threat.name} (at {l.name})",
+                    "target": l
+                })
+                
+        # 2. Scan for Active Power-Ups (If playing Infinity Gauntlet Mode)
+        pu_manager = getattr(engine.mode_handler, 'power_up_manager', None)
+        active_pu = getattr(pu_manager, 'state', None) and getattr(pu_manager.state, 'active_pu_token', None)
+        
+        if active_pu:
+            reqs = active_pu.get("req", {})
+            progress = pu_manager.state.pu_progress
+            for req_type, target in reqs.items():
+                if req_type != "threat" and progress.get(req_type, 0) < target:
+                    options.append({
+                        "type": "power_up",
+                        "label": f"Power-Up: {active_pu['name']} (Requires {req_type.upper()})",
+                        "target_type": req_type,
+                        "manager": pu_manager
+                    })
+
+        if not options: return
+
+        # 3. Prompt the user
+        if Col.prompt_y_n("🪄 SANCTUM SANCTORUM", effect['text']):
+            print(Col.wrap("\n Select a target to receive a free Action token:", Col.CYAN))
+            
+            for i, opt in enumerate(options, 1):
+                print(f" [{i}] {opt['label']}")
+                
+            choice = Col.get_choice(" >> ", 1, len(options)) - 1
+            selected = options[choice]
+            
+            # 4. Route the Action into the correct mechanical pipeline
+            if selected["type"] == "threat":
+                target_loc = selected["target"]
+                threat = target_loc.threat
+                
+                if getattr(threat, 'hp', 0) > 0:
+                    # It's a Henchman (Requires Attack ✸)
+                    from src.systems.damage_system import DamageSystem
+                    DamageSystem.deal_enemy_damage(engine, threat, amount=1, flavor="Sanctum Magic")
+                    engine.log.append(Col.wrap(f" 🪄 SANCTUM SANCTORUM: A free ✸ hit {threat.name}!", Col.MAGENTA))
+                else:
+                    # It's a Standard Threat (Can require Heroic ★, Move ➡, or Attack ✸)
+                    from src.systems.token_system import TokenSystem
+                    
+                    unmet = []
+                    if getattr(threat, 'heroic_tokens', 0) < getattr(threat, 'heroic_req', 0): unmet.append("heroic")
+                    if getattr(threat, 'move_tokens', 0) < getattr(threat, 'move_req', 0): unmet.append("move")
+                    if getattr(threat, 'attack_tokens', 0) < getattr(threat, 'attack_req', 0): unmet.append("attack")
+                    
+                    if not unmet:
+                        # Failsafe fallback
+                        TokenSystem.apply_threat_token(engine, target_loc, "heroic")
+                    elif len(unmet) == 1:
+                        # Auto-route if there is only one valid option
+                        TokenSystem.apply_threat_token(engine, target_loc, unmet[0])
+                    else:
+                        # Prompt if the threat has mixed requirements
+                        print(Col.wrap(f"\n Select requirement to fill on {threat.name}:", Col.CYAN))
+                        for i, req in enumerate(unmet, 1):
+                            print(f" [{i}] {req.capitalize()} Token")
+                        req_choice = Col.get_choice(" >> ", 1, len(unmet)) - 1
+                        TokenSystem.apply_threat_token(engine, target_loc, unmet[req_choice])
+                        
+                    # (Duplicate engine.log.append removed from here)
+
+            elif selected["type"] == "power_up":
+                req_type = selected["target_type"]
+                mgr = selected["manager"]
+                mgr.state.pu_progress[req_type] += 1
+                engine.log.append(Col.wrap(f" 🪄 SANCTUM SANCTORUM: A free token was channeled into {active_pu['name']}!", Col.MAGENTA))
 
     @staticmethod
     def ko_for_threat(engine, hero, effect):

@@ -80,5 +80,91 @@ class SpecialAbilitySystem:
         if logic_class and hasattr(logic_class, event_name):
             getattr(logic_class, event_name)(engine, hero, **kwargs)
 
+    @staticmethod
+    def swap_with_storyline(engine, hero, prompt_context=None):
+        """Universal utility for swapping a card from a hero's hand with one in the storyline."""
+        from src.utils.helpers import Col, ICON
+        from src.ui.board import BoardRenderer
+        
+        if not hero.hand:
+            engine.log.append(Col.wrap(f" ⚠️ {hero.name} has no cards in hand to swap!", Col.YLW))
+            return False
+
+        story_cards = getattr(engine.storyline, 'cards', engine.storyline)
+        is_shield_mode = hasattr(engine, 'mode_handler') and engine.mode_handler.__class__.__name__ == "ShieldMode"
+        
+        # 1. 🛡️ "YOU = THE PLAYER": Grant global access to all hero cards in the Storyline
+        eligible_indices = []
+        for i, card in enumerate(story_cards):
+            owner_raw = card.get('owner')
+            if not owner_raw or owner_raw == engine.villain.name: 
+                continue # Ignore Villain cards
+            
+            owner_name = owner_raw.name if hasattr(owner_raw, 'name') else str(owner_raw)
+            
+            if is_shield_mode or owner_name == hero.name:
+                eligible_indices.append(i)
+
+        if not eligible_indices:
+            engine.log.append(Col.wrap(f" ⚠️ {hero.name} has no valid faceup cards in the Storyline to swap!", Col.YLW))
+            return False
+
+        color_map = {h.name: BoardRenderer.HERO_COLORS[i % len(BoardRenderer.HERO_COLORS)] for i, h in enumerate(engine.heroes)}
+        header_text = prompt_context.get("text", f"SWAP WITH STORYLINE: {hero.name}") if prompt_context else f"SWAP WITH STORYLINE: {hero.name}"
+        
+        if not engine.ui.ask_yes_no(f"\n {Col.wrap(header_text, Col.MAGENTA)} (y/n): "):
+            print(Col.wrap(" Swap cancelled.", Col.YLW))
+            return False
+
+        # --- SELECT CARD TO TAKE ---
+        print(Col.wrap(f"\n Select card to TAKE from Storyline:", Col.CYAN))
+        for opt_num, s_idx in enumerate(eligible_indices, 1):
+            s_card = story_cards[s_idx]
+            o_raw = s_card.get('owner')
+            o_name = o_raw.name if hasattr(o_raw, 'name') else str(o_raw) if o_raw else "Unknown"
+            c_color = color_map.get(o_name, Col.CYAN)
+            o_display = Col.wrap(f" ({o_name})", c_color)
+            
+            actions = " ".join([ICON.get(a, a) for a in s_card.get('actions', [])])
+            name_str = f" - {s_card['name']}" if 'name' in s_card else ""
+            print(f" [{opt_num}] [{actions}]{name_str}{o_display}")
+        print(" [0] Cancel")
+        
+        story_choice = engine.ui.ask_choice(" >> ", 0, len(eligible_indices))
+        if story_choice == 0:
+            print(Col.wrap(" Swap cancelled.", Col.YLW))
+            return False
+        target_story_idx = eligible_indices[story_choice - 1]
+        taken = story_cards[target_story_idx]
+
+        # --- SELECT CARD TO GIVE ---
+        print(Col.wrap(f"\n Select card to GIVE from Hand:", Col.CYAN))
+        for i, c in enumerate(hero.hand, 1):
+            o_raw = c.get('owner')
+            o_name = o_raw.name if hasattr(o_raw, 'name') else str(o_raw) if o_raw else "Unknown"
+            c_color = color_map.get(o_name, Col.CYAN)
+            o_display = Col.wrap(f" ({o_name})", c_color)
+            
+            actions = " ".join([ICON.get(a, a) for a in c.get('actions', [])])
+            name_str = f" - {c['name']}" if 'name' in c else ""
+            print(f" [{i}] [{actions}]{name_str}{o_display}")
+        print(" [0] Cancel")
+        
+        hand_choice = engine.ui.ask_choice(" >> ", 0, len(hero.hand))
+        if hand_choice == 0:
+            print(Col.wrap(" Swap cancelled.", Col.YLW))
+            return False
+        given = hero.hand.pop(hand_choice - 1)
+        
+        # 2. 🦸‍♂️ CARD = HERO: Preserve the original hero's identity!
+        if 'owner' not in given: 
+            given['owner'] = hero if is_shield_mode else hero.name
+
+        story_cards[target_story_idx] = given
+        hero.hand.append(taken)
+        
+        engine.log.append(Col.wrap(f" 🔀 REALITY WARPED: A card was swapped with the Storyline.", Col.MAGENTA + Col.BOLD))
+        return True
+
 # Move the import to the absolute bottom, unindented
-import src.logic.heroes 
+import src.logic.heroes

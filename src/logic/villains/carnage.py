@@ -144,3 +144,42 @@ class CarnageLogic(BaseVillainLogic):
             loc.civilians = 0
             loc.infected = 0
             engine.log.append(Col.wrap(f" 💨 {total} inhabitants fled the scene!", Col.YLW))
+            
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Cletus Kasady and the Carnage symbiote are a match made in \n"
+                "hell. He doesn't just kill; he spreads a parasitic infection \n"
+                "that turns the city's population into fuel for his 'Spawn Track'."
+            ),
+            "rules": (
+                "\"The Spawn Track\"\n"
+                "Carnage is playing for a total victory condition. Every time \n"
+                "a hero is KO'd, or an infected civilian is consumed by an \n"
+                "overflow, his Spawn Track advances. If it reaches 10, the \n"
+                "symbiote takeover is complete and the mission is lost."
+            ),
+            "bam": (
+                "\"Contagion Strike\"\n"
+                "Carnage deals 1 damage to every hero in his sector. More \n"
+                "dangerously, he infects the local population. Healthy \n"
+                "civilians are converted into Infected units (marked with \n"
+                "Crisis tokens), setting them up for his harvest."
+            ),
+            "overflow": (
+                "\"The Harvest\"\n"
+                "Normal overflows are manageable, but a Carnage overflow is \n"
+                "lethal. If a location overflows, all INFECTED civilians \n"
+                "there are consumed, each one advancing the Spawn Track by 1. \n"
+                "Keep the locations clear or keep them healthy."
+            ),
+            "threats": (
+                "His offspring and ambush tactics make rescue nearly impossible.\n"
+                "- Carnage Offspring: These entities infect, spawn, and attack \n"
+                "  simultaneously during a BAM.\n"
+                "- Symbiote Ambush: Thick webbing and chaos mean it takes \n"
+                "  double the Heroic effort (2 ★) to rescue any civilian."
+            )
+        }

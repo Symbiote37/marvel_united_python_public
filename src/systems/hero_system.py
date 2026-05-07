@@ -132,6 +132,13 @@ class HeroSystem:
                 if card.get("effect_text"):
                     print(Col.wrap(f"    └ {card['effect_text']}", Col.DARK_GRAY))
 
+            # 🚨 PRE-TURN WARNING: Preview facedown states before UI selection
+            is_exposed = getattr(hero, 'force_facedown_exposure', False)
+            is_dazed = sot_mods.get("is_facedown")
+            
+            if is_exposed or is_dazed:
+                print(Col.wrap(f"\n ⚠️ TACTICAL ALERT: {hero.name.upper()}'s next card will be forced FACEDOWN (0 Actions).", Col.YLW))
+
             # 🚨 RESTORED: UI Adapter ask_choice
             choice = engine.ui.ask_choice("\nPlay card >> ", 1, len(hero.hand)) - 1
 
@@ -155,7 +162,10 @@ class HeroSystem:
         if sot_mods.get("is_facedown"):
             played["is_facedown"] = True
             played["actions"] = []
-            engine.log.append(Col.wrap(f" 🃏 {hero.name} is dazed; card played facedown. ", Col.PURP))
+            
+            # 🚨 DECOUPLED LOGGING: Only print the generic engine default if no custom threat label was provided
+            if not sot_mods.get("label"):
+                engine.log.append(Col.wrap(f" 🃏 {hero.name} is dazed; card played facedown. ", Col.PURP))
 
         return played
 
@@ -182,8 +192,11 @@ class HeroSystem:
         # 🚨 RESTORED: The Valve
         if sid and ActionSystem.is_auto_trigger(played) and not is_secret_identity:
             if not played.get("is_facedown"):
+                # ⚓ MEMORY ANCHOR: Protect Nick Fury's pool from nested sub-turns
+                saved_pool_ref = engine.active_pool
                 if ActionSystem.resolve_special_id(engine, hero, played):
                     engine.used_specials.add(sid)
+                engine.active_pool = saved_pool_ref
 
         # 🚨 RESTORED: Baseline Anchor drop
         UndoSystem.clear_history()       
@@ -214,11 +227,15 @@ class HeroSystem:
             if tokens:
                 print(f"{Col.wrap('STASHED TOKENS:', Col.CYAN)} [ {token_display} ] ")
 
-            valid_cmds = {"0", "1", "2", "3", "U"}
+            valid_cmds = {"0", "1", "2", "3", "U", "I"}
             commands = [f"(1) {ICON['move']}", f"(2) {ICON['attack']}", f"(3) {ICON['heroic']}"]
+            
+            # 🚨 THE INJECTION: Add Intel to the visual HUD
+            commands.append(Col.wrap(" (I) Intel", Col.CYAN))
             
             if tokens:
                 commands.append(f"(T) Tokens")
+
                 valid_cmds.add("T")
 
             custom_cmds = engine.mode_handler.get_custom_commands(engine, hero, pool)
@@ -248,10 +265,25 @@ class HeroSystem:
             print(f"\nCOMMANDS: {' | '.join(commands)}")
 
             cmd = engine.ui.ask_raw("\n> ", valid_cmds)
-
+            
             if cmd == "0":
                 break
                 
+            # 🚨 THE DOSSIER HOOK
+            elif cmd == 'I':
+                from src.logic.registry import get_villain_logic
+                logic_class = get_villain_logic(engine.villain.internal_id)
+                
+                if hasattr(logic_class, 'get_intel_report'):
+                    intel_data = logic_class.get_intel_report()
+                    # Decoupled Hand-off: The engine simply routes the payload to the UI
+                    engine.ui.render_intel_dossier(engine.villain.name, intel_data)
+                else:
+                    # UI handles the warning state as well
+                    engine.ui.render_intel_dossier(engine.villain.name, None)
+                
+                continue 
+
             # 🚨 RESTORED: Temporal mechanics
             elif cmd == 'U':
                 if UndoSystem.restore_snapshot(engine):
@@ -278,14 +310,17 @@ class HeroSystem:
                 
             elif cmd == "S" and sid and sid not in used_specials and not played.get("is_facedown"):
                 UndoSystem.save_snapshot(engine)
+                # ⚓ MEMORY ANCHOR: Protect Nick Fury's pool from nested sub-turns
+                saved_pool_ref = engine.active_pool
                 if ActionSystem.resolve_special_id(engine, hero, played):
                     if not played.get("repeatable", False):
                         used_specials.add(sid)
+                    engine.active_pool = saved_pool_ref
                     engine.ui.wait()
                 else:
                     UndoSystem._history_stack.pop()
                     print(Col.wrap(" Special action cancelled. ", Col.YLW))
-                    
+
             elif cmd == "T":
                 UndoSystem.save_snapshot(engine)
                 from src.systems.token_system import TokenSystem

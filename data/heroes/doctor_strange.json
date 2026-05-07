@@ -27,6 +27,6 @@
     { "id": 9, "name": "Cloak of Levitation", "actions": ["wild"], "special_id": "doctor_strange_cloak_of_levitation", "effect_text": "Either ✸ in an adjacent Location or ➡." },
     { "id": 10, "name": "Dimensional Portal", "actions": ["wild"], "special_id": "doctor_strange_dimensional_portal", "effect_text": "Move to any Location." },
     { "id": 11, "name": "Eye of Agamotto", "actions": ["wild"], "special_id": "doctor_strange_eye_of_agamotto", "auto_trigger": true, "effect_text": "You may take any Master Plan card from the Storyline and reshuffle it into the Master Plan deck." },
-    { "id": 12, "name": "Orb of Agamotto", "actions": [], "special_id": "doctor_strange_orb_of_agamotto", "auto_trigger": true, "effect_text": "As long as this card is faceup in the Storyline, the top card of the Master Plan deck is revealed." }
+    { "id": 12, "name": "Orb of Agamotto", "actions": [], "special_id": "doctor_strange_orb_of_agamotto", "auto_trigger": true, "persistent_effect": "reveal_master_plan", "effect_text": "As long as this card is faceup in the Storyline, the top card of the Master Plan deck is revealed." }
   ]
 }

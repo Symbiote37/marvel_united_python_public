@@ -18,6 +18,8 @@ from src.systems.hero_system import HeroSystem
 from src.systems.villain_system import VillainSystem
 
 class GameEngine:
+    _NAME_CACHE = {}
+
     def __init__(self, location_file="data/locations/core_locations.json", controller=None):
         self.heroes = []
         self.villain = None
@@ -34,6 +36,7 @@ class GameEngine:
         self.forced_extra_cards = 0 
         self.current_hero_index = 0
         self.active_challenges = []
+        self.statuses = {}
         
         self.missions = {
             "civilians": 0, "civilians_max": 9,
@@ -43,7 +46,7 @@ class GameEngine:
         self.campaign_manager = None
         self.location_file = location_file
         
-        # THE UI ADAPTER PORT: Default to Human, but allow bots to be plugged in
+        # THE UI ADAPTER PORT: Default to Human (Manual)
         if controller is None:
             from src.ui.controllers import HumanController
             self.ui = HumanController()
@@ -58,9 +61,12 @@ class GameEngine:
             
         display_names = []
         for f_name in files:
-            with open(os.path.join(path, f_name), 'r') as f:
-                temp_data = json.load(f)
-                display_names.append(temp_data.get("name", f_name.replace('.json', '')))
+            full_path = os.path.join(path, f_name)
+            if full_path not in GameEngine._NAME_CACHE:
+                with open(full_path, 'r') as f:
+                    temp_data = json.load(f)
+                    GameEngine._NAME_CACHE[full_path] = temp_data.get("name", f_name.replace('.json', ''))
+            display_names.append(GameEngine._NAME_CACHE[full_path])
 
         selected = []
         while len(selected) < count:
@@ -108,6 +114,7 @@ class GameEngine:
         self.game_over = False; self.victory_status = None; self.loss_reason = ""
         self.missions = {"civilians": 0, "thugs": 0, "threats": 0, 
                          "civilians_max": 9, "thugs_max": 9, "threats_max": 4}
+        self.statuses = {}
 
     def _load_entities(self):
         if not hasattr(self, 'selected_heroes'):
@@ -355,6 +362,12 @@ class GameEngine:
         self.setup_game()
         self.current_hero_index = 0
         
+        # 🎵 THE TRANSITION: Shift from Main Menu to Combat
+        # Note: You can even make this dynamic in the future by doing:
+        # file_path = f"assets/audio/{self.villain.internal_id}_theme.mp3"
+        from src.systems.audio_system import AudioSystem
+        AudioSystem.transition_track("assets/audio/battle_theme.mp3")
+        
         # 🔌 INITIAL RENDER: Neutral start for S.H.I.E.L.D. protocol
         start_hero = self._get_neutral_team_hud() if getattr(self, 'is_solo_mode', False) else self.heroes[self.current_hero_index]
         BoardRenderer.render(self.get_game_state(start_hero))
@@ -404,6 +417,9 @@ class GameEngine:
                 for loc in self.locations:
                     StatusSystem.tick_all_statuses(loc)
                 
+                # 🚨 THE CLOCK FIX: Tick the Engine's statuses so Emphatic Manipulation expires
+                StatusSystem.tick_all_statuses(self)
+                
                 self.ui.acknowledge("\n ⚠️ VILLAIN PHASE COMPLETE. Press Enter to continue...")
                 turns_since_v = 0
 
@@ -417,6 +433,14 @@ class GameEngine:
                 active_hero = self.heroes[self.current_hero_index]
                 HeroSystem.execute_turn(self, active_hero, self.current_hero_index)
             
+            # 🚨 THE CLOCK FIX: Tick the Hero's statuses so Astral Projection expires
+            from src.systems.status_system import StatusSystem
+            if getattr(self, 'is_solo_mode', False):
+                for h in self.heroes:
+                    StatusSystem.tick_all_statuses(h)
+            else:
+                StatusSystem.tick_all_statuses(self.heroes[self.current_hero_index])
+
             # --- VICTORY CHECK ---
             if hasattr(self.villain_logic, 'is_defeated'):
                 villain_defeated = self.villain_logic.is_defeated(self)

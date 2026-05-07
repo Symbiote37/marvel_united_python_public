@@ -128,3 +128,41 @@ class CorvusGlaiveLogic(BaseVillainLogic):
                 villain.location_index = target_idx
                 engine.log.append(Col.wrap(f" 🔪 Slaughter: Corvus hunts to {engine.locations[target_idx].name}!", Col.RED))
                 CorvusGlaiveLogic._apply_glaive_damage(engine, target_idx, 1, "Slaughter")
+
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Corvus Glaive is the cruel and cunning right hand of Thanos. \n"
+                "He is a master tactician who excels at isolating his targets \n"
+                "and breaking them down through sheer attrition."
+            ),
+            "rules": (
+                "\"The Soul Harvest & Predator's Instinct\"\n"
+                "Corvus claims a KO Token for every fallen hero. If his tally \n"
+                "matches your squad size, the mission is lost. Do not let him \n"
+                "pick you off one by one.\n\n"
+                "Beware his pursuit tactics: his 'Glaive Attack' specifically \n"
+                "hunts for sectors containing exactly ONE isolated hero, rushing \n"
+                "there to deliver a devastating 2-damage strike."
+            ),
+            "bam": (
+                "\"Sweeping Strike\"\n"
+                "A direct and brutal assault. He deals 1 damage to every \n"
+                "hero currently standing in his sector."
+            ),
+            "overflow": (
+                "\"Collateral Bloodshed\"\n"
+                "If a location overruns, the ensuing panic turns into a killing \n"
+                "field. Every hero in the overflowing sector instantly takes 1 damage."
+            ),
+            "threats": (
+                "His vanguard has rigged the battlefield with lethal traps.\n"
+                "- Dangerous Terrain: Amplifies ALL damage taken here by 1.\n"
+                "- Civilians in Peril: A massacre that discards all civilians \n"
+                "  and forces an EXTRA Master Plan card to be played immediately!\n"
+                "- Hidden Traps: Taking shelter here at the end of a turn \n"
+                "  incurs 1 damage."
+            )
+        }

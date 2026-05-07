@@ -5,6 +5,9 @@ from src.utils.helpers import Col
 
 class Hero:
     def __init__(self, data):
+        # 🚨 THE MISSING ID CARD: Retain the raw JSON block for systemic hooks
+        self.raw_data = data
+        
         # 🛡️ THE IDENTITY BADGE
         self.internal_id = data.get('internal_id') 
         self.name = data.get('name', "Unknown Hero")
@@ -47,6 +50,14 @@ class Hero:
             if hasattr(self, 'on_deflect'):
                 self.on_deflect(engine, amount)
             return False 
+
+        # 🚨 THE GENERIC DAMAGE INTERCEPTOR: Absorbs 1 damage and shatters the shield
+        if StatusSystem.has_status(self, "prevent_next_damage"):
+            engine.log.append(Col.wrap(f"   🛡️ PROTECTED: 1 damage to {self.name} was absorbed by a protective effect!", Col.CYAN + Col.BOLD))
+            StatusSystem.remove_status(self, "prevent_next_damage")
+            amount -= 1
+            if amount <= 0:
+                return False 
 
         if getattr(self, 'is_ko', False):
             return False

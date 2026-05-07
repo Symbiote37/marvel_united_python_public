@@ -5,38 +5,6 @@ from src.systems.special_abilities import SpecialAbilitySystem
 @SpecialAbilitySystem.register("doctor_strange")
 class DoctorStrangeLogic:
     @staticmethod
-    def _format_plan_card(card):
-        """Translates Master Plan JSON data into a readable UI string."""
-        parts = []
-        
-        # 1. Movement
-        move = card.get('movement', card.get('move', 0))
-        if move > 0: 
-            parts.append(f"➡ {move}")
-            
-        # 2. BAM and Trigger
-        if card.get('bam'): 
-            parts.append("💥 BAM")
-        if card.get('trigger'): 
-            parts.append("⚡ TRG")
-            
-        # 3. Tokens Added
-        adds = card.get('add', {})
-        add_str = []
-        for k, v in adds.items():
-            if k == 'thug': add_str.append(f"👊 {v}")
-            elif k == 'civilian': add_str.append(f"🧍 {v}")
-            elif k == 'threat': add_str.append(f"⚠️ {v}")
-        if add_str: 
-            parts.append(f"➕ {' '.join(add_str)}")
-            
-        # 4. Special Effects
-        if card.get('special_id') or card.get('effect_text'):
-            parts.append("🌟 SPEC")
-            
-        return " | ".join(parts) if parts else "Blank Plan"
-
-    @staticmethod
     def _resolve_book_of_vishanti(engine):
         deck = engine.villain.plan_deck
         if not deck:
@@ -48,8 +16,11 @@ class DoctorStrangeLogic:
             Col.wrap(" Peer into the timeline and select a Master Plan to banish:", Col.CYAN)
         ]
         
+        from src.ui.board import BoardRenderer
+        
         for i, p_card in enumerate(deck, 1):
-            label = DoctorStrangeLogic._format_plan_card(p_card)
+            # 🚨 POINT TO THE NEW UNIVERSAL FORMATTER
+            label = BoardRenderer.format_master_plan(p_card)
             desc = p_card.get('effect_text', '')
             if desc:
                 desc = f" - {desc[:35]}..." if len(desc) > 35 else f" - {desc}"
@@ -76,7 +47,7 @@ class DoctorStrangeLogic:
 
     @staticmethod
     def _resolve_cloak_of_levitation(engine, hero):
-        choice = engine.ui.ask_raw(f" CLOAK: (1) ✸ Adjacent or (2) Gain ➡ token? ", {'1', '2'})
+        choice = engine.ui.ask_raw(f" CLOAK: (1) ✸ Adjacent or (2) Gain ➡ action? ", {'1', '2'})
         
         if choice == '1':
             from src.systems.action_system import ActionSystem
@@ -87,8 +58,11 @@ class DoctorStrangeLogic:
             c = engine.ui.ask_choice(prompt, 1, 2) - 1
             ActionSystem._handle_targeted_attack(engine, hero, adj[c])
         else:
-            hero.add_token("move")
-            engine.log.append(" 🧥 Gained 1 ➡ token.")
+            # 🚨 THE FIX: Inject directly into the active turn pool, not the persistent inventory
+            if not hasattr(engine, 'active_pool'):
+                engine.active_pool = {}
+            engine.active_pool["move"] = engine.active_pool.get("move", 0) + 1
+            engine.log.append(" 🧥 Gained 1 ➡ action for this turn.")
         return True
 
     @staticmethod
@@ -113,8 +87,6 @@ class DoctorStrangeLogic:
 
     @staticmethod
     def _resolve_orb_of_agamotto(engine):
-        from src.systems.status_system import StatusSystem
-        StatusSystem.apply_status(engine, "orb_of_agamotto", duration=99)
         engine.log.append(Col.wrap(f" 🔮 ORB OF AGAMOTTO: The future is revealed...", Col.MAGENTA))
         return True
 

@@ -71,7 +71,7 @@ class CampaignManager:
         
         if hero_id == "nick_fury":
             unlocked.append(hero_id)
-            print(Col.wrap(f"\n 📞 REINFORCEMENTS: Nick Fury is available for a mission! 📞", Col.GRN + Col.BOLD))
+            print(Col.wrap(f"\n REINFORCEMENTS: Nick Fury is available for a mission! 📞", Col.GRN + Col.BOLD))
             self.save_state()
             
         elif hero_id not in unlocked:

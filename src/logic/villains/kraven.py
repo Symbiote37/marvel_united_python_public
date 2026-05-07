@@ -92,7 +92,9 @@ class KravenLogic(BaseVillainLogic):
         """Wrapper to apply damage so we can calculate the Traps threat."""
         actual_dmg = dmg
 
-        if loc.threat and not loc.threat.cleared and "traps" in loc.threat.id_internal.lower():
+        # 🚨 STATE ARMOR: Safely extract ID to prevent AttributeError
+        t_id = (getattr(loc.threat, 'id_internal', '') or getattr(loc.threat, 'id', '')).lower() if loc.threat else ""
+        if loc.threat and not loc.threat.cleared and "traps" in t_id:
             if loc.civilians == 0 and loc.thugs == 0:
                 actual_dmg += 1
                 engine.log.append(Col.wrap(f"   🪤 TRAP SPRUNG! {hero.name} takes +1 damage from the empty environment!", Col.YLW))
@@ -163,8 +165,10 @@ class KravenLogic(BaseVillainLogic):
         loc = engine.locations[target_obj.location_index]
 
         # Check if the Decoy threat is active in Kraven's CURRENT location
-        if loc.threat and not loc.threat.cleared and "decoys" in loc.threat.id_internal.lower():
-            # 🚨 THE FIX: Only absorb if no damage has been ignored yet this turn
+        # 🚨 STATE ARMOR: Safely extract ID to prevent AttributeError
+        t_id = (getattr(loc.threat, 'id_internal', '') or getattr(loc.threat, 'id', '')).lower() if loc.threat else ""
+        if loc.threat and not loc.threat.cleared and "decoys" in t_id:
+            # Only absorb if no damage has been ignored yet this turn
             if amount > 0 and getattr(target_obj, 'dmg_ignored_this_turn', 0) == 0:
                 target_obj.dmg_ignored_this_turn = 1
                 engine.log.append(Col.wrap("   🎭 DECOY: Kraven's decoy absorbs the first blow this turn! ", Col.YLW))

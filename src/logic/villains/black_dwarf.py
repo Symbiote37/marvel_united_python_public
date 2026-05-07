@@ -100,3 +100,41 @@ class BlackDwarfLogic(BaseVillainLogic):
         if (getattr(threat, 'trigger_id', None) or threat.id) == "charge":
             engine.log.append(Col.wrap(f" 🏃 CHARGE: {threat.name} tramples the heroes!", Col.RED))
             BaseVillainLogic._hit_sector(engine, loc_idx, 1, "Charge")
+
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Cull Obsidian, aka Black Dwarf, is the heavy muscle of the \n"
+                "Black Order. He is an immovable object and an unstoppable \n"
+                "force, relying on impenetrable skin and sweeping area attacks."
+            ),
+            "rules": (
+                "\"Relentless Advance\"\n"
+                "Black Dwarf doesn't waste time gloating over a fallen hero. \n"
+                "If he KOs a hero, he doesn't BAM; instead, he relentlessly \n"
+                "accelerates his timeline by playing a Master Plan facedown.\n\n"
+                "Watch out for his Master Plan specials: he can swing his axe \n"
+                "in a massive arc (hitting adjacent sectors) or use his Healing \n"
+                "Factor to recover health (or explode with energy if full!)."
+            ),
+            "bam": (
+                "\"Ground Smash\"\n"
+                "A massive localized strike dealing 1 damage to every hero in \n"
+                "his current location. However, if his 'Chain Hammer' is active, \n"
+                "the shockwave extends to hit both adjacent locations as well."
+            ),
+            "overflow": (
+                "\"Crushing Weight\"\n"
+                "When a sector is overrun with Thugs or Civilians, the sheer \n"
+                "chaos causes collateral damage. Every hero in the overflowing \n"
+                "location immediately takes 1 damage."
+            ),
+            "threats": (
+                "He brings heavy weaponry and impenetrable armor to the field.\n"
+                "- Super Tough: He ignores the first point of damage each turn.\n"
+                "- Chain Hammer: Upgrades his BAM to hit adjacent locations.\n"
+                "- Charge: Tramples heroes, dealing 1 damage when triggered."
+            )
+        }

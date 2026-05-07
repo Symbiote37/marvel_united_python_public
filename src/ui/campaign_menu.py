@@ -106,7 +106,7 @@ class CampaignMenu:
                     print(Col.wrap(f" > RANDOMLY APPLIED: {rolled_challenge.replace('_', ' ').upper()}", Col.RED))
                 
                 import time
-                time.sleep(3)
+                time.sleep(.5)
 
             # 2. Launch Game Engine
             game = GameEngine()

@@ -24,14 +24,14 @@ class ElectroLogic(BaseVillainLogic):
         Checks the literal length of the physical Storyline to see if enough
         Hero cards have been played since he dematerialized.
         """
-        # 🚨 THE FIX: Compare against the actual length of the storyline.cards
+        # 🚨 ONE SOURCE OF TRUTH: The engine dictates Storyline is an object with a .cards list.
         actual_length = len(engine.storyline.cards)
         if getattr(villain, 'demat_target_storyline', 0) > actual_length:
             cards_needed = villain.demat_target_storyline - actual_length
             return True, f" ⚡ INVULNERABLE: Electro is pure static! (Needs {cards_needed} more cards in Storyline)"
             
         return False, ""
-        
+
     # --- THE POWER GRID (CRISIS TOKENS) ---
 
     @staticmethod
@@ -154,17 +154,16 @@ class ElectroLogic(BaseVillainLogic):
             ElectroLogic.add_crisis_cascade(engine, villain.location_index)
             
         elif sid == "dematerialize":
-            # 🚨 THE FIX: Only count heroes that can physically play a card
             active_heroes = len([h for h in engine.heroes if not getattr(h, "is_ko", False)])
             
-            # 🚨 THE FIX: Lock the target using .cards!
+            # 🚨 ONE SOURCE OF TRUTH: Lock the target using .cards
             villain.demat_target_storyline = len(engine.storyline.cards) + active_heroes
             
             engine.log.append(Col.wrap(
-                f" 🌌 DEMATERIALIZE: Electro turns into static! (Invulnerable for {active_heroes} Hero cards)", 
+                f" 🌌 DEMATERIALIZE: Electro turns into static! (Invulnerable for {active_heroes} Hero Hero cards)", 
                 Col.PURP + Col.BOLD
             ))
-            
+
     # --- THREAT TRIGGERS ---
 
     @staticmethod
@@ -180,3 +179,44 @@ class ElectroLogic(BaseVillainLogic):
             engine.villain.hp += 3
             engine.log.append(Col.wrap(f" 🔋 RECHARGE: Electro regains 3 Health! (Now {engine.villain.hp} HP)", Col.GRN))
             
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Max Dillon, a.k.a. Electro, is living lightning. He doesn't \n"
+                "just want to defeat you; he wants to fry the entire city's \n"
+                "power grid until everything goes dark."
+            ),
+            "rules": (
+                "\"City-Wide Blackout & Static Form\"\n"
+                "Electro overloads the grid using Crisis tokens. If a token \n"
+                "is placed on a location that already has one, the surge \n"
+                "cascades clockwise until it finds an empty node. If all 6 \n"
+                "locations are electrified, the grid collapses and you lose.\n\n"
+                "KOs do not trigger a Revenge BAM; instead, they strike the \n"
+                "fallen hero's location with a Crisis token. Also, beware his \n"
+                "ability to 'Dematerialize', making him utterly invulnerable \n"
+                "until every active hero cycles a card!"
+            ),
+            "bam": (
+                "\"Arc Lightning\"\n"
+                "He fires a massive electrical arc across the city. His BAM \n"
+                "hits the sector EXACTLY OPPOSITE to him, as well as the two \n"
+                "sectors adjacent to that target zone. Strangely, standing \n"
+                "close to him might be the safest place."
+            ),
+            "overflow": (
+                "\"Grid Overload\"\n"
+                "When a sector is overrun, the local grid blows out. Any \n"
+                "overflow places 1 Crisis token at that location (cascading \n"
+                "clockwise if it is already electrified)."
+            ),
+            "threats": (
+                "He has weaponized the city's infrastructure against you.\n"
+                "- High Voltage: Environmental hazard; you take +1 damage here.\n"
+                "- Overpowered: Absorbs raw energy to play an EXTRA Master Plan.\n"
+                "- Recharge: Restores 3 HP to Electro (and can even exceed his \n"
+                "  starting health!)."
+            )
+        }

@@ -24,8 +24,6 @@ class VenomLogic(BaseVillainLogic):
         """Updates the UI to show highest infection and total casualties."""
         # 1. Find the highest token count among those NOT yet assimilated
         active_tokens = [h.crisis_tokens for h in engine.heroes if not getattr(h, 'is_eliminated', False)]
-        
-        # 🚨 THE FIX: Match the variable name to 'active_tokens'
         highest = max(active_tokens) if active_tokens else 0
         
         # 2. Count the fallen

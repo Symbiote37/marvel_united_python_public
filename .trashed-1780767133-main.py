@@ -2,27 +2,17 @@ import sys
 from src.ui.main_menu import MainMenu
 from src.utils.helpers import Col
 from src.utils.logger import DangerRoomRecorder
-from src.systems.audio_system import AudioSystem  # 🚨 INJECTED: Audio import
 
 if __name__ == "__main__":
     # 🛰️ ACTIVATE BLACK BOX: This must be initialized first.
     # It hijacks the system crash handler to record telemetry before exit.
     DangerRoomRecorder.initialize()
 
-    # 🎵 BOOT AUDIO THREAD
-    AudioSystem.initialize()
-    # Point the engine to your specific track
-    AudioSystem.play_menu_theme("assets/audio/marvel_united_theme.mp3") 
-
     try:
-        # 🎬 THE CINEMATIC INTRO: Render the splash screen while the music swells
-        from src.ui.splash_screen import SplashScreen
-        SplashScreen.show()
-
         # 🔑 THE KEY: This is the entry point that boots the OS router
         MainMenu.run()
     except KeyboardInterrupt:
         # We keep this because a user 'quitting' isn't a 'crash'
-        AudioSystem.stop_music()  # 🚨 INJECTED: Prevent ghost threads
         print(Col.wrap("\n\n [!] System Interrupted. Powering down...", Col.RED))
         sys.exit(0)
+  

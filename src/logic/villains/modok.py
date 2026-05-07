@@ -108,9 +108,11 @@ class ModokLogic(BaseVillainLogic):
         for card in engine.storyline.cards:
             if card.get('special_id') == 'consciousness_transferral' and not card.get('is_facedown'):
                 
-                # 🚨 THE FIX: Do not let the card buff its own initial BAM!
-                if card is active_card:
-                    continue
+                # 🚨 STATE ARMOR: Do not let the card buff its own initial BAM, but allow Threat BAMs!
+                if not card.get("_initial_bam_resolved"):
+                    card["_initial_bam_resolved"] = True
+                    if card is active_card:
+                        continue
                     
                 flip_count += 1
                 engine.log.append(Col.wrap("   ↳ Consciousness Transferral amplifies the effect!", Col.CYAN))

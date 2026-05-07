@@ -142,18 +142,24 @@ class ActionSystem:
         opts.extend(logic.get_extra_attack_options(engine, loc, hero))
         
         has_reach = StatusSystem.has_status(hero, "range") or getattr(hero, 'can_attack_adjacent', False)
+        has_astral = StatusSystem.has_status(hero, "astral_projection")
         
-        if has_reach:
-            for offset in [-1, 1]:
-                adj_idx = (hero.location_index + offset) % 6
-                adj_loc = engine.locations[adj_idx]
-                if getattr(adj_loc, 'is_destroyed', False): continue
+        # 🚨 MANTIS ASTRAL PROJECTION FIX
+        loc_indices = []
+        if has_astral:
+            loc_indices = [i for i in range(6) if i != hero.location_index]
+        elif has_reach:
+            loc_indices = [(hero.location_index - 1) % 6, (hero.location_index + 1) % 6]
+            
+        for adj_idx in loc_indices:
+            adj_loc = engine.locations[adj_idx]
+            if getattr(adj_loc, 'is_destroyed', False): continue
                 
-                adj_opts = logic.get_attack_options(engine, hero, location_override=adj_idx)
-                for o in adj_opts:
-                    o['label'] = f"{o['label']} (at {adj_loc.name})"
-                    o['target_loc'] = adj_idx 
-                opts.extend(adj_opts)
+            adj_opts = logic.get_attack_options(engine, hero, location_override=adj_idx)
+            for o in adj_opts:
+                o['label'] = f"{o['label']} (at {adj_loc.name})"
+                o['target_loc'] = adj_idx 
+            opts.extend(adj_opts)
 
         valid_opts = [o for o in opts if ActionSystem._is_attack_target_valid(engine, loc, o)]
         
@@ -213,6 +219,24 @@ class ActionSystem:
         # 🚨 THE CHALLENGE HOOK: Fetch any challenge-specific heroic actions
         from src.systems.challenge_system import ChallengeSystem
         opts.extend(ChallengeSystem.get_challenge_heroic_options(engine, hero, loc))
+
+        # 🚨 MANTIS ASTRAL PROJECTION FIX
+        from src.systems.status_system import StatusSystem
+        if StatusSystem.has_status(hero, "astral_projection"):
+            for i in range(6):
+                if i == hero.location_index: continue
+                adj_loc = engine.locations[i]
+                if getattr(adj_loc, 'is_destroyed', False): continue
+                
+                adj_opts = logic.get_heroic_options(engine, hero, location_override=i)
+                if hasattr(logic, 'get_extra_heroic_options'):
+                    adj_opts.extend(logic.get_extra_heroic_options(engine, adj_loc, hero))
+                adj_opts.extend(ChallengeSystem.get_challenge_heroic_options(engine, hero, adj_loc))
+                
+                for o in adj_opts:
+                    o['label'] = f"{o['label']} (at {adj_loc.name})"
+                    o['target_loc'] = i
+                opts.extend(adj_opts)
         
         if not opts: 
             engine.ui.acknowledge(" ! Nothing to do here. ")
@@ -239,15 +263,19 @@ class ActionSystem:
 
         ActionSystem.pay_bulk_cost(pool, "heroic", total_required)
         
+        # 🚨 TARGET OVERRIDE FIX: Point resolution to the selected sector, not physical loc
+        target_loc_idx = selected.get("target_loc", hero.location_index)
+        target_loc = engine.locations[target_loc_idx]
+
         if "execute" in selected: 
             selected["execute"](engine)
         else:
             if selected["id"] == "c":
-                TokenSystem.apply_heroic(engine, loc, target_type="c")
+                TokenSystem.apply_heroic(engine, target_loc, target_type="c")
             elif selected["id"] == "t_h":
-                TokenSystem.apply_threat_token(engine, loc, "heroic")
+                TokenSystem.apply_threat_token(engine, target_loc, "heroic")
             elif selected["id"] == "x":
-                TokenSystem.apply_heroic(engine, loc, target_type="x")
+                TokenSystem.apply_heroic(engine, target_loc, target_type="x")
         return True
 
     @staticmethod
@@ -385,5 +413,88 @@ class ActionSystem:
                 break # Burst mode instantly exits after the single massive strike
             else:
                 remaining_dmg -= spent_dmg
+            
+        return hit_anything
+
+    @staticmethod
+    def _handle_targeted_heroic(engine, hero, target_idx, amount=2, burst_mode=False):
+        from src.logic.registry import get_villain_logic
+        from src.systems.token_system import TokenSystem
+        from src.utils.helpers import Col
+        
+        target_loc = engine.locations[target_idx]
+        logic = get_villain_logic(engine.villain.internal_id)
+        
+        remaining_val = amount
+        hit_anything = False
+
+        # 🚨 THE GHOST SHIFT: Temporarily move hero to evaluate the remote sector natively
+        original_idx = hero.location_index
+        hero.location_index = target_idx
+
+        try:
+            while remaining_val > 0:
+                # 🚨 ONE SOURCE OF TRUTH: Fetch standard options directly from the logic baseline!
+                opts = logic.get_heroic_options(engine, hero, location_override=target_idx)
+                
+                if hasattr(logic, 'get_extra_heroic_options'):
+                    opts.extend(logic.get_extra_heroic_options(engine, target_loc, hero))
+
+                # 🚨 THE INTERCEPTOR: Dynamically filter and price options based on remaining pool
+                display_opts = []
+                for opt in opts:
+                    opt['target_loc'] = target_idx
+                    if not burst_mode and remaining_val < opt.get("cost", 1): continue 
+                    
+                    label = opt['label']
+                    cost = opt.get('cost', 1)
+                    if "(Cost:" not in label:
+                        opt['label'] = f"{label} (Cost: {cost} ★)"
+                        
+                    display_opts.append(opt)
+
+                if not display_opts:
+                    if not hit_anything:
+                        engine.log.append(Col.wrap(f"   (No valid heroic targets at {target_loc.name})", Col.DARK_GRAY))
+                    return hit_anything
+
+                pool_str = f" ({remaining_val} ★ POOL)" if remaining_val > 1 else ""
+                print(f"\n--- {Col.wrap(f'HEROIC ACTION: {target_loc.name}{pool_str}', Col.CYAN)} ---")
+                for i, opt in enumerate(display_opts, 1):
+                    print(f" [{i}] {opt['label']}")
+                print(" [0] Cancel / Finish Action")
+
+                choice = engine.ui.ask_choice(" >> ", 0, len(display_opts))
+                if choice == 0: return hit_anything
+                
+                selected = display_opts[choice-1]
+                hit_anything = True
+                spent_val = selected.get("cost", 1)
+                
+                # 💥 RESOLUTION
+                hits = remaining_val if burst_mode else 1
+                
+                if "execute" in selected: 
+                    for _ in range(hits): selected["execute"](engine)
+                else: 
+                    if selected["id"] == "c":
+                        for _ in range(hits): TokenSystem.apply_heroic(engine, target_loc, target_type="c")
+                        if burst_mode:
+                            engine.log.append(Col.wrap(f"   ✨ Rescued! ({remaining_val - spent_val} Heroic Overkill) ", Col.CYAN))
+                    elif selected["id"] == "t":
+                        for _ in range(hits): TokenSystem.apply_heroic(engine, target_loc, target_type="t")
+                    else:
+                        for _ in range(hits): 
+                            if hasattr(logic, 'resolve_special_action'):
+                                logic.resolve_special_action(engine, target_loc, hero, selected["id"])
+                
+                if burst_mode:
+                    break 
+                else:
+                    remaining_val -= spent_val
+                    
+        finally:
+            # 🚨 SNAP BACK
+            hero.location_index = original_idx
             
         return hit_anything

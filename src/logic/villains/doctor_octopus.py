@@ -13,7 +13,7 @@ class DoctorOctopusLogic(BaseVillainLogic):
             loc.is_destroyed = False
             loc.crisis_tokens = 0
             
-        engine.log.append(Col.wrap(" 🐙 DOC OCK: 'The city will crumble under my genius!'", Col.RED + Col.BOLD))
+        engine.log.append(Col.wrap("  DOC OCK: 'The city will crumble under my genius!'", Col.RED + Col.BOLD))
 
     # --- COLLAPSE MECHANICS ---
 
@@ -56,8 +56,12 @@ class DoctorOctopusLogic(BaseVillainLogic):
             loc.threat.cleared = True
             loc.threat = None 
 
-        # 🚨 THE FIX: Get the absolute array index to prevent ID mismatches
-        actual_loc_idx = engine.locations.index(loc)
+        # 🚨 THE FIX: Get the absolute array index, with fallback for headless deep-clones
+        try:
+            actual_loc_idx = engine.locations.index(loc)
+        except ValueError:
+            # Fallback to match by ID to prevent mismatches across clones/headless simulations
+            actual_loc_idx = next((i for i, l in enumerate(engine.locations) if getattr(l, 'index', None) == getattr(loc, 'index', object())), 0)
 
         # Calculation: Find the actual next valid spots relative to this index
         cw_idx = DoctorOctopusLogic.get_next_valid_index(engine, actual_loc_idx, steps=1, direction=1)
@@ -68,12 +72,15 @@ class DoctorOctopusLogic(BaseVillainLogic):
         # Evacuate Heroes
         for h in engine.heroes:
             if h.location_index == actual_loc_idx and not getattr(h, 'is_ko', False):
-                print(f"\n {Col.wrap('🏚️ EVACUATION:', Col.RED)} {loc.name} is collapsing under {h.name}!")
-                print(f" (1) Leap clockwise to {cw_name}")
-                print(f" (2) Leap counter-clockwise to {ccw_name}")
+                prompt_text = (
+                    f"\n {Col.wrap('🏚️ EVACUATION:', Col.RED)} {loc.name} is collapsing under {h.name}!\n"
+                    f" (1) Leap clockwise to {cw_name}\n"
+                    f" (2) Leap counter-clockwise to {ccw_name}\n"
+                    f" Choose destination >> "
+                )
 
-                # 🚨 HEADLESS FIX: Route through UI Adapter
-                choice = engine.ui.ask_choice(" Choose destination >> ", 1, 2)
+                # 🚨 HEADLESS FIX: Route full prompt through UI Adapter
+                choice = engine.ui.ask_choice(prompt_text, 1, 2)
                 h.location_index = cw_idx if choice == 1 else ccw_idx
                 engine.log.append(Col.wrap(f"   🏃 {h.name} fled to {engine.locations[h.location_index].name}!", Col.CYAN))
 
@@ -168,13 +175,16 @@ class DoctorOctopusLogic(BaseVillainLogic):
                 cw_name = engine.locations[cw_idx].name
                 ccw_name = engine.locations[ccw_idx].name
 
-                print(f"\n {Col.wrap('🦾 TIE-BREAKER:', Col.PURP)} {h.name} is equidistant from Doc Ock.")
-                print(f" (1) Drag clockwise to {cw_name}")
-                print(f" (2) Drag counter-clockwise to {ccw_name}")
+                prompt_text = (
+                    f"\n {Col.wrap('🦾 TIE-BREAKER:', Col.PURP)} {h.name} is equidistant from Doc Ock.\n"
+                    f" (1) Drag clockwise to {cw_name}\n"
+                    f" (2) Drag counter-clockwise to {ccw_name}\n"
+                    f" Choose direction >> "
+                )
 
-                # 🚨 HEADLESS FIX: Route through UI adapter with O(1) set lookup
-                choice = engine.ui.ask_raw(" Choose direction >> ", {'1', '2'})
-                if choice == "1":
+                # 🚨 HEADLESS FIX: Route full prompt through UI Adapter
+                choice = engine.ui.ask_choice(prompt_text, 1, 2)
+                if choice == 1:
                     dir_step = 1
                 else:
                     dir_step = -1
@@ -210,9 +220,8 @@ class DoctorOctopusLogic(BaseVillainLogic):
             BaseVillainLogic._hit_sector(engine, loc_idx, 1, "Sandman's sandstorm", single_target=False)
 
         elif "vulture" in t_id:
-            # 🚨 THE FIX: Prevent loop-chasing by locking Vulture to the current Storyline clock
-            story_cards = getattr(engine.storyline, 'cards', engine.storyline) if hasattr(engine, 'storyline') else []
-            current_step = len(story_cards)
+            # 🚨 ONE SOURCE OF TRUTH: Prevent loop-chasing by locking Vulture to the engine's Storyline clock
+            current_step = len(engine.storyline.cards)
             if getattr(threat, '_last_bam_step', -1) == current_step:
                 return
             threat._last_bam_step = current_step
@@ -257,3 +266,45 @@ class DoctorOctopusLogic(BaseVillainLogic):
         else:
             # Fallback for standard generic damage patterns
             BaseVillainLogic.apply_standard_bam_damage(engine, threat, loc_idx)
+
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Dr. Otto Octavius relies on pure intellectual superiority \n"
+                "and his mechanical appendages. He doesn't just want to defeat \n"
+                "the heroes; he wants to structurally dismantle the city."
+            ),
+            "rules": (
+                "\"Collapsing City\"\n"
+                "Doc Ock places Crisis tokens to destabilize sectors. If a \n"
+                "location accumulates 3 Crisis tokens, it is DESTROYED. \n"
+                "All tokens are wiped, and the sector is permanently removed \n"
+                "from board movement. If 4 locations collapse, the city falls \n"
+                "and the mission is lost. \n\n"
+                "Also, beware his 'Tentacle Grasp', which drags all heroes \n"
+                "closer to him before triggering a massive BAM."
+            ),
+            "bam": (
+                "\"Controlled Demolition\"\n"
+                "He lashes out, dealing 1 damage to every hero in his sector. \n"
+                "Simultaneously, his tentacles rip at the foundations, placing \n"
+                "1 Crisis token on his current location."
+            ),
+            "overflow": (
+                "\"Structural Stress\"\n"
+                "When a sector is overrun, the sheer weight of the panic \n"
+                "accelerates the collapse. Any overflow adds 1 Crisis token \n"
+                "to that location."
+            ),
+            "threats": (
+                "He has assembled the Sinister Six for this operation.\n"
+                "- Sandman: Deals AoE damage and actually GAINS health on BAM.\n"
+                "- Vulture: Hit-and-run tactics; he strikes a hero and immediately \n"
+                "  relocates to an empty Threat slot.\n"
+                "- Mysterio: Deals damage and floods the zone with new Civilians \n"
+                "  and Thugs, accelerating Overflows.\n"
+                "- Endangered Civilians: Requires 2 Heroic (★) actions to rescue."
+            )
+        }

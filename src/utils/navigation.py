@@ -23,17 +23,23 @@ class BoardNav:
         """Scans the board... 🚨 THE VOID FIX: Ignores heroes at location -1."""
         is_cw = BoardNav.parse_direction(direction)
         
+        # 🚨 JULES'S O(N) OPTIMIZATION + OUR ARMOR: Pre-calculate hero locations
+        heroes_by_loc = {}
+        for h in engine.heroes:
+            if h.location_index != -1 and not getattr(h, 'is_ko', False):
+                heroes_by_loc.setdefault(h.location_index, []).append(h)
+        
         for distance in range(1, 7):
             search_idx = (start_idx + distance) % 6 if is_cw else (start_idx - distance) % 6
             if ignore_start_loc and search_idx == start_idx:
                 continue
             
-            # 🚨 ARMOR RESTORED
-            heroes_at_loc = [h for h in engine.heroes if h.location_index == search_idx and h.location_index != -1 and not getattr(h, 'is_ko', False)]
+            # Fast O(1) dictionary lookup
+            heroes_at_loc = heroes_by_loc.get(search_idx)
             if heroes_at_loc:
                 return heroes_at_loc, distance
         return None, None
-
+ 
     @staticmethod
     def find_nearest_empty_location(engine, start_idx, direction="cw"):
         """Scans the board to find the first location without any active heroes."""

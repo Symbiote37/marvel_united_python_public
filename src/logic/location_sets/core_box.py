@@ -41,71 +41,10 @@ class CoreLocationLogic:
 
     @staticmethod
     def swap_with_storyline(engine, hero, effect):
-        story_cards = getattr(engine.storyline, 'cards', engine.storyline)
-        is_shield_mode = hasattr(engine, 'mode_handler') and engine.mode_handler.__class__.__name__ == "ShieldMode"
-
-        # 1. 🛡️ "YOU = THE PLAYER": Grant global access to all hero cards in the Storyline
-        my_cards = []
-        for c in story_cards:
-            owner_raw = c.get('owner')
-            if not owner_raw or owner_raw == engine.villain.name: 
-                continue # Ignore Villain cards
-            
-            owner_name = owner_raw.name if hasattr(owner_raw, 'name') else str(owner_raw)
-            
-            # Solo Mode: Access ANY hero card. Standard: Access only your own.
-            if is_shield_mode or owner_name == hero.name:
-                my_cards.append(c)
-        
-        if not hero.hand or not my_cards:
-            engine.log.append(Col.wrap("   (Swap cancelled: No valid cards available)", Col.DARK_GRAY))
-            return
-
-        # 🔌 UI ADAPTER: Safe prompts for both Human and Bot controllers
-        if engine.ui.ask_yes_no(f"\n SWAP STORYLINE: {effect.get('text', 'Swap a card?')} (y/n): "):
-            
-            from src.ui.board import BoardRenderer
-            color_map = {h.name: BoardRenderer.HERO_COLORS[i % len(BoardRenderer.HERO_COLORS)] for i, h in enumerate(engine.heroes)}
-
-            # --- SELECT CARD TO TAKE ---
-            print("\n Select card to TAKE from Storyline:")
-            for i, c in enumerate(my_cards, 1):
-                o_raw = c.get('owner')
-                o_name = o_raw.name if hasattr(o_raw, 'name') else str(o_raw) if o_raw else "Unknown"
-                c_color = color_map.get(o_name, Col.CYAN)
-                o_display = Col.wrap(f" ({o_name})", c_color)
-                print(f" [{i}] {Col._get_card_label(c)}{o_display}")
-            print(" [0] Cancel")
-            
-            take_choice = engine.ui.ask_choice(" >> ", 0, len(my_cards))
-            if take_choice == 0:
-                print(Col.wrap(" Swap cancelled.", Col.YLW))
-                return
-            taken = my_cards[take_choice - 1]
-            
-            # --- SELECT CARD TO GIVE ---
-            print("\n Select card to GIVE from Hand:")
-            for i, c in enumerate(hero.hand, 1):
-                o_raw = c.get('owner')
-                o_name = o_raw.name if hasattr(o_raw, 'name') else str(o_raw) if o_raw else "Unknown"
-                c_color = color_map.get(o_name, Col.CYAN)
-                o_display = Col.wrap(f" ({o_name})", c_color)
-                print(f" [{i}] {Col._get_card_label(c)}{o_display}")
-            print(" [0] Cancel")
-            
-            give_choice = engine.ui.ask_choice(" >> ", 0, len(hero.hand))
-            if give_choice == 0:
-                print(Col.wrap(" Swap cancelled.", Col.YLW))
-                return
-            given = hero.hand.pop(give_choice - 1)
-            
-            # 2. 🦸‍♂️ CARD = HERO: Preserve the original hero's identity!
-            if 'owner' not in given: 
-                given['owner'] = hero if is_shield_mode else hero.name
-
-            story_cards[story_cards.index(taken)] = given
-            hero.hand.append(taken)
-            engine.log.append(Col.wrap(f" 🔃 A card was swapped with the Storyline.", Col.MAGENTA))
+        # 🚨 THE DECOUPLED ROUTER: Delegate entirely to the global system
+        from src.systems.special_abilities import SpecialAbilitySystem
+        prompt = {"text": effect.get('text', 'Swap a card?')}
+        SpecialAbilitySystem.swap_with_storyline(engine, hero, prompt)
 
     @staticmethod
     def pick_next_card(engine, hero, effect):

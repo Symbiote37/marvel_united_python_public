@@ -98,7 +98,7 @@ class GreenGoblinLogic(BaseVillainLogic):
                 from src.systems.token_system import TokenSystem
                 TokenSystem.add_token(engine, target_idx, "thugs", set())
                 
-            active_threats = sum(1 for l in engine.locations if l.threat and not l.threat.cleared)
+            active_threats = GreenGoblinLogic._count_active_threats(engine)
             engine.villain.plot_value = active_threats
             if active_threats >= 6:
                 engine.game_over = True
@@ -111,8 +111,16 @@ class GreenGoblinLogic(BaseVillainLogic):
         engine.villain.threat_pool.append(threat)
         random.shuffle(engine.villain.threat_pool)
         
-        active_threats = sum(1 for l in engine.locations if l.threat and not l.threat.cleared)
+        active_threats = GreenGoblinLogic._count_active_threats(engine)
         engine.villain.plot_value = active_threats
+
+    @staticmethod
+    def _count_active_threats(engine):
+        count = 0
+        for l in engine.locations:
+            if l.threat and not l.threat.cleared:
+                count += 1
+        return count
 
     @staticmethod
     def on_bam(engine, villain, damage=1):
@@ -218,3 +226,47 @@ class GreenGoblinLogic(BaseVillainLogic):
                     target.take_damage(engine)
         else:
             BaseVillainLogic.apply_standard_bam_damage(engine, threat, loc_idx)
+
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Norman Osborn is a maniacal billionaire equipped with highly \n"
+                "advanced Oscorp weaponry. He thrives on collateral damage, \n"
+                "kidnapping innocents to use as living shields while he slowly \n"
+                "seizes control of the city."
+            ),
+            "rules": (
+                "\"Oscorp Takeover & Hostage Situations\"\n"
+                "Goblin begins the mission with NO Threats on the board. \n"
+                "However, he deploys them rapidly, and defeated Threats are \n"
+                "shuffled right back into his reserve pool! If all 6 locations \n"
+                "are ever occupied by a Threat, Oscorp takes over and you lose.\n\n"
+                "Furthermore, he takes Hostages. As long as he holds a Hostage, \n"
+                "he is completely immune to damage. You must share his location \n"
+                "and spend 2 Heroic (★) actions to rescue one."
+            ),
+            "bam": (
+                "\"Pumpkin Bombs & Deployment\"\n"
+                "Goblin bombs his current location, dealing 1 damage to every \n"
+                "hero there. Immediately after, he deploys a new Threat to the \n"
+                "next available clockwise location. (Beware his 'Goblin Formula', \n"
+                "which permanently increases this BAM damage!)"
+            ),
+            "overflow": (
+                "\"Rapid Escalation\"\n"
+                "When a sector is overrun, the resulting panic allows Goblin's \n"
+                "forces to advance. Every overflow triggers a new Threat \n"
+                "deployment to the next available clockwise location."
+            ),
+            "threats": (
+                "He deploys Oscorp assets and rogue villains.\n"
+                "- Civilian Shield: Goblin cannot be damaged while standing here \n"
+                "  if there are ANY civilians present.\n"
+                "- Corporate Thugs: Heavily armored; requires 2 ✸ to defeat.\n"
+                "- Electro, Kraven, Lizard: Deadly henchmen. Kraven actively \n"
+                "  hunts heroes, Electro fries adjacent zones, and Lizard deals \n"
+                "  heavy, splittable damage."
+            )
+        }

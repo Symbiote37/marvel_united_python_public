@@ -11,27 +11,27 @@ class NovaLogic:
 
     @staticmethod
     def _i_am_the_help(engine, hero):
-        print(f"\n{Col.wrap('🌠 I AM THE HELP:', Col.CYAN)} Select an adjacent location to receive ★ ★.")
+        from src.systems.action_system import ActionSystem
         
-        idx_cw = (hero.location_index + 1) % 6
-        idx_ccw = (hero.location_index - 1) % 6
+        loc_idx = hero.location_index
+        adj_indices = [(loc_idx - 1) % 6, (loc_idx + 1) % 6]
         
-        loc_cw = engine.locations[idx_cw]
-        loc_ccw = engine.locations[idx_ccw]
-        
-        print(f" [1] {loc_cw.name} (Clockwise)")
-        print(f" [2] {loc_ccw.name} (Counter-Clockwise)")
+        print(f"\n--- {Col.wrap('🌠 I AM THE HELP: SELECT SECTOR', Col.CYAN + Col.BOLD)} ---")
+        for i, idx in enumerate(adj_indices, 1):
+            print(f" [{i}] {engine.locations[idx].name}")
         print(" [0] Cancel")
         
-        choice = Col.get_choice(" >> ", 0, 2)
+        # 🔌 UI ADAPTER: Using the established interface hook
+        choice = engine.ui.ask_choice(" >> ", 0, len(adj_indices))
         if choice == 0: return False
         
-        target_loc = loc_cw if choice == 1 else loc_ccw
+        target_idx = adj_indices[choice - 1]
+        target_loc = engine.locations[target_idx]
         
-        # Inject virtual tokens into the location for the engine to use later
-        target_loc.virtual_tokens = getattr(target_loc, 'virtual_tokens', {})
-        target_loc.virtual_tokens["heroic"] = target_loc.virtual_tokens.get("heroic", 0) + 2
+        engine.log.append(Col.wrap(f" 🌠 Nova beams support to {target_loc.name}!", Col.CYAN + Col.BOLD))
         
-        engine.log.append(Col.wrap(f" 🌠 {hero.name} beams support to {target_loc.name}! (+2 Heroic available there)", Col.CYAN))
+        # 🚨 ONE SOURCE OF TRUTH: Delegate to ActionSystem for targeted resolution
+        ActionSystem._handle_targeted_heroic(engine, hero, target_idx, amount=2)
+        
         return True
-        
+ 

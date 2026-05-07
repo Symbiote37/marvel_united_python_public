@@ -108,3 +108,39 @@ class DormammuLogic(BaseVillainLogic):
             engine.game_over = True
             engine.victory_status = "VILLAIN_WINS"
             engine.loss_reason = "RITUAL COMPLETE: The Dark Dimension has consumed our reality."
+
+    @staticmethod
+    def get_intel_report():
+        """Returns the thematic dossier for the pre-game S.H.I.E.L.D. briefing."""
+        return {
+            "profile": (
+                "Dormammu is an interdimensional conqueror of incalculable power. \n"
+                "He cannot be defeated by physical means; you must outlast his \n"
+                "assault and prevent him from dragging Earth into the Dark Dimension."
+            ),
+            "rules": (
+                "\"The Dark Ritual & War of Attrition\"\n"
+                "Dormammu is completely IMMUNE to damage. To win, you must survive \n"
+                "until his Master Plan deck runs completely dry.\n\n"
+                "However, if his Ritual Track reaches 20, he consumes our reality \n"
+                "and you lose. KOs feed the ritual (+1) instead of triggering a BAM. \n"
+                "Clearing 2 missions will burn the top card of his deck, bringing \n"
+                "you one step closer to outlasting him!"
+            ),
+            "bam": (
+                "\"Dimensional Blast\"\n"
+                "A devastating localized attack. Dormammu deals 2 damage to every \n"
+                "hero currently standing in his location."
+            ),
+            "overflow": (
+                "\"Dimensional Bleed\"\n"
+                "When a sector overruns, the barrier between worlds weakens. Every \n"
+                "unplaceable token immediately advances the Ritual Track by 1."
+            ),
+            "threats": (
+                "His very presence warps the reality of the battlefield.\n"
+                "- Banishment: Reality is distorted; rescuing Civilians costs 2 ★.\n"
+                "- Dark Dimension: Minions are empowered; defeating Thugs costs 2 ✸.\n"
+                "- Elemental Control: Amplifies all damage taken in this sector by 1."
+            )
+        }

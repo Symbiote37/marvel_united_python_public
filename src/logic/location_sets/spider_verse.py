@@ -39,7 +39,10 @@ class SpiderVerseLocationLogic:
                 parts = []
                 # 1. Movement
                 m = top.get('move', 0)
-                if m > 0: parts.append(f"MOVE {m}")
+                if isinstance(m, int) and m > 0: 
+                    parts.append(f"MOVE {m}")
+                elif isinstance(m, str) and m: 
+                    parts.append(f"MOVE {m.upper()}")
                 # 2. BAM
                 if top.get('bam'): parts.append("BAM!")
                 # 3. Reinforcements

@@ -79,13 +79,19 @@ class RhinoLogic(BaseVillainLogic):
         engine.log.append(Col.wrap(f" 💥 IMPACT: Rhino hits for {damage} damage and knocks heroes back!", Col.RED + Col.BOLD))
         
         for h in targets:
+            # Capture state before damage is processed
+            was_invincible = getattr(h, 'is_invincible', False)
+            
             for _ in range(damage):
                 h.take_damage(engine)
             
-            if damage > 0:
+            # Only apply knockback if they actually took the hit
+            if damage > 0 and not was_invincible:
                 h.location_index = (h.location_index + 1) % 6
                 new_loc = engine.locations[h.location_index].name
                 engine.log.append(f"   🌪️ {h.name} is sent flying to {new_loc}!")
+            elif damage > 0 and was_invincible:
+                engine.log.append(Col.wrap(f"   🛡️ {h.name} anchors down and absorbs the charge!", Col.CYAN))
 
     @staticmethod
     def on_overflow(engine, villain, loc, t_type):
@@ -159,7 +165,7 @@ class RhinoLogic(BaseVillainLogic):
                 "Master Plan card is immediately played facedown."
             ),
             "threats": (
-                "Expect heavily armored Mercenaries and barricades.\n"
+                "Expect Mercenaries and barricades.\n"
                 "- Open Field: Taking damage here grants a Crisis token.\n"
                 "- No Cover: Ending your turn here grants a Crisis token."
             )

@@ -13,9 +13,43 @@ class BoardRenderer:
         sys.stdout.flush()
 
     @classmethod
-    def get_loc_box(cls, loc, idx, engine, heroes):       
-        if getattr(loc, 'is_destroyed', False):
-            return [
+    def get_loc_box(cls, loc, idx, engine, heroes, hero_presence=None):       
+        is_destroyed = getattr(loc, 'is_destroyed', False)
+
+        # 🚨 STATE HASH: Build the cache key including custom UI tokens
+        if is_destroyed:
+            v_icons = ""
+            h_state = ()
+            threat_state = None
+        else:
+            v_icons = engine.mode_handler.get_location_presence(idx)
+            h_state = tuple(getattr(h, 'location_index', -1) for h in heroes)
+            threat = getattr(loc, 'threat', None)
+            threat_state = (getattr(threat, 'cleared', False), getattr(threat, 'display_hp', "0"), getattr(threat, 'name', ""), getattr(threat, 'short_effect', '')) if threat else None
+
+        cache_key = (
+            idx,
+            is_destroyed,
+            v_icons,
+            h_state,
+            loc.name,
+            getattr(loc, 'thugs', 0),
+            getattr(loc, 'civilians', 0),
+            getattr(loc, 'crisis_tokens', 0),
+            getattr(loc, 'journalists', 0),
+            getattr(loc, 'infected', 0),
+            getattr(getattr(loc, 'endangered_hero', None), 'name', None),
+            getattr(loc, 'capacity', 5),
+            threat_state,
+            getattr(loc, 'short_effect', 'CLEARED')
+        )
+
+        # 🚨 CACHE HIT: Return pre-rendered string block
+        if getattr(loc, '_box_cache_key', None) == cache_key:
+            return loc._box_cache_data
+
+        if is_destroyed:
+            result = [
                 f"[{idx+1}] {Col.wrap('COLLAPSED', Col.RED + Col.BOLD)}  ",   
                 f"    {Col.wrap('----------', Col.RED)} ",         
                 Col.ljust(" ", 16), 
@@ -24,15 +58,21 @@ class BoardRenderer:
                 Col.ljust(" ", 16),
                 Col.ljust(" ", 16)
             ]
-            
-        v_icons = engine.mode_handler.get_location_presence(idx)
-            
-        h_icons = ""
-        for i, h in enumerate(heroes):
-            if h.location_index == idx and h.location_index != -1:
-                color = cls.HERO_COLORS[i % len(cls.HERO_COLORS)]
-                h_icons += Col.wrap(h.name[0], color)
-        
+            loc._box_cache_key = cache_key
+            loc._box_cache_data = result
+            return result
+
+        # ⚡ OPTIMIZED LOOKUP
+        if hero_presence is not None:
+            h_icons = hero_presence.get(idx, "")
+        else:
+            # Fallback for manual or legacy calls
+            h_icons = ""
+            for i, h in enumerate(heroes):
+                if getattr(h, 'location_index', -1) == idx and getattr(h, 'location_index', -1) != -1:
+                    color = cls.HERO_COLORS[i % len(cls.HERO_COLORS)]
+                    h_icons += Col.wrap(h.name[0], color)
+
         name_parts = loc.name.split()
         l1, l2 = (name_parts + [""])[:2]
         
@@ -73,7 +113,7 @@ class BoardRenderer:
             line_threat_hp = Col.wrap(f" {b1[:14]} ", Col.GRN)
             line_threat_effect = Col.wrap(f" {b2[:14]} ", Col.GRN)
 
-        return [
+        result = [
             f"[{idx+1}] {l1[:11]:<11} ", 
             f"    {l2[:11]:<11} ", 
             Col.ljust(token_str, 16), 
@@ -82,6 +122,11 @@ class BoardRenderer:
             Col.ljust(line_threat_hp, 16), 
             Col.ljust(line_threat_effect, 16)
         ]
+        
+        # 🚨 CACHE STORE: Save the result against the hash
+        loc._box_cache_key = cache_key
+        loc._box_cache_data = result
+        return result
 
     @classmethod
     def _get_engine(cls, game_state):
@@ -97,11 +142,49 @@ class BoardRenderer:
         turn_count = getattr(engine, 'turn_count', 0)
         v_tag = Col.wrap(v.name.upper(), Col.RED)
         frame.append(f" {v_tag} | HP:{ICON.get('attack', '💥')}x{v.hp} | TURN:{turn_count} | DECK:[{len(v.plan_deck)}] ")
+        
+        # 🚨 DECOUPLED STATE HOOK: Scan for universal mechanical flags, not specific heroes.
+        story_cards = getattr(engine.storyline, 'cards', engine.storyline)
+        reveal_plan = any(isinstance(c, dict) and c.get('persistent_effect') == "reveal_master_plan" for c in story_cards)
+                
+        if reveal_plan and v.plan_deck:
+            top_card = v.plan_deck[0]
+            plan_str = cls.format_master_plan(top_card)
+            frame.append(Col.wrap(f" 🔮 VISIONS OF THE FUTURE: [ {plan_str} ] ", Col.MAGENTA + Col.BOLD))
+
         frame.append("=" * 53)
 
+    @staticmethod
+    def format_master_plan(card):
+        """Universally translates Master Plan JSON data into a readable UI string."""
+        parts = []
+        move = card.get('movement', card.get('move', 0))
+        
+        if isinstance(move, int) and move > 0:
+            parts.append(f"➡ {move}")
+        elif isinstance(move, str) and move.strip():
+            parts.append(f"➡ {move}")
+            
+        if card.get('bam'): parts.append("💥 BAM")
+        if card.get('trigger'): parts.append("⚡ TRG")
+            
+        adds = card.get('add', {})
+        add_str = []
+        for k, v in adds.items():
+            if k == 'thug': add_str.append(f"👊 {v}")
+            elif k == 'civilian': add_str.append(f"🧍 {v}")
+            elif k == 'threat': add_str.append(f"⚠️ {v}")
+        if add_str: parts.append(f"➕ {' '.join(add_str)}")
+            
+        if card.get('special_id') or card.get('effect_text'):
+            parts.append("🌟 SPEC")
+            
+        return " | ".join(parts) if parts else "Blank Plan"
+
     @classmethod
-    def _render_locations_row(cls, engine, frame, indices):
-        loc_data = [cls.get_loc_box(engine.locations[i], i, engine, engine.heroes) for i in indices]
+    def _render_locations_row(cls, engine, frame, indices, hero_presence=None):
+        # Pass the pre-computed dictionary down to the layout builder
+        loc_data = [cls.get_loc_box(engine.locations[i], i, engine, engine.heroes, hero_presence) for i in indices]
         for r in range(7):
             frame.append(f" {Col.ljust(loc_data[0][r], 16)}| {Col.ljust(loc_data[1][r], 16)}| {Col.ljust(loc_data[2][r], 16)}")
         frame.append("-" * 53)
@@ -120,7 +203,7 @@ class BoardRenderer:
             ]
             frame.append(f" MISSIONS: | {' | '.join(m_parts[:2])}\n           | {m_parts[2]} ")
             
-            # 🚨 RESTORED: Dynamic Plot vs Static Plot routing
+            # 🚨 Dynamic Plot vs Static Plot routing
             v = engine.villain
             v_logic = getattr(engine, 'villain_logic', None)
             
@@ -146,11 +229,11 @@ class BoardRenderer:
                 c_color = cls.HERO_COLORS[i % len(cls.HERO_COLORS)]
                 status_text = " (KO)" if h.is_ko else ""
                 
-                # 🚨 RESTORED: Keep Crisis Sensor for individual heroes
+                # 🚨 Keep Crisis Sensor for individual heroes
                 crisis_count = getattr(h, 'crisis_tokens', 0)
-                crisis_str = f" {Col.wrap(f'⚠️{crisis_count}', Col.RED)}" if crisis_count > 0 else ""
+                crisis_str = f" {Col.wrap(f'Δ{crisis_count}', Col.RED)}" if crisis_count > 0 else ""
                 
-                # 🚨 RESTORED: Exposure Tracker
+                # 🚨 Exposure Tracker
                 exp_count = getattr(h, 'exposure_tokens', 0)
                 is_exposed = getattr(h, 'is_exposed', False)
                 if is_exposed:
@@ -172,11 +255,11 @@ class BoardRenderer:
             for i, h in enumerate(heroes):
                 status_text = "KO" if h.is_ko else f"{len(h.hand)}|{len(h.deck)}"
                 
-                # 🚨 RESTORED: Crisis Sensor
+                # 🚨 Crisis Sensor
                 crisis_count = getattr(h, 'crisis_tokens', 0)
-                crisis_str = f" {Col.wrap(f'⚠️{crisis_count}', Col.RED)}" if crisis_count > 0 else ""
+                crisis_str = f" {Col.wrap(f'Δ{crisis_count}', Col.RED)}" if crisis_count > 0 else ""
                 
-                # 🚨 RESTORED: Exposure Tracker
+                # 🚨 Exposure Tracker
                 exp_count = getattr(h, 'exposure_tokens', 0)
                 is_exposed = getattr(h, 'is_exposed', False)
                 if is_exposed:
@@ -228,11 +311,11 @@ class BoardRenderer:
         h_tag = Col.wrap(active_h.name.upper(), cls.HERO_COLORS[h_idx % len(cls.HERO_COLORS)] + Col.BOLD)
         status = f" | {Col.wrap('KO', Col.RED + Col.BOLD)}" if getattr(active_h, 'is_ko', False) else ""
         
-        # 🚨 RESTORED: Crisis Sensor
+        # 🚨 Crisis Sensor
         crisis_count = getattr(active_h, 'crisis_tokens', 0)
         crisis_display = f" | {Col.wrap(f'Δ:[{crisis_count}]', Col.RED + Col.BOLD)}" if crisis_count > 0 else ""
         
-        # 🚨 RESTORED: Exposure Sensor
+        # 🚨 Exposure Sensor
         exp_count = getattr(active_h, 'exposure_tokens', 0)
         is_exposed = getattr(active_h, 'is_exposed', False)
         if is_exposed:
@@ -252,10 +335,17 @@ class BoardRenderer:
         engine = cls._get_engine(game_state)
         frame = []
 
+        # ⚡ OPTIMIZATION: Precompute hero presence mapping once per frame
+        hero_presence = {}
+        for i, h in enumerate(engine.heroes):
+            if getattr(h, 'location_index', -1) != -1:
+                color = cls.HERO_COLORS[i % len(cls.HERO_COLORS)]
+                hero_presence[h.location_index] = hero_presence.get(h.location_index, "") + Col.wrap(h.name[0], color)
+
         cls._render_villain_header(engine, frame)
-        cls._render_locations_row(engine, frame, [0, 1, 2])
+        cls._render_locations_row(engine, frame, [0, 1, 2], hero_presence)
         cls._render_dashboard(engine, frame)
-        cls._render_locations_row(engine, frame, [5, 4, 3])
+        cls._render_locations_row(engine, frame, [5, 4, 3], hero_presence)
         cls._render_team_hud(engine, frame)
         cls._render_active_card(engine, frame)
         cls._render_log(engine, frame)
